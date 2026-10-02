@@ -1,25 +1,36 @@
 {
   "expo": {
-    "name": "graph",
-    "slug": "graph",
-    "version": "1.0.0",
+    "name": "Qalamo",
+    "slug": "qalamo",
+    "version": "1.1.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#3B82F6"
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dialectal.qalamo",
+      "buildNumber": "5"
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "backgroundColor": "#2563EB",
+        "foregroundImage": "./assets/android-icon-foreground.png"
       },
+      "package": "com.dialectal.qalamo",
+      "versionCode": 5,
       "predictiveBackGestureEnabled": false
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-font",
+      "expo-audio"
+    ]
   }
 }

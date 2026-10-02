@@ -39,3 +39,19 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Release bundle
+*.aab
+*.apk
+
+# Temporary audio test files and directories
+/*.mp3
+/test_*
+/check_*
+/sh_*
+/t_*
+/test_phonetic_variations/
+/test_tanwin_fixes/
+/test_verbs/
+/test_voices_tanwin/
+/test_audio.html
