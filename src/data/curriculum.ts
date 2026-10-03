@@ -2645,18 +2645,18 @@ export const WORLDS: World[] = [
   },
   {
     "id": 4,
-    "name": "Monde 4 : Les Mots de 2 Lettres",
-    "nameAr": "العالم الرابع : الكَلِمَات الثُّنَائِيَّة وَالتَّرْكِيب البَسِيط",
-    "description": "Assemble les phonèmes et lis tes tout premiers mots et verbes complets de 2 lettres !",
+    "name": "Monde 4 : Les Combinaisons de 2 Voyelles",
+    "nameAr": "العالم الرابع : تَرْكِيبُ الحَرَكَاتِ الثُّنَائِيَّة",
+    "description": "Enchaîne avec fluidité deux lettres portant des voyelles courtes (Fatḥah, Ḍammah, Kasrah) !",
     "icon": "layers",
     "color": "#F59E0B",
     "levels": [
       {
         "id": 27,
         "worldId": 4,
-        "title": "Noms du Quotidien (Fatḥah)",
-        "titleAr": "كَلِمَاتٌ ثُنَائِيَّةٌ بِالفَتْحَة",
-        "description": "Écoute et construis tes premiers mots complets de 2 lettres.",
+        "title": "Série A + A (Fatḥah - Fatḥah)",
+        "titleAr": "فَتْحَة + فَتْحَة (بَتَ ، دَرَ ، كَتَ)",
+        "description": "Lis et assemble tes premières combinaisons à 2 Fatḥah !",
         "gameType": "wordBuilder",
         "requiredStars": 0,
         "bgColor": [
@@ -2666,88 +2666,118 @@ export const WORLDS: World[] = [
         "items": [],
         "wordItems": [
           {
-            "id": "ab",
-            "word": "أَبْ",
-            "meaning": "Père",
-            "translationFr": "Père",
+            "id": "bata",
+            "word": "بَتَ",
+            "meaning": "Ba-Ta",
+            "translationFr": "Ba-Ta",
             "letters": [
-              "أَ",
-              "بْ"
+              "بَ",
+              "تَ"
             ],
             "distractorLetters": [
-              "تْ",
-              "دْ"
+              "نَ",
+              "دَ"
             ],
-            "emoji": "👨"
+            "emoji": "🔤"
           },
           {
-            "id": "akh",
-            "word": "أَخْ",
-            "meaning": "Frère",
-            "translationFr": "Frère",
+            "id": "dara",
+            "word": "دَرَ",
+            "meaning": "Da-Ra",
+            "translationFr": "Da-Ra",
             "letters": [
-              "أَ",
-              "خْ"
+              "دَ",
+              "رَ"
             ],
             "distractorLetters": [
-              "جْ",
-              "نْ"
+              "زَ",
+              "ذَ"
             ],
-            "emoji": "👦"
+            "emoji": "🔤"
           },
           {
-            "id": "yad",
-            "word": "يَدْ",
-            "meaning": "Main",
-            "translationFr": "Main",
+            "id": "kata",
+            "word": "كَتَ",
+            "meaning": "Ka-Ta",
+            "translationFr": "Ka-Ta",
             "letters": [
-              "يَ",
-              "دْ"
-            ],
-            "distractorLetters": [
-              "رْ",
-              "بْ"
-            ],
-            "emoji": "✋"
-          },
-          {
-            "id": "fam",
-            "word": "فَمْ",
-            "meaning": "Bouche",
-            "translationFr": "Bouche",
-            "letters": [
-              "فَ",
-              "مْ"
+              "كَ",
+              "تَ"
             ],
             "distractorLetters": [
               "قَ",
-              "لْ"
+              "بَ"
             ],
-            "emoji": "👄"
+            "emoji": "🔤"
           },
           {
-            "id": "dam",
-            "word": "دَمْ",
-            "meaning": "Sang",
-            "translationFr": "Sang",
+            "id": "sama",
+            "word": "سَمَ",
+            "meaning": "Sa-Ma",
+            "translationFr": "Sa-Ma",
             "letters": [
-              "دَ",
-              "مْ"
+              "سَ",
+              "مَ"
             ],
             "distractorLetters": [
-              "نْ",
-              "رْ"
+              "شَ",
+              "نَ"
             ],
-            "emoji": "🩸"
+            "emoji": "🔤"
+          },
+          {
+            "id": "rasa",
+            "word": "رَسَ",
+            "meaning": "Ra-Sa",
+            "translationFr": "Ra-Sa",
+            "letters": [
+              "رَ",
+              "سَ"
+            ],
+            "distractorLetters": [
+              "دَ",
+              "صَ"
+            ],
+            "emoji": "🔤"
+          },
+          {
+            "id": "maa_particle",
+            "word": "مَعَ",
+            "meaning": "Avec (Ma'a)",
+            "translationFr": "Avec",
+            "letters": [
+              "مَ",
+              "عَ"
+            ],
+            "distractorLetters": [
+              "غَ",
+              "لَ"
+            ],
+            "emoji": "🤝"
+          },
+          {
+            "id": "laka",
+            "word": "لَكَ",
+            "meaning": "Pour toi (La-Ka)",
+            "translationFr": "Pour toi",
+            "letters": [
+              "لَ",
+              "كَ"
+            ],
+            "distractorLetters": [
+              "بَ",
+              "كُ"
+            ],
+            "emoji": "🎁"
           }
         ]
       },
       {
         "id": 28,
         "worldId": 4,
-        "title": "Verbes Courts & Ordres (Ḍammah)",
-        "titleAr": "أَفْعَالُ الأَمْرِ وَالكَلِمَاتُ بِالضَّمَّة",
-        "description": "Construis les verbes courts d'action et ordres du quotidien.",
+        "title": "Série A + OU (Fatḥah - Ḍammah)",
+        "titleAr": "فَتْحَة + ضَمَّة (بَبُ ، كَتُ ، دَرُ)",
+        "description": "Passe du son 'A' au son 'OU' avec agilité !",
         "gameType": "wordBuilder",
         "requiredStars": 0,
         "bgColor": [
@@ -2757,73 +2787,118 @@ export const WORLDS: World[] = [
         "items": [],
         "wordItems": [
           {
-            "id": "qul_sukun",
-            "word": "قُلْ",
-            "meaning": "Dis !",
-            "translationFr": "Dis !",
+            "id": "babu",
+            "word": "بَبُ",
+            "meaning": "Ba-Bou",
+            "translationFr": "Ba-Bou",
             "letters": [
-              "قُ",
-              "لْ"
+              "بَ",
+              "بُ"
+            ],
+            "distractorLetters": [
+              "تُ",
+              "بِ"
+            ],
+            "emoji": "🔤"
+          },
+          {
+            "id": "katu",
+            "word": "كَتُ",
+            "meaning": "Ka-Tou",
+            "translationFr": "Ka-Tou",
+            "letters": [
+              "كَ",
+              "تُ"
+            ],
+            "distractorLetters": [
+              "قَ",
+              "تَ"
+            ],
+            "emoji": "🔤"
+          },
+          {
+            "id": "daru",
+            "word": "دَرُ",
+            "meaning": "Da-Rou",
+            "translationFr": "Da-Rou",
+            "letters": [
+              "دَ",
+              "رُ"
+            ],
+            "distractorLetters": [
+              "ذَ",
+              "رَ"
+            ],
+            "emoji": "🔤"
+          },
+          {
+            "id": "samu",
+            "word": "سَمُ",
+            "meaning": "Sa-Mou",
+            "translationFr": "Sa-Mou",
+            "letters": [
+              "سَ",
+              "مُ"
+            ],
+            "distractorLetters": [
+              "شَ",
+              "مَ"
+            ],
+            "emoji": "🔤"
+          },
+          {
+            "id": "qatu",
+            "word": "قَتُ",
+            "meaning": "Qa-Tou",
+            "translationFr": "Qa-Tou",
+            "letters": [
+              "قَ",
+              "تُ"
             ],
             "distractorLetters": [
               "كُ",
-              "رْ"
+              "تَ"
             ],
-            "emoji": "🗣️"
+            "emoji": "🔤"
           },
           {
-            "id": "kun",
-            "word": "كُنْ",
-            "meaning": "Sois !",
-            "translationFr": "Sois !",
+            "id": "nabu",
+            "word": "نَبُ",
+            "meaning": "Na-Bou",
+            "translationFr": "Na-Bou",
             "letters": [
-              "كُ",
-              "نْ"
+              "نَ",
+              "بُ"
             ],
             "distractorLetters": [
-              "قُ",
-              "مْ"
+              "بَ",
+              "نُ"
             ],
-            "emoji": "✨"
+            "emoji": "🔤"
           },
           {
-            "id": "khudh",
-            "word": "خُذْ",
-            "meaning": "Prends !",
-            "translationFr": "Prends !",
+            "id": "tadu",
+            "word": "تَدُ",
+            "meaning": "Ta-Dou",
+            "translationFr": "Ta-Dou",
             "letters": [
-              "خُ",
-              "ذْ"
+              "تَ",
+              "دُ"
             ],
             "distractorLetters": [
-              "حُ",
-              "دْ"
+              "ثَ",
+              "دَ"
             ],
-            "emoji": "🤲"
-          },
-          {
-            "id": "qum_sukun",
-            "word": "قُمْ",
-            "meaning": "Lève-toi !",
-            "translationFr": "Lève-toi !",
-            "letters": [
-              "قُ",
-              "مْ"
-            ],
-            "distractorLetters": [
-              "صُ",
-              "نْ"
-            ],
-            "emoji": "🚶"
+            "emoji": "🔤"
           }
         ]
       },
       {
         "id": 29,
         "worldId": 4,
-        "title": "Verbes Courts & Noms (Kasrah)",
-        "titleAr": "كَلِمَاتٌ وَأَفْعَالٌ بِالكَسْرَة",
-        "description": "Forme les mots débutant par le son tiré \"I\".",
+        "title": "Série A + I (Fatḥah - Kasrah)",
+        "titleAr": "فَتْحَة + كَسْرَة (بَرِ ، دَرِ ، سَمِ)",
+        "description": "Descends vers la Kasrah après la Fatḥah !",
         "gameType": "wordBuilder",
         "requiredStars": 0,
         "bgColor": [
@@ -2833,58 +2908,103 @@ export const WORLDS: World[] = [
         "items": [],
         "wordItems": [
           {
-            "id": "qif",
-            "word": "قِفْ",
-            "meaning": "Arrête-toi !",
-            "translationFr": "Arrête-toi !",
+            "id": "bari",
+            "word": "بَرِ",
+            "meaning": "Ba-Ri",
+            "translationFr": "Ba-Ri",
             "letters": [
-              "قِ",
-              "فْ"
+              "بَ",
+              "رِ"
             ],
             "distractorLetters": [
-              "كِ",
-              "لْ"
+              "تِ",
+              "بُ"
             ],
-            "emoji": "🛑"
+            "emoji": "🔤"
           },
           {
-            "id": "sir",
-            "word": "سِرْ",
-            "meaning": "Marche / Secret",
-            "translationFr": "Marche !",
+            "id": "dari",
+            "word": "دَرِ",
+            "meaning": "Da-Ri",
+            "translationFr": "Da-Ri",
             "letters": [
-              "سِ",
-              "رْ"
+              "دَ",
+              "رِ"
             ],
             "distractorLetters": [
-              "شِ",
-              "زْ"
+              "رَ",
+              "دِ"
             ],
-            "emoji": "🏃"
+            "emoji": "🔤"
           },
           {
-            "id": "zir",
-            "word": "زِرْ",
-            "meaning": "Visite / Bouton",
-            "translationFr": "Visite !",
+            "id": "sami_short",
+            "word": "سَمِ",
+            "meaning": "Sa-Mi",
+            "translationFr": "Sa-Mi",
             "letters": [
-              "زِ",
-              "رْ"
+              "سَ",
+              "مِ"
             ],
             "distractorLetters": [
-              "دِ",
-              "نْ"
+              "سُ",
+              "مَ"
             ],
-            "emoji": "🔘"
+            "emoji": "🔤"
+          },
+          {
+            "id": "kati",
+            "word": "كَتِ",
+            "meaning": "Ka-Ti",
+            "translationFr": "Ka-Ti",
+            "letters": [
+              "كَ",
+              "تِ"
+            ],
+            "distractorLetters": [
+              "كُ",
+              "تَ"
+            ],
+            "emoji": "🔤"
+          },
+          {
+            "id": "shari_short",
+            "word": "شَرِ",
+            "meaning": "Cha-Ri",
+            "translationFr": "Cha-Ri",
+            "letters": [
+              "شَ",
+              "رِ"
+            ],
+            "distractorLetters": [
+              "سَ",
+              "رُ"
+            ],
+            "emoji": "🔤"
+          },
+          {
+            "id": "ali_short",
+            "word": "عَلِ",
+            "meaning": "ʿA-Li",
+            "translationFr": "ʿA-Li",
+            "letters": [
+              "عَ",
+              "لِ"
+            ],
+            "distractorLetters": [
+              "غَ",
+              "لَ"
+            ],
+            "emoji": "🔤"
           }
         ]
       },
       {
         "id": 30,
         "worldId": 4,
-        "title": "Les Petits Mots-Outils Essentiels",
-        "titleAr": "حُرُوفُ المَعَانِي وَأَدَوَاتُ اللُّغَة",
-        "description": "Écoute et attrape les petites particules indispensables de la langue arabe.",
+        "title": "Séries OU + I & OU + A",
+        "titleAr": "ضَمَّة + كَسْرَة / فَتْحَة (كُتِ ، قُرِ ، هُوَ)",
+        "description": "Attrape les bulles des combinaisons débutant par le son 'OU' !",
         "gameType": "bubble",
         "requiredStars": 0,
         "bgColor": [
@@ -2893,87 +3013,99 @@ export const WORLDS: World[] = [
         ],
         "items": [
           {
-            "id": "min_sukun",
-            "grapheme": "مِنْ",
-            "audioText": "مِنْ",
-            "phonemeDesc": "De / Depuis",
-            "transliteration": "min",
+            "id": "kuti",
+            "grapheme": "كُتِ",
+            "audioText": "كُتِ",
+            "phonemeDesc": "Kou-Ti",
+            "transliteration": "kuti",
             "distractors": [
-              "عَنْ",
-              "لَمْ",
-              "هَلْ"
+              "كَتَ",
+              "كَتُ",
+              "قُتِ"
             ]
           },
           {
-            "id": "an_sukun",
-            "grapheme": "عَنْ",
-            "audioText": "عَنْ",
-            "phonemeDesc": "Au sujet de",
-            "transliteration": "ʿan",
+            "id": "quri",
+            "grapheme": "قُرِ",
+            "audioText": "قُرِ",
+            "phonemeDesc": "Qou-Ri",
+            "transliteration": "quri",
             "distractors": [
-              "مِنْ",
-              "إِنْ",
-              "قَدْ"
+              "قَرِ",
+              "قُرُ",
+              "كُرِ"
             ]
           },
           {
-            "id": "hal_sukun",
-            "grapheme": "هَلْ",
-            "audioText": "هَلْ",
-            "phonemeDesc": "Est-ce que ?",
-            "transliteration": "hal",
+            "id": "sumi",
+            "grapheme": "سُمِ",
+            "audioText": "سُمِ",
+            "phonemeDesc": "Sou-Mi",
+            "transliteration": "sumi",
             "distractors": [
-              "بَلْ",
-              "قَدْ",
-              "كَمْ"
+              "سَمِ",
+              "سُمُ",
+              "شُمِ"
             ]
           },
           {
-            "id": "bal_sukun",
-            "grapheme": "بَلْ",
-            "audioText": "بَلْ",
-            "phonemeDesc": "Mais plutôt",
-            "transliteration": "bal",
+            "id": "duri",
+            "grapheme": "دُرِ",
+            "audioText": "دُرِ",
+            "phonemeDesc": "Dou-Ri",
+            "transliteration": "duri",
             "distractors": [
-              "هَلْ",
-              "لَوْ",
-              "لَمْ"
+              "دَرِ",
+              "دُرُ",
+              "ذُرِ"
             ]
           },
           {
-            "id": "lam_word",
-            "grapheme": "لَمْ",
-            "audioText": "لَمْ",
-            "phonemeDesc": "Ne pas",
-            "transliteration": "lam",
+            "id": "huwa",
+            "grapheme": "هُوَ",
+            "audioText": "هُوَ",
+            "phonemeDesc": "Il (Hou-Wa)",
+            "transliteration": "huwa",
             "distractors": [
-              "لَوْ",
-              "كَمْ",
-              "مَنْ"
+              "هِيَ",
+              "هَوَ",
+              "لَكَ"
             ]
           },
           {
-            "id": "law_word",
-            "grapheme": "لَوْ",
-            "audioText": "لَوْ",
-            "phonemeDesc": "Si",
-            "transliteration": "law",
+            "id": "ruba",
+            "grapheme": "رُبَ",
+            "audioText": "رُبَ",
+            "phonemeDesc": "Rou-Ba",
+            "transliteration": "ruba",
             "distractors": [
-              "لَمْ",
-              "هَلْ",
-              "بَلْ"
+              "رَبَ",
+              "رُبُ",
+              "زُبَ"
             ]
           },
           {
-            "id": "qad_sukun",
-            "grapheme": "قَدْ",
-            "audioText": "قَدْ",
-            "phonemeDesc": "Certes",
-            "transliteration": "qad",
+            "id": "kuta",
+            "grapheme": "كُتَ",
+            "audioText": "كُتَ",
+            "phonemeDesc": "Kou-Ta",
+            "transliteration": "kuta",
             "distractors": [
-              "قُلْ",
-              "عَنْ",
-              "مِنْ"
+              "كَتَ",
+              "كُتِ",
+              "قُتَ"
+            ]
+          },
+          {
+            "id": "dura",
+            "grapheme": "دُرَ",
+            "audioText": "دُرَ",
+            "phonemeDesc": "Dou-Ra",
+            "transliteration": "dura",
+            "distractors": [
+              "دَرَ",
+              "دُرِ",
+              "ذُرَ"
             ]
           }
         ],
@@ -2982,9 +3114,9 @@ export const WORLDS: World[] = [
       {
         "id": 31,
         "worldId": 4,
-        "title": "Défi Discrimination & Écoute Rapide",
-        "titleAr": "تَحَدِّي التَّمْيِيزِ السَّرِيع بَيْنَ الكَلِمَات",
-        "description": "Reconnais en un éclair le mot de 2 lettres prononcé !",
+        "title": "Série I + A & Défi Vitesse Mixte",
+        "titleAr": "كَسْرَة + فَتْحَة وَالتَّحَدِّي المُمَيَّز",
+        "description": "Vise la bonne cible parmi les différentes combinaisons de voyelles !",
         "gameType": "target",
         "requiredStars": 0,
         "bgColor": [
@@ -2993,87 +3125,99 @@ export const WORLDS: World[] = [
         ],
         "items": [
           {
-            "id": "ab",
-            "grapheme": "أَبْ",
-            "audioText": "أَبْ",
-            "phonemeDesc": "Père",
-            "transliteration": "ab",
+            "id": "hiya",
+            "grapheme": "هِيَ",
+            "audioText": "هِيَ",
+            "phonemeDesc": "Elle (Hi-Ya)",
+            "transliteration": "hiya",
             "distractors": [
-              "أَخْ",
-              "يَدْ",
-              "فَمْ"
+              "هُوَ",
+              "هَيَ",
+              "لِمَ"
             ]
           },
           {
-            "id": "akh",
-            "grapheme": "أَخْ",
-            "audioText": "أَخْ",
-            "phonemeDesc": "Frère",
-            "transliteration": "akh",
+            "id": "lima",
+            "grapheme": "لِمَ",
+            "audioText": "لِمَ",
+            "phonemeDesc": "Pourquoi (Li-Ma)",
+            "transliteration": "lima",
             "distractors": [
-              "أَبْ",
-              "دَمْ",
-              "يَدْ"
+              "لَمَ",
+              "لُمَ",
+              "لَكَ"
             ]
           },
           {
-            "id": "qul_sukun",
-            "grapheme": "قُلْ",
-            "audioText": "قُلْ",
-            "phonemeDesc": "Dis !",
-            "transliteration": "qul",
+            "id": "bika",
+            "grapheme": "بِكَ",
+            "audioText": "بِكَ",
+            "phonemeDesc": "Par toi (Bi-Ka)",
+            "transliteration": "bika",
             "distractors": [
-              "قِفْ",
-              "قُمْ",
-              "كُنْ"
+              "بَكَ",
+              "بُكَ",
+              "بِتَ"
             ]
           },
           {
-            "id": "qif",
-            "grapheme": "قِفْ",
-            "audioText": "قِفْ",
-            "phonemeDesc": "Arrête-toi !",
-            "transliteration": "qif",
+            "id": "bita",
+            "grapheme": "بِتَ",
+            "audioText": "بِتَ",
+            "phonemeDesc": "Bi-Ta",
+            "transliteration": "bita",
             "distractors": [
-              "قُلْ",
-              "سِرْ",
-              "زِرْ"
+              "بَتَ",
+              "بِكَ",
+              "تِبَ"
             ]
           },
           {
-            "id": "min_sukun",
-            "grapheme": "مِنْ",
-            "audioText": "مِنْ",
-            "phonemeDesc": "De / Depuis",
-            "transliteration": "min",
+            "id": "babu",
+            "grapheme": "بَبُ",
+            "audioText": "بَبُ",
+            "phonemeDesc": "Ba-Bou",
+            "transliteration": "babu",
             "distractors": [
-              "عَنْ",
-              "هَلْ",
-              "بَلْ"
+              "بَتُ",
+              "بُبَ",
+              "بَبَ"
             ]
           },
           {
-            "id": "sir",
-            "grapheme": "سِرْ",
-            "audioText": "سِرْ",
-            "phonemeDesc": "Marche !",
-            "transliteration": "sir",
+            "id": "katu",
+            "grapheme": "كَتُ",
+            "audioText": "كَتُ",
+            "phonemeDesc": "Ka-Tou",
+            "transliteration": "katu",
             "distractors": [
-              "زِرْ",
-              "قِفْ",
-              "خُذْ"
+              "كَتَ",
+              "كُتِ",
+              "قَتُ"
             ]
           },
           {
-            "id": "hal_sukun",
-            "grapheme": "هَلْ",
-            "audioText": "هَلْ",
-            "phonemeDesc": "Est-ce que ?",
-            "transliteration": "hal",
+            "id": "bari",
+            "grapheme": "بَرِ",
+            "audioText": "بَرِ",
+            "phonemeDesc": "Ba-Ri",
+            "transliteration": "bari",
             "distractors": [
-              "بَلْ",
-              "لَمْ",
-              "قَدْ"
+              "بُرِ",
+              "بَرُ",
+              "دَرِ"
+            ]
+          },
+          {
+            "id": "kuti",
+            "grapheme": "كُتِ",
+            "audioText": "كُتِ",
+            "phonemeDesc": "Kou-Ti",
+            "transliteration": "kuti",
+            "distractors": [
+              "كَتِ",
+              "كُتَ",
+              "قُتِ"
             ]
           }
         ],
@@ -3082,9 +3226,9 @@ export const WORLDS: World[] = [
       {
         "id": 32,
         "worldId": 4,
-        "title": "Grand Atelier des Mots de 2 Lettres",
-        "titleAr": "الوَرْشَةُ الكُبْرَى لِتَرْكِيبِ الكَلِمَات الثُّنَائِيَّة",
-        "description": "Construis tous les mots de 2 lettres appris pour valider ton Monde 4 !",
+        "title": "Grand Atelier des 2 Voyelles",
+        "titleAr": "الوَرْشَةُ الكُبْرَى لِتَرْكِيبِ الصَّوْتَيْن",
+        "description": "Construis les combinaisons de voyelles mélangées pour valider ton Monde 4 !",
         "gameType": "wordBuilder",
         "requiredStars": 0,
         "bgColor": [
@@ -3094,94 +3238,124 @@ export const WORLDS: World[] = [
         "items": [],
         "wordItems": [
           {
-            "id": "ab",
-            "word": "أَبْ",
-            "meaning": "Père",
-            "translationFr": "Père",
+            "id": "bata",
+            "word": "بَتَ",
+            "meaning": "Ba-Ta",
+            "translationFr": "Ba-Ta",
             "letters": [
-              "أَ",
-              "بْ"
+              "بَ",
+              "تَ"
             ],
             "distractorLetters": [
-              "تْ",
-              "دْ"
+              "تُ",
+              "بِ"
             ],
-            "emoji": "👨"
+            "emoji": "🔤"
           },
           {
-            "id": "yad",
-            "word": "يَدْ",
-            "meaning": "Main",
-            "translationFr": "Main",
+            "id": "babu",
+            "word": "بَبُ",
+            "meaning": "Ba-Bou",
+            "translationFr": "Ba-Bou",
             "letters": [
-              "يَ",
-              "دْ"
+              "بَ",
+              "بُ"
             ],
             "distractorLetters": [
-              "رْ",
-              "سْ"
+              "بَ",
+              "تُ"
             ],
-            "emoji": "✋"
+            "emoji": "🔤"
           },
           {
-            "id": "qul_sukun",
-            "word": "قُلْ",
-            "meaning": "Dis !",
-            "translationFr": "Dis !",
+            "id": "katu",
+            "word": "كَتُ",
+            "meaning": "Ka-Tou",
+            "translationFr": "Ka-Tou",
             "letters": [
-              "قُ",
-              "لْ"
+              "كَ",
+              "تُ"
             ],
             "distractorLetters": [
               "كُ",
-              "مْ"
+              "تَ"
             ],
-            "emoji": "🗣️"
+            "emoji": "🔤"
           },
           {
-            "id": "khudh",
-            "word": "خُذْ",
-            "meaning": "Prends !",
-            "translationFr": "Prends !",
+            "id": "bari",
+            "word": "بَرِ",
+            "meaning": "Ba-Ri",
+            "translationFr": "Ba-Ri",
             "letters": [
-              "خُ",
-              "ذْ"
+              "بَ",
+              "رِ"
             ],
             "distractorLetters": [
-              "حُ",
-              "دْ"
+              "بُ",
+              "رَ"
             ],
-            "emoji": "🤲"
+            "emoji": "🔤"
           },
           {
-            "id": "qif",
-            "word": "قِفْ",
-            "meaning": "Arrête-toi !",
-            "translationFr": "Arrête-toi !",
+            "id": "kuti",
+            "word": "كُتِ",
+            "meaning": "Kou-Ti",
+            "translationFr": "Kou-Ti",
             "letters": [
-              "قِ",
-              "فْ"
+              "كُ",
+              "تِ"
             ],
             "distractorLetters": [
-              "كِ",
-              "نْ"
+              "كَ",
+              "تُ"
             ],
-            "emoji": "🛑"
+            "emoji": "🔤"
           },
           {
-            "id": "sir",
-            "word": "سِرْ",
-            "meaning": "Marche !",
-            "translationFr": "Marche !",
+            "id": "huwa",
+            "word": "هُوَ",
+            "meaning": "Il (Hou-Wa)",
+            "translationFr": "Il",
             "letters": [
-              "سِ",
-              "رْ"
+              "هُ",
+              "وَ"
             ],
             "distractorLetters": [
-              "شِ",
-              "زْ"
+              "هَ",
+              "وِ"
             ],
-            "emoji": "🏃"
+            "emoji": "👦"
+          },
+          {
+            "id": "hiya",
+            "word": "هِيَ",
+            "meaning": "Elle (Hi-Ya)",
+            "translationFr": "Elle",
+            "letters": [
+              "هِ",
+              "يَ"
+            ],
+            "distractorLetters": [
+              "هُ",
+              "يُ"
+            ],
+            "emoji": "👧"
+          },
+          {
+            "id": "bika",
+            "word": "بِكَ",
+            "meaning": "Par toi (Bi-Ka)",
+            "translationFr": "Par toi",
+            "letters": [
+              "بِ",
+              "كَ"
+            ],
+            "distractorLetters": [
+              "بَ",
+              "كُ"
+            ],
+            "emoji": "👉"
           }
         ]
       }

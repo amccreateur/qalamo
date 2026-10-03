@@ -319,7 +319,45 @@ export const GENERATED_AUDIO_ASSETS: Record<string, any> = {
   jalasa: require('../../assets/audio/generated/jalasa.mp3'),
   dhahaba: require('../../assets/audio/generated/dhahaba.mp3'),
 
-  // 2-Letter Words (Première fusion - Monde 3 / 4)
+  // 2-Letter Words with 2 Short Vowels (Monde 4)
+  bata: require('../../assets/audio/generated/bata.mp3'),
+  dara: require('../../assets/audio/generated/dara.mp3'),
+  kata: require('../../assets/audio/generated/kata.mp3'),
+  sama: require('../../assets/audio/generated/sama.mp3'),
+  rasa: require('../../assets/audio/generated/rasa.mp3'),
+  maa_particle: require('../../assets/audio/generated/maa_particle.mp3'),
+  laka: require('../../assets/audio/generated/laka.mp3'),
+  babu: require('../../assets/audio/generated/babu.mp3'),
+  katu: require('../../assets/audio/generated/katu.mp3'),
+  daru: require('../../assets/audio/generated/daru.mp3'),
+  samu: require('../../assets/audio/generated/samu.mp3'),
+  qatu: require('../../assets/audio/generated/qatu.mp3'),
+  nabu: require('../../assets/audio/generated/nabu.mp3'),
+  tadu: require('../../assets/audio/generated/tadu.mp3'),
+  bari: require('../../assets/audio/generated/bari.mp3'),
+  dari: require('../../assets/audio/generated/dari.mp3'),
+  sami_short: require('../../assets/audio/generated/sami_short.mp3'),
+  kati: require('../../assets/audio/generated/kati.mp3'),
+  shari_short: require('../../assets/audio/generated/shari_short.mp3'),
+  ali_short: require('../../assets/audio/generated/ali_short.mp3'),
+  kuti: require('../../assets/audio/generated/kuti.mp3'),
+  quri: require('../../assets/audio/generated/quri.mp3'),
+  sumi: require('../../assets/audio/generated/sumi.mp3'),
+  duri: require('../../assets/audio/generated/duri.mp3'),
+  rusi: require('../../assets/audio/generated/rusi.mp3'),
+  huwa: require('../../assets/audio/generated/huwa.mp3'),
+  ruba: require('../../assets/audio/generated/ruba.mp3'),
+  kuta: require('../../assets/audio/generated/kuta.mp3'),
+  dura: require('../../assets/audio/generated/dura.mp3'),
+  sura: require('../../assets/audio/generated/sura.mp3'),
+  hiya: require('../../assets/audio/generated/hiya.mp3'),
+  lima: require('../../assets/audio/generated/lima.mp3'),
+  bika: require('../../assets/audio/generated/bika.mp3'),
+  bita: require('../../assets/audio/generated/bita.mp3'),
+  dina: require('../../assets/audio/generated/dina.mp3'),
+  sima: require('../../assets/audio/generated/sima.mp3'),
+
+  // 2-Letter Words (Première fusion - Sukūn)
   yad: require('../../assets/audio/generated/yad.mp3'),
   fam: require('../../assets/audio/generated/fam.mp3'),
   dam: require('../../assets/audio/generated/dam.mp3'),
@@ -559,7 +597,15 @@ export const CHAR_TO_KEY: Record<string, string> = {
   'مَدْرَسَة': 'madrasa', 'مَدْرَسَةٌ': 'madrasa', 'حَدِيقَة': 'hadeeqa', 'حَدِيقَةٌ': 'hadeeqa',
   'عُصْفُور': 'ousfoor', 'عُصْفُورٌ': 'ousfoor', 'رُمَّان': 'rumman', 'رُمَّانٌ': 'rumman',
 
-  // 2-Letter Words (Première fusion)
+  // 2-Letter Words with 2 Short Vowels (Monde 4)
+  'بَتَ': 'bata', 'دَرَ': 'dara', 'كَتَ': 'kata', 'سَمَ': 'sama', 'رَسَ': 'rasa', 'مَعَ': 'maa_particle', 'لَكَ': 'laka',
+  'بَبُ': 'babu', 'كَتُ': 'katu', 'دَرُ': 'daru', 'سَمُ': 'samu', 'قَتُ': 'qatu', 'نَبُ': 'nabu', 'تَدُ': 'tadu',
+  'بَرِ': 'bari', 'دَرِ': 'dari', 'سَمِ': 'sami_short', 'كَتِ': 'kati', 'شَرِ': 'shari_short', 'عَلِ': 'ali_short',
+  'كُتِ': 'kuti', 'قُرِ': 'quri', 'سُمِ': 'sumi', 'دُرِ': 'duri', 'رُسِ': 'rusi',
+  'هُوَ': 'huwa', 'رُبَ': 'ruba', 'كُتَ': 'kuta', 'دُرَ': 'dura', 'سُرَ': 'sura',
+  'هِيَ': 'hiya', 'لِمَ': 'lima', 'بِكَ': 'bika', 'بِتَ': 'bita', 'دِنَ': 'dina', 'سِمَ': 'sima',
+
+  // 2-Letter Words (Première fusion - Sukūn)
   'أَخْ': 'akh', 'يَدْ': 'yad', 'فَمْ': 'fam', 'دَمْ': 'dam',
   'كُنْ': 'kun', 'خُذْ': 'khudh', 'قِفْ': 'qif', 'سِرْ': 'sir', 'زِرْ': 'zir',
   'لَمْ': 'lam_word', 'لَوْ': 'law_word',
