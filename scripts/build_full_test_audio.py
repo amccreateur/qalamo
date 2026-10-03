@@ -12,7 +12,7 @@ emphatic_letters = [
     ("صِ", "Ṣi (صِ — Ṣaad)", "assets/audio/generated/sad_kasra.mp3", "Sifflement sourd et plein d'air"),
     ("ضِ", "Ḍi (ضِ — Ḍaad)", "assets/audio/generated/dad_kasra.mp3", "Impact latéral de la langue, grave"),
     ("ظِ", "Ẓi (ظِ — Ẓaa)", "assets/audio/generated/zha_kasra.mp3", "Interdentale sonore emphatique"),
-    ("قِ", "Qi (قِ — Qāf)", "assets/audio/generated/qaf_kasra.mp3", "Claquement uvulaire net et profond"),
+    ("قِ", "Qi (قِ — Qāf)", "assets/audio/generated/qaf_kasra.mp3", "Claquement uvulaire net et clair (Moaz)"),
     ("خِ", "Khi (خِ — Khā')", "assets/audio/generated/kha_kasra.mp3", "Frottement guttural raclé"),
     ("غِ", "Ghi (غِ — Ghayn)", "assets/audio/generated/ghayn_kasra.mp3", "Vibration gutturale postérieure"),
 ]
@@ -46,7 +46,7 @@ kasra_items = [
     ("عِ", "ʿAyn Kasra (ʿI - Gorge)", "assets/audio/generated/ayn_kasra.mp3"),
     ("غِ", "Ghayn Kasra (Ghi - Shakir)", "assets/audio/generated/ghayn_kasra.mp3"),
     ("فِ", "Fa Kasra (Fi)", "assets/audio/generated/fa_kasra.mp3"),
-    ("قِ", "Qaf Kasra (Qi - Shakir)", "assets/audio/generated/qaf_kasra.mp3"),
+    ("قِ", "Qaf Kasra (Qi - Moaz)", "assets/audio/generated/qaf_kasra.mp3"),
     ("كِ", "Kaf Kasra (Ki - Fin)", "assets/audio/generated/kaf_kasra.mp3"),
     ("لِ", "Lam Kasra (Li)", "assets/audio/generated/lam_kasra.mp3"),
     ("مِ", "Meem Kasra (Mi)", "assets/audio/generated/meem_kasra.mp3"),
