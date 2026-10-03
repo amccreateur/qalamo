@@ -189,8 +189,16 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
 
       {/* Center Sound Speaker (The Grapho Audio Prompt) */}
       <View style={styles.promptArea}>
-        <Text style={styles.instructionText}>Écoute et trouve la bonne lettre :</Text>
-        <Text style={styles.instructionAr}>اِسْتَمِعْ وَاخْتَرِ الحَرْفَ المُنَاسِب</Text>
+        <Text style={styles.instructionText}>
+          {currentItem.phonemeDesc ? `Trouve : ${currentItem.phonemeDesc}` : 'Écoute et trouve la bonne lettre :'}
+        </Text>
+        <Text style={styles.instructionAr}>
+          {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
+          currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
+          currentItem.phonemeDesc?.toLowerCase().includes('fin')
+            ? 'اخْتَرِ الشَّكْلَ المُنَاسِبَ لِمَوْقِعِ الحَرْف'
+            : 'اِسْتَمِعْ وَاخْتَرِ الحَرْفَ المُنَاسِب'}
+        </Text>
 
         <TouchableOpacity style={styles.speakerButton} onPress={playCurrentSound} activeOpacity={0.8}>
           <Animated.View style={[styles.speakerInner, { transform: [{ scale: pulseAnim }] }]}>
@@ -200,7 +208,14 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
           </Animated.View>
         </TouchableOpacity>
 
-        <Text style={styles.phonemeHint}>Touche le haut-parleur pour réécouter</Text>
+        {currentItem.phonemeDesc ? (
+          <View style={styles.hintPill}>
+            <Ionicons name="locate" size={14} color="#1E40AF" />
+            <Text style={styles.hintPillText}>{currentItem.phonemeDesc}</Text>
+          </View>
+        ) : (
+          <Text style={styles.phonemeHint}>Touche le haut-parleur pour réécouter</Text>
+        )}
       </View>
 
       {/* Floating Bubbles Grid */}
@@ -360,6 +375,23 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     color: '#334155',
+  },
+  hintPill: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    backgroundColor: '#DBEAFE',
+    borderWidth: 1.5,
+    borderColor: '#93C5FD',
+    paddingHorizontal: 14,
+    paddingVertical: 4,
+    borderRadius: 16,
+    marginTop: 8,
+  },
+  hintPillText: {
+    fontSize: 14,
+    fontWeight: '800',
+    color: '#1E40AF',
   },
   bubblesGrid: {
     flexDirection: 'row',

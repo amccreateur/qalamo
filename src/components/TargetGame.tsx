@@ -139,17 +139,32 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
 
       {/* Target Center Stage */}
       <View style={styles.targetStage}>
-        <Text style={styles.stageTitle}>Tir Sonore / تَطَابُقُ الأَصْوَات</Text>
-        <Text style={styles.stageSubtitle}>Quel signe correspond à ce son ?</Text>
+        <Text style={styles.stageTitle}>
+          {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
+          currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
+          currentItem.phonemeDesc?.toLowerCase().includes('fin')
+            ? 'Position de la Lettre / مَوْقِعُ الحَرْف'
+            : 'Tir Sonore / تَطَابُقُ الأَصْوَات'}
+        </Text>
+        <Text style={styles.stageSubtitle}>
+          {currentItem.phonemeDesc ? `Trouve : ${currentItem.phonemeDesc}` : 'Quel signe correspond à ce son ?'}
+        </Text>
 
         <TouchableOpacity style={styles.targetOrb} onPress={playSound} activeOpacity={0.8}>
           <Animated.View style={[styles.targetInner, { transform: [{ scale: bounceAnim }] }]}>
             <LinearGradient colors={['#F59E0B', '#EF4444']} style={styles.orbGradient}>
               <Ionicons name="volume-high" size={48} color="#FFFFFF" />
-              <Text style={styles.tapListenText}>Récouter</Text>
+              <Text style={styles.tapListenText}>Réécouter</Text>
             </LinearGradient>
           </Animated.View>
         </TouchableOpacity>
+
+        {currentItem.phonemeDesc && (
+          <View style={styles.targetHintBadge}>
+            <Ionicons name="locate" size={16} color="#FEF08A" />
+            <Text style={styles.targetHintText}>{currentItem.phonemeDesc}</Text>
+          </View>
+        )}
       </View>
 
       {/* Target Choices Cards */}
@@ -303,6 +318,23 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '700',
     color: '#C7D2FE',
+  },
+  targetHintBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    backgroundColor: 'rgba(255, 255, 255, 0.15)',
+    borderWidth: 1.5,
+    borderColor: 'rgba(254, 240, 138, 0.4)',
+    paddingHorizontal: 16,
+    paddingVertical: 6,
+    borderRadius: 20,
+    marginTop: 10,
+  },
+  targetHintText: {
+    fontSize: 15,
+    fontWeight: '800',
+    color: '#FEF08A',
   },
   cardsRow: {
     flexDirection: 'row',
