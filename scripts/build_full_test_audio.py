@@ -45,7 +45,7 @@ kasra_items = [
     ("ظِ", "Ẓa Kasra (Ẓi - Shakir)", "assets/audio/generated/zha_kasra.mp3"),
     ("عِ", "ʿAyn Kasra (ʿI - Gorge)", "assets/audio/generated/ayn_kasra.mp3"),
     ("غِ", "Ghayn Kasra (Ghi - Shakir)", "assets/audio/generated/ghayn_kasra.mp3"),
-    ("فِ", "Fa Kasra (Fi)", "assets/audio/generated/fa_kasra.mp3"),
+    ("فِ", "Fa Kasra (Fi - Shakir)", "assets/audio/generated/fa_kasra.mp3"),
     ("قِ", "Qaf Kasra (Qi - Moaz)", "assets/audio/generated/qaf_kasra.mp3"),
     ("كِ", "Kaf Kasra (Ki - Fin)", "assets/audio/generated/kaf_kasra.mp3"),
     ("لِ", "Lam Kasra (Li)", "assets/audio/generated/lam_kasra.mp3"),
