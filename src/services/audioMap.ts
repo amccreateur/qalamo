@@ -318,6 +318,18 @@ export const GENERATED_AUDIO_ASSETS: Record<string, any> = {
   rasama: require('../../assets/audio/generated/rasama.mp3'),
   jalasa: require('../../assets/audio/generated/jalasa.mp3'),
   dhahaba: require('../../assets/audio/generated/dhahaba.mp3'),
+
+  // 2-Letter Words (Première fusion - Monde 3 / 4)
+  yad: require('../../assets/audio/generated/yad.mp3'),
+  fam: require('../../assets/audio/generated/fam.mp3'),
+  dam: require('../../assets/audio/generated/dam.mp3'),
+  kun: require('../../assets/audio/generated/kun.mp3'),
+  khudh: require('../../assets/audio/generated/khudh.mp3'),
+  qif: require('../../assets/audio/generated/qif.mp3'),
+  sir: require('../../assets/audio/generated/sir.mp3'),
+  zir: require('../../assets/audio/generated/zir.mp3'),
+  lam_word: require('../../assets/audio/generated/lam_word.mp3'),
+  law_word: require('../../assets/audio/generated/law_word.mp3'),
   samia: require('../../assets/audio/generated/samia.mp3'),
   akala: require('../../assets/audio/generated/akala.mp3'),
   shariba: require('../../assets/audio/generated/shariba.mp3'),
@@ -546,6 +558,14 @@ export const CHAR_TO_KEY: Record<string, string> = {
   'عِنَب': 'inab', 'عِنَبٌ': 'inab', 'تُفَّاح': 'tuffah', 'تُفَّاحٌ': 'tuffah',
   'مَدْرَسَة': 'madrasa', 'مَدْرَسَةٌ': 'madrasa', 'حَدِيقَة': 'hadeeqa', 'حَدِيقَةٌ': 'hadeeqa',
   'عُصْفُور': 'ousfoor', 'عُصْفُورٌ': 'ousfoor', 'رُمَّان': 'rumman', 'رُمَّانٌ': 'rumman',
+
+  // 2-Letter Words (Première fusion)
+  'أَخْ': 'akh', 'يَدْ': 'yad', 'فَمْ': 'fam', 'دَمْ': 'dam',
+  'كُنْ': 'kun', 'خُذْ': 'khudh', 'قِفْ': 'qif', 'سِرْ': 'sir', 'زِرْ': 'zir',
+  'لَمْ': 'lam_word', 'لَوْ': 'law_word',
+  'يَد': 'yad', 'فَم': 'fam', 'دَم': 'dam', 'كُن': 'kun', 'خُذ': 'khudh',
+  'قِف': 'qif', 'سِر': 'sir', 'زِر': 'zir',
+  'لَم': 'lam_word',
 
   // Phrases (Monde 7)
   'الكِتَابُ مُفِيدٌ': 'alkitaab_mufeed',

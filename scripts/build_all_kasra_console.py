@@ -50,6 +50,28 @@ tanwin_items = [
     ("بَيْتٍ", "Baytin (-in)", "assets/audio/generated/baytin.mp3"),
 ]
 
+two_letter_words_items = [
+    ("أَبْ", "Ab (أَ + بْ - Père)", "assets/audio/generated/ab.mp3"),
+    ("أَخْ", "Akh (أَ + خْ - Frère)", "assets/audio/generated/akh.mp3"),
+    ("يَدْ", "Yad (يَ + دْ - Main)", "assets/audio/generated/yad.mp3"),
+    ("فَمْ", "Fam (فَ + مْ - Bouche)", "assets/audio/generated/fam.mp3"),
+    ("دَمْ", "Dam (دَ + مْ - Sang)", "assets/audio/generated/dam.mp3"),
+    ("قُلْ", "Qul (قُ + لْ - Dis !)", "assets/audio/generated/qul_sukun.mp3"),
+    ("كُنْ", "Kun (كُ + نْ - Sois !)", "assets/audio/generated/kun.mp3"),
+    ("خُذْ", "Khudh (خُ + ذْ - Prends !)", "assets/audio/generated/khudh.mp3"),
+    ("قُمْ", "Qum (قُ + مْ - Lève-toi !)", "assets/audio/generated/qum_sukun.mp3"),
+    ("مِنْ", "Min (مِ + نْ - De/Depuis)", "assets/audio/generated/min_sukun.mp3"),
+    ("قِفْ", "Qif (قِ + فْ - Arrête-toi !)", "assets/audio/generated/qif.mp3"),
+    ("سِرْ", "Sir (سِ + رْ - Marche/Secret)", "assets/audio/generated/sir.mp3"),
+    ("زِرْ", "Zir (زِ + رْ - Bouton)", "assets/audio/generated/zir.mp3"),
+    ("عَنْ", "ʿAn (عَ + نْ - Au sujet de)", "assets/audio/generated/an_sukun.mp3"),
+    ("هَلْ", "Hal (هَ + لْ - Est-ce que ?)", "assets/audio/generated/hal_sukun.mp3"),
+    ("بَلْ", "Bal (بَ + لْ - Mais plutôt)", "assets/audio/generated/bal_sukun.mp3"),
+    ("لَمْ", "Lam (لَ + مْ - Ne pas)", "assets/audio/generated/lam_word.mp3"),
+    ("لَوْ", "Law (لَ + وْ - Si)", "assets/audio/generated/law_word.mp3"),
+    ("قَدْ", "Qad (قَ + دْ - Certes/Déjà)", "assets/audio/generated/qad_sukun.mp3"),
+]
+
 fatha_items = [
     ("أَ", "Alif Fatha (A)", "assets/audio/generated/alif_fatha.mp3"),
     ("بَ", "Ba Fatha (Ba)", "assets/audio/generated/ba_fatha.mp3"),
@@ -173,6 +195,11 @@ html = f'''<!DOCTYPE html>
       <div class="grid">
 {chr(10).join(kasra_cards)}
       </div>
+    </div>
+
+    <div class="section-title">🧩 Mots de 2 Lettres (Première Fusion — Monde 3 / 4)</div>
+    <div class="grid">
+{render_simple_grid(two_letter_words_items)}
     </div>
 
     <div class="section-title">⚡ Voyelle Fatḥah (ـَ) — Les 28 Lettres</div>
