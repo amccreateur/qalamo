@@ -190,7 +190,11 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
       {/* Center Sound Speaker (The Grapho Audio Prompt) */}
       <View style={styles.promptArea}>
         <Text style={styles.instructionText}>
-          {currentItem.phonemeDesc ? `Trouve : ${currentItem.phonemeDesc}` : 'Écoute et trouve la bonne lettre :'}
+          {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
+          currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
+          currentItem.phonemeDesc?.toLowerCase().includes('fin')
+            ? `Trouve la forme : ${currentItem.phonemeDesc}`
+            : 'Écoute et trouve la bonne lettre :'}
         </Text>
         <Text style={styles.instructionAr}>
           {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
@@ -208,7 +212,9 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
           </Animated.View>
         </TouchableOpacity>
 
-        {currentItem.phonemeDesc ? (
+        {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
+        currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
+        currentItem.phonemeDesc?.toLowerCase().includes('fin') ? (
           <View style={styles.hintPill}>
             <Ionicons name="locate" size={14} color="#1E40AF" />
             <Text style={styles.hintPillText}>{currentItem.phonemeDesc}</Text>

@@ -147,7 +147,11 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
             : 'Tir Sonore / تَطَابُقُ الأَصْوَات'}
         </Text>
         <Text style={styles.stageSubtitle}>
-          {currentItem.phonemeDesc ? `Trouve : ${currentItem.phonemeDesc}` : 'Quel signe correspond à ce son ?'}
+          {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
+          currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
+          currentItem.phonemeDesc?.toLowerCase().includes('fin')
+            ? `Trouve la forme : ${currentItem.phonemeDesc}`
+            : 'Quel signe correspond à ce son ?'}
         </Text>
 
         <TouchableOpacity style={styles.targetOrb} onPress={playSound} activeOpacity={0.8}>
@@ -159,7 +163,9 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
           </Animated.View>
         </TouchableOpacity>
 
-        {currentItem.phonemeDesc && (
+        {(currentItem.phonemeDesc?.toLowerCase().includes('début') ||
+          currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
+          currentItem.phonemeDesc?.toLowerCase().includes('fin')) && (
           <View style={styles.targetHintBadge}>
             <Ionicons name="locate" size={16} color="#FEF08A" />
             <Text style={styles.targetHintText}>{currentItem.phonemeDesc}</Text>
