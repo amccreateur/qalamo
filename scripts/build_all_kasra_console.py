@@ -29,7 +29,7 @@ all_kasra_letters = [
     {"char": "غِ", "name": "Ghayn Kasrah", "sound": "Ghi (Shakir)", "type": "Emphatique", "file": "assets/audio/generated/ghayn_kasra.mp3", "color": "#22c55e"},
     {"char": "فِ", "name": "Fā' Kasrah", "sound": "Fi (Shakir)", "type": "Labio-dentale", "file": "assets/audio/generated/fa_kasra.mp3", "color": "#38bdf8"},
     {"char": "قِ", "name": "Qāf Kasrah", "sound": "Qi (Moaz)", "type": "Uvulaire profonde", "file": "assets/audio/generated/qaf_kasra.mp3", "color": "#22c55e"},
-    {"char": "كِ", "name": "Kāf Kasrah", "sound": "Ki (Shakir)", "type": "Palatale fine", "file": "assets/audio/generated/kaf_kasra.mp3", "color": "#38bdf8"},
+    {"char": "كِ", "name": "Kāf Kasrah", "sound": "Ki (Hamed)", "type": "Palatale fine", "file": "assets/audio/generated/kaf_kasra.mp3", "color": "#38bdf8"},
     {"char": "لِ", "name": "Lām Kasrah", "sound": "Li", "type": "Liquide", "file": "assets/audio/generated/lam_kasra.mp3", "color": "#38bdf8"},
     {"char": "مِ", "name": "Mīm Kasrah", "sound": "Mi", "type": "Nasale labiale", "file": "assets/audio/generated/meem_kasra.mp3", "color": "#38bdf8"},
     {"char": "نِ", "name": "Nūn Kasrah", "sound": "Ni (Amplifié)", "type": "Nasale dentale", "file": "assets/audio/generated/noon_kasra.mp3", "color": "#38bdf8"},
