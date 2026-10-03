@@ -13,72 +13,72 @@ sections = [
         'title': '1. Série A + A (Fatḥah — Fatḥah)',
         'badge': 'Niveau 27',
         'items': [
-            ('bata', 'بَتَ', 'Ba - Ta', 'Syllabes A + A'),
-            ('dara', 'دَرَ', 'Da - Ra', 'Syllabes A + A'),
-            ('kata', 'كَتَ', 'Ka - Ta', 'Syllabes A + A'),
-            ('sama', 'سَمَ', 'Sa - Ma', 'Syllabes A + A'),
-            ('rasa', 'رَسَ', 'Ra - Sa', 'Syllabes A + A'),
-            ('maa_particle', 'مَعَ', 'Ma - ʿA', 'Avec (mot réel)'),
-            ('laka', 'لَكَ', 'La - Ka', 'Pour toi (mot réel)'),
+            ('bata', 'بَتَ', 'بَ + تَ', 'Combinaison A + A'),
+            ('dara', 'دَرَ', 'دَ + رَ', 'Combinaison A + A'),
+            ('kata', 'كَتَ', 'كَ + تَ', 'Combinaison A + A'),
+            ('sama', 'سَمَ', 'سَ + مَ', 'Combinaison A + A'),
+            ('rasa', 'رَسَ', 'رَ + سَ', 'Combinaison A + A'),
+            ('maa_particle', 'مَعَ', 'مَ + عَ', 'Mot "Avec"'),
+            ('laka', 'لَكَ', 'لَ + كَ', 'Mot "Pour toi"'),
         ]
     },
     {
         'title': '2. Série A + OU (Fatḥah — Ḍammah)',
         'badge': 'Niveau 28',
         'items': [
-            ('babu', 'بَبُ', 'Ba - Bou', 'Syllabes A + OU'),
-            ('katu', 'كَتُ', 'Ka - Tou', 'Syllabes A + OU'),
-            ('daru', 'دَرُ', 'Da - Rou', 'Syllabes A + OU'),
-            ('samu', 'سَمُ', 'Sa - Mou', 'Syllabes A + OU'),
-            ('qatu', 'قَتُ', 'Qa - Tou', 'Syllabes A + OU'),
-            ('nabu', 'نَبُ', 'Na - Bou', 'Syllabes A + OU'),
-            ('tadu', 'تَدُ', 'Ta - Dou', 'Syllabes A + OU'),
+            ('babu', 'بَبُ', 'بَ + بُ', 'Combinaison A + OU'),
+            ('katu', 'كَتُ', 'كَ + تُ', 'Combinaison A + OU'),
+            ('daru', 'دَرُ', 'دَ + رُ', 'Combinaison A + OU'),
+            ('samu', 'سَمُ', 'سَ + مُ', 'Combinaison A + OU'),
+            ('qatu', 'قَتُ', 'قَ + تُ', 'Combinaison A + OU'),
+            ('nabu', 'نَبُ', 'نَ + بُ', 'Combinaison A + OU'),
+            ('tadu', 'تَدُ', 'تَ + دُ', 'Combinaison A + OU'),
         ]
     },
     {
         'title': '3. Série A + I (Fatḥah — Kasrah)',
         'badge': 'Niveau 29',
         'items': [
-            ('bari', 'بَرِ', 'Ba - Ri', 'Syllabes A + I'),
-            ('dari', 'دَرِ', 'Da - Ri', 'Syllabes A + I'),
-            ('sami_short', 'سَمِ', 'Sa - Mi', 'Syllabes A + I'),
-            ('kati', 'كَتِ', 'Ka - Ti', 'Syllabes A + I'),
-            ('shari_short', 'شَرِ', 'Cha - Ri', 'Syllabes A + I'),
-            ('ali_short', 'عَلِ', 'ʿA - Li', 'Syllabes A + I'),
+            ('bari', 'بَرِ', 'بَ + رِ', 'Combinaison A + I'),
+            ('dari', 'دَرِ', 'دَ + رِ', 'Combinaison A + I'),
+            ('sami_short', 'سَمِ', 'سَ + مِ', 'Combinaison A + I'),
+            ('kati', 'كَتِ', 'كَ + تِ', 'Combinaison A + I'),
+            ('shari_short', 'شَرِ', 'شَ + رِ', 'Combinaison A + I'),
+            ('ali_short', 'عَلِ', 'عَ + لِ', 'Combinaison A + I'),
         ]
     },
     {
         'title': '4. Série OU + I (Ḍammah — Kasrah)',
         'badge': 'Niveau 30',
         'items': [
-            ('kuti', 'كُتِ', 'Kou - Ti', 'Syllabes OU + I'),
-            ('quri', 'قُرِ', 'Qou - Ri', 'Syllabes OU + I'),
-            ('sumi', 'سُمِ', 'Sou - Mi', 'Syllabes OU + I'),
-            ('duri', 'دُرِ', 'Dou - Ri', 'Syllabes OU + I'),
-            ('rusi', 'رُسِ', 'Rou - Si', 'Syllabes OU + I'),
+            ('kuti', 'كُتِ', 'كُ + تِ', 'Combinaison OU + I'),
+            ('quri', 'قُرِ', 'قُ + رِ', 'Combinaison OU + I'),
+            ('sumi', 'سُمِ', 'سُ + مِ', 'Combinaison OU + I'),
+            ('duri', 'دُرِ', 'دُ + رِ', 'Combinaison OU + I'),
+            ('rusi', 'رُسِ', 'رُ + سِ', 'Combinaison OU + I'),
         ]
     },
     {
         'title': '5. Série OU + A (Ḍammah — Fatḥah)',
         'badge': 'Niveau 30',
         'items': [
-            ('huwa', 'هُوَ', 'Hou - Wa', 'Il (Pronom)'),
-            ('ruba', 'رُبَ', 'Rou - Ba', 'Peut-être (mot réel)'),
-            ('kuta', 'كُتَ', 'Kou - Ta', 'Syllabes OU + A'),
-            ('dura', 'دُرَ', 'Dou - Ra', 'Syllabes OU + A'),
-            ('sura', 'سُرَ', 'Sou - Ra', 'Syllabes OU + A'),
+            ('huwa', 'هُوَ', 'هُ + وَ', 'Pronom "Il"'),
+            ('ruba', 'رُبَ', 'رُ + بَ', 'Mot "Peut-être"'),
+            ('kuta', 'كُتَ', 'كُ + تَ', 'Combinaison OU + A'),
+            ('dura', 'دُرَ', 'دُ + رَ', 'Combinaison OU + A'),
+            ('sura', 'سُرَ', 'سُ + رَ', 'Combinaison OU + A'),
         ]
     },
     {
         'title': '6. Série I + A (Kasrah — Fatḥah)',
         'badge': 'Niveau 31',
         'items': [
-            ('hiya', 'هِيَ', 'Hi - Ya', 'Elle (Pronom)'),
-            ('lima', 'لِمَ', 'Li - Ma', 'Pourquoi (mot réel)'),
-            ('bika', 'بِكَ', 'Bi - Ka', 'Par toi (mot réel)'),
-            ('bita', 'بِتَ', 'Bi - Ta', 'Syllabes I + A'),
-            ('dina', 'دِنَ', 'Di - Na', 'Syllabes I + A'),
-            ('sima', 'سِمَ', 'Si - Ma', 'Syllabes I + A'),
+            ('hiya', 'هِيَ', 'هِ + يَ', 'Pronom "Elle"'),
+            ('lima', 'لِمَ', 'لِ + مَ', 'Mot "Pourquoi"'),
+            ('bika', 'بِكَ', 'بِ + كَ', 'Mot "Par toi"'),
+            ('bita', 'بِتَ', 'بِ + تَ', 'Combinaison I + A'),
+            ('dina', 'دِنَ', 'دِ + نَ', 'Combinaison I + A'),
+            ('sima', 'سِمَ', 'سِ + مَ', 'Combinaison I + A'),
         ]
     }
 ]
@@ -88,7 +88,7 @@ html = """<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qalamo — Monde 4 : Console Complète des 36 Sons (Hamed Syllabé)</title>
+  <title>Qalamo — Monde 4 : Combinaisons de 2 Voyelles Courtes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
@@ -110,7 +110,7 @@ html = """<!DOCTYPE html>
     .card:hover { border-color: #f59e0b; transform: translateY(-2px); }
     
     .ar-word { font-family: 'Amiri', serif; font-size: 42px; font-weight: 700; color: #fde047; margin-bottom: 2px; line-height: 52px; }
-    .phonetic { font-size: 15px; font-weight: 800; color: #38bdf8; margin-bottom: 4px; }
+    .phonetic { font-size: 18px; font-weight: 700; color: #38bdf8; margin-bottom: 4px; font-family: 'Amiri', serif; }
     .meaning { font-size: 13px; color: #94a3b8; margin-bottom: 12px; }
     .play-btn { width: 100%; background: #2563eb; color: white; border: none; padding: 9px; border-radius: 10px; font-size: 14px; font-weight: 800; cursor: pointer; transition: all 0.15s; }
     .play-btn:hover { background: #3b82f6; }
@@ -121,7 +121,7 @@ html = """<!DOCTYPE html>
   <div class="container">
     <header>
       <h1>🔤 Qalamo — Monde 4 : Combinaisons de 2 Voyelles Courtes</h1>
-      <p class="subtitle">36 Sons Générés avec la méthode Hamed (Syllabé) — 2 voyelles complètes sans Waqf</p>
+      <p class="subtitle">36 Sons Générés avec la méthode Hamed (Syllabé) — Sans phonétique latine</p>
     </header>
 """
 
@@ -177,4 +177,4 @@ html += """
 with open('test_two_vowels.html', 'w', encoding='utf-8') as f:
     f.write(html)
 
-print('test_two_vowels.html updated with base64 embedded audio successfully!')
+print('test_two_vowels.html updated successfully!')

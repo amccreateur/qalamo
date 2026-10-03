@@ -148,9 +148,11 @@ export const WordBuilderGame: React.FC<WordBuilderGameProps> = ({ items, onCompl
           <Text style={styles.speakerPillText}>Écouter le mot</Text>
         </TouchableOpacity>
 
-        <Text style={styles.meaningText}>
-          {(currentWord.translationFr || currentWord.meaning || '').replace(/\s*\([^)]*\)/g, '').trim()}
-        </Text>
+        {Boolean((currentWord.translationFr || currentWord.meaning || '').replace(/\s*\([^)]*\)/g, '').trim()) && (
+          <Text style={styles.meaningText}>
+            {(currentWord.translationFr || currentWord.meaning || '').replace(/\s*\([^)]*\)/g, '').trim()}
+          </Text>
+        )}
       </View>
 
       {/* Word Slots (assembled word) */}

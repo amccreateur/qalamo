@@ -2668,8 +2668,8 @@ export const WORLDS: World[] = [
           {
             "id": "bata",
             "word": "بَتَ",
-            "meaning": "Ba-Ta",
-            "translationFr": "Ba-Ta",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "بَ",
               "تَ"
@@ -2683,8 +2683,8 @@ export const WORLDS: World[] = [
           {
             "id": "dara",
             "word": "دَرَ",
-            "meaning": "Da-Ra",
-            "translationFr": "Da-Ra",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "دَ",
               "رَ"
@@ -2698,8 +2698,8 @@ export const WORLDS: World[] = [
           {
             "id": "kata",
             "word": "كَتَ",
-            "meaning": "Ka-Ta",
-            "translationFr": "Ka-Ta",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "كَ",
               "تَ"
@@ -2713,8 +2713,8 @@ export const WORLDS: World[] = [
           {
             "id": "sama",
             "word": "سَمَ",
-            "meaning": "Sa-Ma",
-            "translationFr": "Sa-Ma",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "سَ",
               "مَ"
@@ -2728,8 +2728,8 @@ export const WORLDS: World[] = [
           {
             "id": "rasa",
             "word": "رَسَ",
-            "meaning": "Ra-Sa",
-            "translationFr": "Ra-Sa",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "رَ",
               "سَ"
@@ -2743,7 +2743,7 @@ export const WORLDS: World[] = [
           {
             "id": "maa_particle",
             "word": "مَعَ",
-            "meaning": "Avec (Ma'a)",
+            "meaning": "Avec",
             "translationFr": "Avec",
             "letters": [
               "مَ",
@@ -2758,7 +2758,7 @@ export const WORLDS: World[] = [
           {
             "id": "laka",
             "word": "لَكَ",
-            "meaning": "Pour toi (La-Ka)",
+            "meaning": "Pour toi",
             "translationFr": "Pour toi",
             "letters": [
               "لَ",
@@ -2789,8 +2789,8 @@ export const WORLDS: World[] = [
           {
             "id": "babu",
             "word": "بَبُ",
-            "meaning": "Ba-Bou",
-            "translationFr": "Ba-Bou",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "بَ",
               "بُ"
@@ -2804,8 +2804,8 @@ export const WORLDS: World[] = [
           {
             "id": "katu",
             "word": "كَتُ",
-            "meaning": "Ka-Tou",
-            "translationFr": "Ka-Tou",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "كَ",
               "تُ"
@@ -2819,8 +2819,8 @@ export const WORLDS: World[] = [
           {
             "id": "daru",
             "word": "دَرُ",
-            "meaning": "Da-Rou",
-            "translationFr": "Da-Rou",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "دَ",
               "رُ"
@@ -2834,8 +2834,8 @@ export const WORLDS: World[] = [
           {
             "id": "samu",
             "word": "سَمُ",
-            "meaning": "Sa-Mou",
-            "translationFr": "Sa-Mou",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "سَ",
               "مُ"
@@ -2849,8 +2849,8 @@ export const WORLDS: World[] = [
           {
             "id": "qatu",
             "word": "قَتُ",
-            "meaning": "Qa-Tou",
-            "translationFr": "Qa-Tou",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "قَ",
               "تُ"
@@ -2864,8 +2864,8 @@ export const WORLDS: World[] = [
           {
             "id": "nabu",
             "word": "نَبُ",
-            "meaning": "Na-Bou",
-            "translationFr": "Na-Bou",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "نَ",
               "بُ"
@@ -2879,8 +2879,8 @@ export const WORLDS: World[] = [
           {
             "id": "tadu",
             "word": "تَدُ",
-            "meaning": "Ta-Dou",
-            "translationFr": "Ta-Dou",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "تَ",
               "دُ"
@@ -2910,8 +2910,8 @@ export const WORLDS: World[] = [
           {
             "id": "bari",
             "word": "بَرِ",
-            "meaning": "Ba-Ri",
-            "translationFr": "Ba-Ri",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "بَ",
               "رِ"
@@ -2925,8 +2925,8 @@ export const WORLDS: World[] = [
           {
             "id": "dari",
             "word": "دَرِ",
-            "meaning": "Da-Ri",
-            "translationFr": "Da-Ri",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "دَ",
               "رِ"
@@ -2940,8 +2940,8 @@ export const WORLDS: World[] = [
           {
             "id": "sami_short",
             "word": "سَمِ",
-            "meaning": "Sa-Mi",
-            "translationFr": "Sa-Mi",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "سَ",
               "مِ"
@@ -2955,8 +2955,8 @@ export const WORLDS: World[] = [
           {
             "id": "kati",
             "word": "كَتِ",
-            "meaning": "Ka-Ti",
-            "translationFr": "Ka-Ti",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "كَ",
               "تِ"
@@ -2970,8 +2970,8 @@ export const WORLDS: World[] = [
           {
             "id": "shari_short",
             "word": "شَرِ",
-            "meaning": "Cha-Ri",
-            "translationFr": "Cha-Ri",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "شَ",
               "رِ"
@@ -2985,8 +2985,8 @@ export const WORLDS: World[] = [
           {
             "id": "ali_short",
             "word": "عَلِ",
-            "meaning": "ʿA-Li",
-            "translationFr": "ʿA-Li",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "عَ",
               "لِ"
@@ -3016,8 +3016,8 @@ export const WORLDS: World[] = [
             "id": "kuti",
             "grapheme": "كُتِ",
             "audioText": "كُتِ",
-            "phonemeDesc": "Kou-Ti",
-            "transliteration": "kuti",
+            "phonemeDesc": "",
+            "transliteration": "",
             "distractors": [
               "كَتَ",
               "كَتُ",
@@ -3028,8 +3028,8 @@ export const WORLDS: World[] = [
             "id": "quri",
             "grapheme": "قُرِ",
             "audioText": "قُرِ",
-            "phonemeDesc": "Qou-Ri",
-            "transliteration": "quri",
+            "phonemeDesc": "",
+            "transliteration": "",
             "distractors": [
               "قَرِ",
               "قُرُ",
@@ -3040,8 +3040,8 @@ export const WORLDS: World[] = [
             "id": "sumi",
             "grapheme": "سُمِ",
             "audioText": "سُمِ",
-            "phonemeDesc": "Sou-Mi",
-            "transliteration": "sumi",
+            "phonemeDesc": "",
+            "transliteration": "",
             "distractors": [
               "سَمِ",
               "سُمُ",
@@ -3052,8 +3052,8 @@ export const WORLDS: World[] = [
             "id": "duri",
             "grapheme": "دُرِ",
             "audioText": "دُرِ",
-            "phonemeDesc": "Dou-Ri",
-            "transliteration": "duri",
+            "phonemeDesc": "",
+            "transliteration": "",
             "distractors": [
               "دَرِ",
               "دُرُ",
@@ -3064,8 +3064,8 @@ export const WORLDS: World[] = [
             "id": "huwa",
             "grapheme": "هُوَ",
             "audioText": "هُوَ",
-            "phonemeDesc": "Il (Hou-Wa)",
-            "transliteration": "huwa",
+            "phonemeDesc": "Il",
+            "transliteration": "",
             "distractors": [
               "هِيَ",
               "هَوَ",
@@ -3076,8 +3076,8 @@ export const WORLDS: World[] = [
             "id": "ruba",
             "grapheme": "رُبَ",
             "audioText": "رُبَ",
-            "phonemeDesc": "Rou-Ba",
-            "transliteration": "ruba",
+            "phonemeDesc": "Peut-être",
+            "transliteration": "",
             "distractors": [
               "رَبَ",
               "رُبُ",
@@ -3088,8 +3088,8 @@ export const WORLDS: World[] = [
             "id": "kuta",
             "grapheme": "كُتَ",
             "audioText": "كُتَ",
-            "phonemeDesc": "Kou-Ta",
-            "transliteration": "kuta",
+            "phonemeDesc": "",
+            "transliteration": "",
             "distractors": [
               "كَتَ",
               "كُتِ",
@@ -3100,8 +3100,8 @@ export const WORLDS: World[] = [
             "id": "dura",
             "grapheme": "دُرَ",
             "audioText": "دُرَ",
-            "phonemeDesc": "Dou-Ra",
-            "transliteration": "dura",
+            "phonemeDesc": "",
+            "transliteration": "",
             "distractors": [
               "دَرَ",
               "دُرِ",
@@ -3128,8 +3128,8 @@ export const WORLDS: World[] = [
             "id": "hiya",
             "grapheme": "هِيَ",
             "audioText": "هِيَ",
-            "phonemeDesc": "Elle (Hi-Ya)",
-            "transliteration": "hiya",
+            "phonemeDesc": "Elle",
+            "transliteration": "",
             "distractors": [
               "هُوَ",
               "هَيَ",
@@ -3140,8 +3140,8 @@ export const WORLDS: World[] = [
             "id": "lima",
             "grapheme": "لِمَ",
             "audioText": "لِمَ",
-            "phonemeDesc": "Pourquoi (Li-Ma)",
-            "transliteration": "lima",
+            "phonemeDesc": "Pourquoi",
+            "transliteration": "",
             "distractors": [
               "لَمَ",
               "لُمَ",
@@ -3152,8 +3152,8 @@ export const WORLDS: World[] = [
             "id": "bika",
             "grapheme": "بِكَ",
             "audioText": "بِكَ",
-            "phonemeDesc": "Par toi (Bi-Ka)",
-            "transliteration": "bika",
+            "phonemeDesc": "Par toi",
+            "transliteration": "",
             "distractors": [
               "بَكَ",
               "بُكَ",
@@ -3164,8 +3164,8 @@ export const WORLDS: World[] = [
             "id": "bita",
             "grapheme": "بِتَ",
             "audioText": "بِتَ",
-            "phonemeDesc": "Bi-Ta",
-            "transliteration": "bita",
+            "phonemeDesc": "",
+            "transliteration": "",
             "distractors": [
               "بَتَ",
               "بِكَ",
@@ -3176,8 +3176,8 @@ export const WORLDS: World[] = [
             "id": "babu",
             "grapheme": "بَبُ",
             "audioText": "بَبُ",
-            "phonemeDesc": "Ba-Bou",
-            "transliteration": "babu",
+            "phonemeDesc": "",
+            "transliteration": "",
             "distractors": [
               "بَتُ",
               "بُبَ",
@@ -3188,8 +3188,8 @@ export const WORLDS: World[] = [
             "id": "katu",
             "grapheme": "كَتُ",
             "audioText": "كَتُ",
-            "phonemeDesc": "Ka-Tou",
-            "transliteration": "katu",
+            "phonemeDesc": "",
+            "transliteration": "",
             "distractors": [
               "كَتَ",
               "كُتِ",
@@ -3200,8 +3200,8 @@ export const WORLDS: World[] = [
             "id": "bari",
             "grapheme": "بَرِ",
             "audioText": "بَرِ",
-            "phonemeDesc": "Ba-Ri",
-            "transliteration": "bari",
+            "phonemeDesc": "",
+            "transliteration": "",
             "distractors": [
               "بُرِ",
               "بَرُ",
@@ -3212,8 +3212,8 @@ export const WORLDS: World[] = [
             "id": "kuti",
             "grapheme": "كُتِ",
             "audioText": "كُتِ",
-            "phonemeDesc": "Kou-Ti",
-            "transliteration": "kuti",
+            "phonemeDesc": "",
+            "transliteration": "",
             "distractors": [
               "كَتِ",
               "كُتَ",
@@ -3240,8 +3240,8 @@ export const WORLDS: World[] = [
           {
             "id": "bata",
             "word": "بَتَ",
-            "meaning": "Ba-Ta",
-            "translationFr": "Ba-Ta",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "بَ",
               "تَ"
@@ -3255,8 +3255,8 @@ export const WORLDS: World[] = [
           {
             "id": "babu",
             "word": "بَبُ",
-            "meaning": "Ba-Bou",
-            "translationFr": "Ba-Bou",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "بَ",
               "بُ"
@@ -3270,8 +3270,8 @@ export const WORLDS: World[] = [
           {
             "id": "katu",
             "word": "كَتُ",
-            "meaning": "Ka-Tou",
-            "translationFr": "Ka-Tou",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "كَ",
               "تُ"
@@ -3285,8 +3285,8 @@ export const WORLDS: World[] = [
           {
             "id": "bari",
             "word": "بَرِ",
-            "meaning": "Ba-Ri",
-            "translationFr": "Ba-Ri",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "بَ",
               "رِ"
@@ -3300,8 +3300,8 @@ export const WORLDS: World[] = [
           {
             "id": "kuti",
             "word": "كُتِ",
-            "meaning": "Kou-Ti",
-            "translationFr": "Kou-Ti",
+            "meaning": "",
+            "translationFr": "",
             "letters": [
               "كُ",
               "تِ"
@@ -3315,7 +3315,7 @@ export const WORLDS: World[] = [
           {
             "id": "huwa",
             "word": "هُوَ",
-            "meaning": "Il (Hou-Wa)",
+            "meaning": "Il",
             "translationFr": "Il",
             "letters": [
               "هُ",
@@ -3330,7 +3330,7 @@ export const WORLDS: World[] = [
           {
             "id": "hiya",
             "word": "هِيَ",
-            "meaning": "Elle (Hi-Ya)",
+            "meaning": "Elle",
             "translationFr": "Elle",
             "letters": [
               "هِ",
@@ -3345,7 +3345,7 @@ export const WORLDS: World[] = [
           {
             "id": "bika",
             "word": "بِكَ",
-            "meaning": "Par toi (Bi-Ka)",
+            "meaning": "Par toi",
             "translationFr": "Par toi",
             "letters": [
               "بِ",
