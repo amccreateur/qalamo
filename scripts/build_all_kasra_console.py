@@ -8,7 +8,7 @@ def get_b64(path):
     return None
 
 all_kasra_letters = [
-    {"char": "إِ", "name": "Alif Kasrah", "sound": "'I", "type": "Voyelle pure", "file": "assets/audio/generated/alif_kasra.mp3", "color": "#38bdf8"},
+    {"char": "إِ", "name": "Alif Kasrah", "sound": "'I (Moaz)", "type": "Voyelle pure", "file": "assets/audio/generated/alif_kasra.mp3", "color": "#38bdf8"},
     {"char": "بِ", "name": "Bā' Kasrah", "sound": "Bi", "type": "Labiale", "file": "assets/audio/generated/ba_kasra.mp3", "color": "#38bdf8"},
     {"char": "تِ", "name": "Tā' Kasrah", "sound": "Ti (Fin)", "type": "Dentale fine", "file": "assets/audio/generated/ta_kasra.mp3", "color": "#38bdf8"},
     {"char": "ثِ", "name": "Thā' Kasrah", "sound": "Thi", "type": "Interdentale", "file": "assets/audio/generated/tha_kasra.mp3", "color": "#38bdf8"},
