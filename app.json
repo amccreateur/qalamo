@@ -2,7 +2,7 @@
   "expo": {
     "name": "Qalamo",
     "slug": "qalamo",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -14,7 +14,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.dialectal.qalamo",
-      "buildNumber": "6"
+      "buildNumber": "7"
     },
     "android": {
       "adaptiveIcon": {
@@ -22,7 +22,7 @@
         "foregroundImage": "./assets/android-icon-foreground.png"
       },
       "package": "com.dialectal.qalamo",
-      "versionCode": 6,
+      "versionCode": 7,
       "predictiveBackGestureEnabled": false
     },
     "web": {
