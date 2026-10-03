@@ -10,75 +10,76 @@ def get_b64(name):
 
 sections = [
     {
-        'title': '1. Série A + A (Fatḥah — Fatḥah)',
+        'title': '1. Série A + A (Fatḥah — Fatḥah) : Emphatiques & Simples',
         'badge': 'Niveau 27',
         'items': [
+            ('sada', 'صَدَ', 'صَ + دَ', 'Ṣād Emphatique'),
+            ('tala', 'طَلَ', 'طَ + لَ', 'Ṭā\' Emphatique'),
+            ('ghafa', 'غَفَ', 'غَ + فَ', 'Ghayn Emphatique'),
+            ('khala', 'خَلَ', 'خَ + لَ', 'Khā\' Emphatique'),
             ('bata', 'بَتَ', 'بَ + تَ', 'Combinaison A + A'),
-            ('dara', 'دَرَ', 'دَ + رَ', 'Combinaison A + A'),
-            ('kata', 'كَتَ', 'كَ + تَ', 'Combinaison A + A'),
-            ('sama', 'سَمَ', 'سَ + مَ', 'Combinaison A + A'),
-            ('rasa', 'رَسَ', 'رَ + سَ', 'Combinaison A + A'),
             ('maa_particle', 'مَعَ', 'مَ + عَ', 'Mot "Avec"'),
             ('laka', 'لَكَ', 'لَ + كَ', 'Mot "Pour toi"'),
         ]
     },
     {
-        'title': '2. Série A + OU (Fatḥah — Ḍammah)',
+        'title': '2. Série A + OU (Fatḥah — Ḍammah) : Emphatiques & Simples',
         'badge': 'Niveau 28',
         'items': [
+            ('daru_emph', 'ضَرُ', 'ضَ + رُ', 'Ḍād Emphatique'),
+            ('zhafu', 'ظَفُ', 'ظَ + فُ', 'Ẓā\' Emphatique'),
+            ('qatu', 'قَتُ', 'قَ + تُ', 'Qāf Emphatique'),
+            ('hasu', 'حَسُ', 'حَ + سُ', 'Ḥā\' de la gorge'),
             ('babu', 'بَبُ', 'بَ + بُ', 'Combinaison A + OU'),
-            ('katu', 'كَتُ', 'كَ + تُ', 'Combinaison A + OU'),
-            ('daru', 'دَرُ', 'دَ + رُ', 'Combinaison A + OU'),
-            ('samu', 'سَمُ', 'سَ + مُ', 'Combinaison A + OU'),
-            ('qatu', 'قَتُ', 'قَ + تُ', 'Combinaison A + OU'),
             ('nabu', 'نَبُ', 'نَ + بُ', 'Combinaison A + OU'),
             ('tadu', 'تَدُ', 'تَ + دُ', 'Combinaison A + OU'),
         ]
     },
     {
-        'title': '3. Série A + I (Fatḥah — Kasrah)',
+        'title': '3. Série A + I (Fatḥah — Kasrah) : Gorge & Sifflement',
         'badge': 'Niveau 29',
         'items': [
-            ('bari', 'بَرِ', 'بَ + رِ', 'Combinaison A + I'),
-            ('dari', 'دَرِ', 'دَ + رِ', 'Combinaison A + I'),
-            ('sami_short', 'سَمِ', 'سَ + مِ', 'Combinaison A + I'),
-            ('kati', 'كَتِ', 'كَ + تِ', 'Combinaison A + I'),
-            ('shari_short', 'شَرِ', 'شَ + رِ', 'Combinaison A + I'),
-            ('ali_short', 'عَلِ', 'عَ + لِ', 'Combinaison A + I'),
+            ('sahi', 'صَحِ', 'صَ + حِ', 'Ṣād + Ḥā\''),
+            ('tafi', 'طَفِ', 'طَ + فِ', 'Ṭā\' Emphatique'),
+            ('ghani', 'غَنِ', 'غَ + نِ', 'Ghayn Emphatique'),
+            ('khashi', 'خَشِ', 'خَ + شِ', 'Khā\' + Shīn'),
+            ('ali_short', 'عَلِ', 'عَ + لِ', 'ʿAyn de la gorge'),
+            ('jali', 'جَلِ', 'جَ + لِ', 'Jeem'),
+            ('dhari', 'ذَرِ', 'ذَ + رِ', 'Dhāl'),
+            ('zami', 'زَمِ', 'زَ + مِ', 'Zāy'),
         ]
     },
     {
-        'title': '4. Série OU + I (Ḍammah — Kasrah)',
+        'title': '4. Série OU + I (Ḍammah — Kasrah) : Emphatiques & Fermeture',
         'badge': 'Niveau 30',
         'items': [
-            ('kuti', 'كُتِ', 'كُ + تِ', 'Combinaison OU + I'),
-            ('quri', 'قُرِ', 'قُ + رِ', 'Combinaison OU + I'),
-            ('sumi', 'سُمِ', 'سُ + مِ', 'Combinaison OU + I'),
-            ('duri', 'دُرِ', 'دُ + رِ', 'Combinaison OU + I'),
-            ('rusi', 'رُسِ', 'رُ + سِ', 'Combinaison OU + I'),
-        ]
-    },
-    {
-        'title': '5. Série OU + A (Ḍammah — Fatḥah)',
-        'badge': 'Niveau 30',
-        'items': [
+            ('suri_emph', 'صُرِ', 'صُ + رِ', 'Ṣād Emphatique'),
+            ('duri_emph', 'ضُرِ', 'ضُ + رِ', 'Ḍād Emphatique'),
+            ('tubi', 'طُبِ', 'طُ + بِ', 'Ṭā\' Emphatique'),
+            ('zhuli', 'ظُلِ', 'ظُ + لِ', 'Ẓā\' Emphatique'),
+            ('quri', 'قُرِ', 'قُ + رِ', 'Qāf Emphatique'),
+            ('ghufi', 'غُفِ', 'غُ + فِ', 'Ghayn Emphatique'),
+            ('khuli', 'خُلِ', 'خُ + لِ', 'Khā\' Emphatique'),
+            ('humi', 'حُمِ', 'حُ + مِ', 'Ḥā\' de la gorge'),
+            ('thubi', 'ثُبِ', 'ثُ + بِ', 'Thā\''),
             ('huwa', 'هُوَ', 'هُ + وَ', 'Pronom "Il"'),
             ('ruba', 'رُبَ', 'رُ + بَ', 'Mot "Peut-être"'),
-            ('kuta', 'كُتَ', 'كُ + تَ', 'Combinaison OU + A'),
-            ('dura', 'دُرَ', 'دُ + رَ', 'Combinaison OU + A'),
-            ('sura', 'سُرَ', 'سُ + رَ', 'Combinaison OU + A'),
         ]
     },
     {
-        'title': '6. Série I + A (Kasrah — Fatḥah)',
+        'title': '5. Série I + A (Kasrah — Fatḥah) : Discrimination Emphatique',
         'badge': 'Niveau 31',
         'items': [
+            ('tiba', 'طِبَ', 'طِ + بَ', 'Ṭā\' Emphatique'),
+            ('zhima', 'ظِمَ', 'ظِ + مَ', 'Ẓā\' Emphatique'),
+            ('sifa', 'صِفَ', 'صِ + فَ', 'Ṣād Emphatique'),
+            ('dia', 'ضِعَ', 'ضِ + عَ', 'Ḍād + ʿAyn'),
+            ('qifa', 'قِفَ', 'قِ + فَ', 'Qāf Emphatique'),
+            ('ghila', 'غِلَ', 'غِ + لَ', 'Ghayn Emphatique'),
+            ('khifa', 'خِفَ', 'خِ + فَ', 'Khā\' Emphatique'),
             ('hiya', 'هِيَ', 'هِ + يَ', 'Pronom "Elle"'),
             ('lima', 'لِمَ', 'لِ + مَ', 'Mot "Pourquoi"'),
             ('bika', 'بِكَ', 'بِ + كَ', 'Mot "Par toi"'),
-            ('bita', 'بِتَ', 'بِ + تَ', 'Combinaison I + A'),
-            ('dina', 'دِنَ', 'دِ + نَ', 'Combinaison I + A'),
-            ('sima', 'سِمَ', 'سِ + مَ', 'Combinaison I + A'),
         ]
     }
 ]
@@ -88,14 +89,14 @@ html = """<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qalamo — Monde 4 : Combinaisons de 2 Voyelles Courtes</title>
+  <title>Qalamo — Monde 4 : Les 28 Lettres & Emphatiques (Hamed Syllabé)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background: #0b0f19; color: #f8fafc; padding: 30px 16px; display: flex; justify-content: center; }
-    .container { width: 100%; max-width: 1050px; }
+    .container { width: 100%; max-width: 1100px; }
     header { text-align: center; margin-bottom: 28px; }
     h1 { color: #f59e0b; font-size: 28px; margin-bottom: 8px; }
     p.subtitle { color: #94a3b8; font-size: 15px; margin-bottom: 20px; }
@@ -108,6 +109,7 @@ html = """<!DOCTYPE html>
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; }
     .card { background: #0b0f19; border: 2px solid #334155; border-radius: 16px; padding: 14px; text-align: center; transition: transform 0.15s, border-color 0.15s; }
     .card:hover { border-color: #f59e0b; transform: translateY(-2px); }
+    .card.emph { border-color: #ec4899; }
     
     .ar-word { font-family: 'Amiri', serif; font-size: 42px; font-weight: 700; color: #fde047; margin-bottom: 2px; line-height: 52px; }
     .phonetic { font-size: 18px; font-weight: 700; color: #38bdf8; margin-bottom: 4px; font-family: 'Amiri', serif; }
@@ -120,8 +122,8 @@ html = """<!DOCTYPE html>
 <body>
   <div class="container">
     <header>
-      <h1>🔤 Qalamo — Monde 4 : Combinaisons de 2 Voyelles Courtes</h1>
-      <p class="subtitle">36 Sons Générés avec la méthode Hamed (Syllabé) — Sans phonétique latine</p>
+      <h1>🔤 Qalamo — Monde 4 : Les 28 Lettres & Sons Emphatiques</h1>
+      <p class="subtitle">Enchaînement à 2 Voyelles Courtes sur l'ensemble de l'alphabet arabe (Méthode Hamed Syllabé)</p>
     </header>
 """
 
@@ -136,8 +138,10 @@ for s in sections:
     """
     for key, ar, phon, desc in s['items']:
         b64 = get_b64(key)
+        is_emph = any(k in desc for k in ['Emphatique', 'Ṣād', 'Ḍād', 'Ṭā', 'Ẓā', 'Qāf', 'Ghayn', 'Khā'])
+        emph_class = ' emph' if is_emph else ''
         html += f"""
-        <div class="card">
+        <div class="card{emph_class}">
           <div class="ar-word">{ar}</div>
           <div class="phonetic">{phon}</div>
           <div class="meaning">{desc}</div>
@@ -177,4 +181,4 @@ html += """
 with open('test_two_vowels.html', 'w', encoding='utf-8') as f:
     f.write(html)
 
-print('test_two_vowels.html updated successfully!')
+print('test_two_vowels.html updated with 28 letters and emphatic sounds!')
