@@ -308,11 +308,31 @@ export const WORLD_LESSONS: Record<number, WorldLesson> = {
           { char: 'رِ', transcription: 'Ri', audioKey: 'ri_kasra', label: 'R + I' },
         ],
       },
+    ],
+  },
+
+  // ==========================================
+  // MONDE 4 : LES MOTS DE 2 LETTRES (LA PREMIÈRE FUSION)
+  // ==========================================
+  4: {
+    worldId: 4,
+    title: 'Monde 4 : Les Mots de 2 Lettres',
+    titleAr: 'العالم الرابع : الكَلِمَات الثُّنَائِيَّة وَالتَّرْكِيب البَسِيط',
+    subtitle: 'La première marche vers la lecture autonome de mots entiers',
+    icon: 'layers',
+    color: '#F59E0B',
+    summary: 'Après avoir appris les sons voyellés (A, OU, I), il est temps de les fusionner à deux ! Un mot de 2 lettres associe une 1ère lettre vivante (avec voyelle) et une 2nde lettre d\'arrêt (sans voyelle, au Sukūn).',
+    sections: [
       {
-        title: '4. Première Fusion : Lire des Mots de 2 Lettres (avec Fatḥah)',
-        titleAr: 'تَرْكِيبُ الكَلِمَاتِ الثُّنَائِيَّةِ بِالفَتْحَة ( حَرْفَان )',
-        content: 'Comme dans le Monde 6 pour les verbes de 3 lettres, vous pouvez dès maintenant assembler 2 lettres pour former et lire vos tout premiers mots complets !\n\n• أَ + بْ = أَبْ ("Père")\n• أَ + خْ = أَخْ ("Frère")\n• يَ + دْ = يَدْ ("Main")\n• فَ + مْ = فَمْ ("Bouche")\n• دَ + مْ = دَمْ ("Sang")',
-        tip: '💡 Méthode de fusion : Prononcez la 1ère lettre avec sa voyelle, puis posez fermement la 2ème lettre sans voyelle.',
+        title: '1. Le Principe de Fusion à 2 Lettres',
+        titleAr: 'مَبْدَأُ التَّرْكِيبِ الثُّنَائِيّ',
+        content: 'Pour lire un mot de 2 lettres, on ne s\'arrête pas entre les sons : on lance la 1ère lettre voyellée et on vient poser fermement la 2ème lettre sans voyelle.\n\n• أَ + بْ = أَبْ ("Père")\n• قُ + لْ = قُلْ ("Dis !")\n• مِ + نْ = مِنْ ("De / Depuis")',
+        tip: '💡 Méthode d\'or : Enchaînez les deux sons dans le même souffle, sans coupure !',
+      },
+      {
+        title: '2. Noms du Quotidien avec Fatḥah',
+        titleAr: 'كَلِمَاتٌ شَائِعَةٌ بِالفَتْحَة',
+        content: 'Découvrez et écoutez ces mots indispensables à 2 lettres avec la voyelle ouverte "A" :',
         samples: [
           { char: 'أَبْ', transcription: 'Ab (أَ + بْ)', audioKey: 'ab', label: 'Père' },
           { char: 'أَخْ', transcription: 'Akh (أَ + خْ)', audioKey: 'akh', label: 'Frère' },
@@ -322,25 +342,23 @@ export const WORLD_LESSONS: Record<number, WorldLesson> = {
         ],
       },
       {
-        title: '5. Mots de 2 Lettres avec Ḍammah & Kasrah (Ordres et Actions)',
-        titleAr: 'كَلِمَاتٌ ثُنَائِيَّةٌ بِالضَّمَّةِ وَالكَسْرَة',
-        content: 'Appliquez la même fusion avec le son "OU" (Ḍammah) et le son "I" (Kasrah) pour lire des verbes à l\'impératif et des noms courts :\n\n• قُ + لْ = قُلْ ("Dis !")\n• كُ + نْ = كُنْ ("Sois !")\n• خُ + ذْ = خُذْ ("Prends !")\n• قُ + مْ = قُمْ ("Lève-toi !")\n• قِ + فْ = قِفْ ("Arrête-toi !")\n• سِ + رْ = سِرْ ("Secret / Marche !")\n• زِ + رْ = زِرْ ("Bouton")',
-        tip: '💡 Écoutez attentivement le changement de voyelle initiale (OU vs I).',
+        title: '3. Verbes Courts d\'Action & Ordres (Ḍammah & Kasrah)',
+        titleAr: 'أَفْعَالُ الأَمْرِ وَالحَرَكَة ( ضَمَّة وَكَسْرَة )',
+        content: 'En arabe, de nombreux verbes d\'action à l\'impératif ne comptent que 2 lettres :',
         samples: [
           { char: 'قُلْ', transcription: 'Qul (قُ + لْ)', audioKey: 'qul_sukun', label: 'Dis !' },
           { char: 'كُنْ', transcription: 'Kun (كُ + نْ)', audioKey: 'kun', label: 'Sois !' },
           { char: 'خُذْ', transcription: 'Khudh (خُ + ذْ)', audioKey: 'khudh', label: 'Prends !' },
           { char: 'قُمْ', transcription: 'Qum (قُ + مْ)', audioKey: 'qum_sukun', label: 'Lève-toi !' },
           { char: 'قِفْ', transcription: 'Qif (قِ + فْ)', audioKey: 'qif', label: 'Arrête-toi !' },
-          { char: 'سِرْ', transcription: 'Sir (سِ + رْ)', audioKey: 'sir', label: 'Secret / Marche' },
-          { char: 'زِرْ', transcription: 'Zir (زِ + رْ)', audioKey: 'zir', label: 'Bouton' },
+          { char: 'سِرْ', transcription: 'Sir (سِ + رْ)', audioKey: 'sir', label: 'Marche / Secret' },
+          { char: 'زِرْ', transcription: 'Zir (زِ + رْ)', audioKey: 'zir', label: 'Visite !' },
         ],
       },
       {
-        title: '6. Les Petits Mots Outils de 2 Lettres Indispensables',
-        titleAr: 'حُرُوفُ الجَرِّ وَالكَلِمَاتُ البَسِيطَة',
-        content: 'Ces petits mots de 2 lettres sont les briques de liaison fondamentales de toute la langue arabe :\n\n• مِ + نْ = مِنْ ("De / Depuis")\n• عَ + نْ = عَنْ ("Au sujet de")\n• هَ + لْ = هَلْ ("Est-ce que ?")\n• بَ + لْ = بَلْ ("Mais plutôt")\n• لَ + مْ = لَمْ ("Ne pas / Négation")\n• لَ + وْ = لَوْ ("Si / Condition")\n• قَ + دْ = قَدْ ("Certes / Déjà")',
-        tip: '💡 Apprenez à les reconnaître d\'un seul coup d\'œil, ils reviendront dans toutes les phrases du Monde 7 !',
+        title: '4. Les Petits Mots-Outils & Particules',
+        titleAr: 'حُرُوفُ الجَرِّ وَالأَدَوَاتُ الأَسَاسِيَّة',
+        content: 'Ces petits mots de 2 lettres sont les briques de liaison fondamentales que l\'on retrouve partout :',
         samples: [
           { char: 'مِنْ', transcription: 'Min (مِ + نْ)', audioKey: 'min_sukun', label: 'De / Depuis' },
           { char: 'عَنْ', transcription: 'ʿAn (عَ + نْ)', audioKey: 'an_sukun', label: 'Au sujet de' },
@@ -355,11 +373,11 @@ export const WORLD_LESSONS: Record<number, WorldLesson> = {
   },
 
   // ==========================================
-  // MONDE 4 : SUKŪN & VOYELLES LONGUES (MADD)
+  // MONDE 5 : SUKŪN & VOYELLES LONGUES (MADD)
   // ==========================================
-  4: {
-    worldId: 4,
-    title: 'Monde 4 : Sukūn & Voyelles Longues (المَدّ)',
+  5: {
+    worldId: 5,
+    title: 'Monde 5 : Sukūn & Voyelles Longues (المَدّ)',
     titleAr: 'السُّكُونُ وَحُرُوفُ المَدِّ الثَّلَاثَة',
     subtitle: 'L\'arrêt consonnantique vs l\'allongement en 2 temps',
     icon: 'pulse',
@@ -403,11 +421,11 @@ export const WORLD_LESSONS: Record<number, WorldLesson> = {
   },
 
   // ==========================================
-  // MONDE 5 : SHADDAH, TANWĪN & ALIF-LĀM
+  // MONDE 6 : SHADDAH, TANWĪN & ALIF-LĀM
   // ==========================================
-  5: {
-    worldId: 5,
-    title: 'Monde 5 : Shaddah, Tanwīn & Alif-Lām',
+  6: {
+    worldId: 6,
+    title: 'Monde 6 : Shaddah, Tanwīn & Alif-Lām',
     titleAr: 'الشَّدَّةُ وَالتَّنْوِينُ وَلاَمُ التَّعْرِيف',
     subtitle: 'Les secrets de la lecture courante',
     icon: 'flash',
@@ -469,11 +487,11 @@ export const WORLD_LESSONS: Record<number, WorldLesson> = {
   },
 
   // ==========================================
-  // MONDE 6 : LE VOCABULAIRE & LA FUSION DE MOTS
+  // MONDE 7 : LE VOCABULAIRE & LA FUSION DE MOTS
   // ==========================================
-  6: {
-    worldId: 6,
-    title: 'Monde 6 : Le Vocabulaire & Mots',
+  7: {
+    worldId: 7,
+    title: 'Monde 7 : Le Vocabulaire & Mots',
     titleAr: 'تَرْكِيبُ الكَلِمَاتِ وَالمُفْرَدَات',
     subtitle: 'La lecture autonome et rapide de mots complets',
     icon: 'cube',
@@ -517,11 +535,11 @@ export const WORLD_LESSONS: Record<number, WorldLesson> = {
   },
 
   // ==========================================
-  // MONDE 7 : PHRASES, DIALOGUES & LECTURE FLUIDE
+  // MONDE 8 : PHRASES, DIALOGUES & LECTURE FLUIDE
   // ==========================================
-  7: {
-    worldId: 7,
-    title: 'Monde 7 : Phrases & Textes Courts',
+  8: {
+    worldId: 8,
+    title: 'Monde 8 : Phrases & Textes Courts',
     titleAr: 'قِرَاءَةُ الجُمَلِ وَالنُّصُوصِ القَصِيرَة',
     subtitle: 'L\'accès à la lecture fluide et à la compréhension',
     icon: 'reader',
