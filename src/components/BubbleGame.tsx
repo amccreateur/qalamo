@@ -270,6 +270,7 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
                 onPress={() => handleBubblePress(opt)}
                 activeOpacity={0.7}
               >
+              <View style={styles.bubbleContentWrapper}>
                 <Text
                   style={[
                     styles.bubbleText,
@@ -287,6 +288,7 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
                 >
                   {opt.grapheme}
                 </Text>
+              </View>
 
                 {isSelected && (
                   <View style={styles.feedbackIcon}>
@@ -458,29 +460,46 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 10,
   },
+  bubbleContentWrapper: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   bubbleText: {
     fontFamily: 'Amiri-Bold',
     fontSize: 58,
     fontWeight: '700',
     textAlign: 'center',
     textAlignVertical: 'center',
+    alignSelf: 'center',
+    width: '100%',
     includeFontPadding: false,
   },
   bubbleTextMedium: {
     fontSize: 40,
+    textAlign: 'center',
     textAlignVertical: 'center',
+    alignSelf: 'center',
+    width: '100%',
     includeFontPadding: false,
   },
   bubbleTextSmall: {
     fontSize: 30,
     fontWeight: '700',
+    textAlign: 'center',
     textAlignVertical: 'center',
+    alignSelf: 'center',
+    width: '100%',
     includeFontPadding: false,
   },
   bubbleTextExtraSmall: {
     fontSize: 24,
     fontWeight: '700',
+    textAlign: 'center',
     textAlignVertical: 'center',
+    alignSelf: 'center',
+    width: '100%',
     includeFontPadding: false,
   },
   feedbackIcon: {

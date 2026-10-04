@@ -218,23 +218,25 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
               onPress={() => handleSelect(opt)}
               activeOpacity={0.7}
             >
-              <Text
-                style={[
-                  styles.cardArabicText,
-                  { color: textColor },
-                  opt.grapheme.length > 16
-                    ? styles.cardArabicTextExtraSmall
-                    : opt.grapheme.length > 8
-                    ? styles.cardArabicTextSmall
-                    : opt.grapheme.length > 4
-                    ? styles.cardArabicTextMedium
-                    : null,
-                ]}
-                numberOfLines={2}
-                adjustsFontSizeToFit
-              >
-                {opt.grapheme}
-              </Text>
+              <View style={styles.cardContentWrapper}>
+                <Text
+                  style={[
+                    styles.cardArabicText,
+                    { color: textColor },
+                    opt.grapheme.length > 16
+                      ? styles.cardArabicTextExtraSmall
+                      : opt.grapheme.length > 8
+                      ? styles.cardArabicTextSmall
+                      : opt.grapheme.length > 4
+                      ? styles.cardArabicTextMedium
+                      : null,
+                  ]}
+                  numberOfLines={2}
+                  adjustsFontSizeToFit
+                >
+                  {opt.grapheme}
+                </Text>
+              </View>
 
               {isSelected && (
                 <View style={styles.cardBadge}>
@@ -404,29 +406,46 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 10,
   },
+  cardContentWrapper: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   cardArabicText: {
     fontFamily: 'Amiri-Bold',
     fontSize: 58,
     fontWeight: '700',
     textAlign: 'center',
     textAlignVertical: 'center',
+    alignSelf: 'center',
+    width: '100%',
     includeFontPadding: false,
   },
   cardArabicTextMedium: {
     fontSize: 40,
+    textAlign: 'center',
     textAlignVertical: 'center',
+    alignSelf: 'center',
+    width: '100%',
     includeFontPadding: false,
   },
   cardArabicTextSmall: {
     fontSize: 30,
     fontWeight: '700',
+    textAlign: 'center',
     textAlignVertical: 'center',
+    alignSelf: 'center',
+    width: '100%',
     includeFontPadding: false,
   },
   cardArabicTextExtraSmall: {
     fontSize: 24,
     fontWeight: '700',
+    textAlign: 'center',
     textAlignVertical: 'center',
+    alignSelf: 'center',
+    width: '100%',
     includeFontPadding: false,
   },
   cardBadge: {
