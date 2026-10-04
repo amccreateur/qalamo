@@ -5,13 +5,17 @@ import {
   StyleSheet,
   TouchableOpacity,
   Animated,
+  Dimensions,
   Platform,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { PhonemeItem } from '../types/game';
 import { soundService } from '../services/soundService';
+import { COLORS } from '../theme/colors';
 import { useLanguage } from '../i18n/LanguageContext';
+
+const { width } = Dimensions.get('window');
 
 interface TargetGameProps {
   items: PhonemeItem[];
@@ -23,6 +27,7 @@ interface TargetOption {
   id: string;
   grapheme: string;
   isCorrect: boolean;
+  colorIdx: number;
 }
 
 export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExit }) => {
@@ -56,11 +61,12 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
     if (!currentItem) return;
 
     const allChoices: TargetOption[] = [
-      { id: 'correct', grapheme: currentItem.grapheme, isCorrect: true },
+      { id: 'correct', grapheme: currentItem.grapheme, isCorrect: true, colorIdx: 0 },
       ...currentItem.distractors.map((d, idx) => ({
         id: `dist_${idx}`,
         grapheme: d,
         isCorrect: false,
+        colorIdx: (idx + 1) % COLORS.bubbleColors.length,
       })),
     ];
 
@@ -190,12 +196,15 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
       <View style={[styles.cardsRow, isPhraseLevel && styles.cardsColumn]}>
         {options.map((opt) => {
           const isSelected = selectedId === opt.id;
-          let cardBg = 'rgba(255, 255, 255, 0.95)';
-          let borderColor = '#6366F1';
+          const colorTheme = COLORS.bubbleColors[opt.colorIdx] || COLORS.bubbleColors[0];
+          let cardBg = colorTheme.bg;
+          let borderColor = colorTheme.border;
+          let textColor = colorTheme.text;
 
           if (isSelected) {
             cardBg = isSuccess ? '#D1FAE5' : '#FEE2E2';
             borderColor = isSuccess ? '#10B981' : '#EF4444';
+            textColor = isSuccess ? '#065F46' : '#991B1B';
           }
 
           return (
@@ -212,6 +221,7 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
               <Text
                 style={[
                   styles.cardArabicText,
+                  { color: textColor },
                   opt.grapheme.length > 16
                     ? styles.cardArabicTextExtraSmall
                     : opt.grapheme.length > 8
@@ -370,34 +380,34 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   targetCard: {
-    width: '46%',
-    maxWidth: 180,
-    minHeight: 120,
-    borderRadius: 24,
-    borderWidth: 3,
+    width: (width - 56) / 2,
+    maxWidth: 170,
+    aspectRatio: 1,
+    borderRadius: 36,
+    borderWidth: 3.5,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 12,
-    paddingVertical: 10,
+    paddingHorizontal: 8,
+    paddingVertical: 8,
     ...Platform.select({
-      ios: { shadowColor: '#000', shadowOffset: { width: 0, height: 6 }, shadowOpacity: 0.2, shadowRadius: 8 },
+      ios: { shadowColor: '#000', shadowOffset: { width: 0, height: 6 }, shadowOpacity: 0.15, shadowRadius: 8 },
       android: { elevation: 6 },
-      web: { boxShadow: '0 8px 16px rgba(0, 0, 0, 0.25)' } as any,
+      web: { boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.15)' } as any,
     }),
   },
   targetCardPhrase: {
     width: '100%',
     maxWidth: 420,
+    aspectRatio: undefined,
     minHeight: 64,
-    borderRadius: 20,
+    borderRadius: 22,
     paddingHorizontal: 16,
     paddingVertical: 10,
   },
   cardArabicText: {
     fontFamily: 'Amiri-Bold',
-    fontSize: 48,
+    fontSize: 50,
     fontWeight: '700',
-    color: '#1E1B4B',
     textAlign: 'center',
     includeFontPadding: true,
   },
