@@ -96,8 +96,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Group 1 : أ, ب, ت, ث",
-        "descriptionEn": "Listen to the sound and catch the correct letter."
+        "titleEn": "Group 1: أ, ب, ت, ث",
+        "descriptionEn": "Learn the first 4 letters with clear audio: Alif, Bā', Tā', and Thā'."
       },
       {
         "id": 2,
@@ -186,8 +186,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Group 2 : ج, ح, خ, د",
-        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
+        "titleEn": "Group 2: ج, ح, خ, د",
+        "descriptionEn": "Master deep throat and rasping sounds: Jeem, Ḥā', Khā', and Dāl."
       },
       {
         "id": 3,
@@ -276,8 +276,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Group 3 : ذ, ر, ز, س",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Group 3: ذ, ر, ز, س",
+        "descriptionEn": "Distinguish between interdental, rolled, and sharp whistling sounds."
       },
       {
         "id": 4,
@@ -366,8 +366,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Group 4 : ش, ص, ض, ط",
-        "descriptionEn": "Recognize the correct Arabic phrase and meaning."
+        "titleEn": "Group 4: ش, ص, ض, ط",
+        "descriptionEn": "Practice emphatic, deep mouth-filling consonants."
       },
       {
         "id": 5,
@@ -456,8 +456,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Group 5 : ظ, ع, غ, ف",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Group 5: ظ, ع, غ, ف",
+        "descriptionEn": "Master guttural and throat consonants with clear native pronunciation."
       },
       {
         "id": 6,
@@ -546,8 +546,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Group 6 : ق, ك, ل, م",
-        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
+        "titleEn": "Group 6: ق, ك, ل, م",
+        "descriptionEn": "Distinguish the deep palate Qāf from the light, smiling Kāf."
       },
       {
         "id": 7,
@@ -636,8 +636,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Group 7 : ن, هـ, و, ي",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Group 7: ن, هـ, و, ي",
+        "descriptionEn": "Conclude the 28 alphabet letters with soft breath and glide sounds."
       },
       {
         "id": 8,
@@ -738,8 +738,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Duel des Points : ب, ت, ث, ن, ي",
-        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
+        "titleEn": "Dot Duel: ب, ت, ث, ن, ي",
+        "descriptionEn": "Recognize identical boat shapes by their dot positions."
       },
       {
         "id": 9,
@@ -840,8 +840,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Duel Emphatiques & Gutturales",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Emphatic & Guttural Duel",
+        "descriptionEn": "Train your ear on the hardest contrasts: seen/ṣād, tā'/ṭā', dāl/ḍād."
       },
       {
         "id": 10,
@@ -954,8 +954,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Grand Challenge de l'Alphabet",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Grand Alphabet Mastery Challenge",
+        "descriptionEn": "Comprehensive test of all 28 Arabic letters in randomized audio tests."
       }
     ],
     "nameEn": "World 1: The Alphabet & 28 Sounds",
@@ -1056,8 +1056,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Début (ـ...) : Famille Bateau & Boucles",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Initial Form (ـ...): Boat & Loop Family",
+        "descriptionEn": "Identify letters reaching out their arm at the beginning of words."
       },
       {
         "id": 12,
@@ -1170,8 +1170,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Début (ـ...) : Sifflantes, Emphatiques & Autres",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Initial Form (ـ...): Whistling, Emphatics & Others",
+        "descriptionEn": "Identify teeth and loop letters in initial connected position."
       },
       {
         "id": 13,
@@ -1260,8 +1260,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Milieu (ـ...ـ) : Famille Bateau & Boucles",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Medial Form (ـ...ـ): Boat & Loop Family",
+        "descriptionEn": "Recognize letters that connect on both right and left sides."
       },
       {
         "id": 14,
@@ -1374,8 +1374,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Milieu (ـ...ـ) : Sifflantes, Emphatiques & Autres",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Medial Form (ـ...ـ): Whistling, Emphatics & Others",
+        "descriptionEn": "Spot intermediate connecting shapes in the middle of words."
       },
       {
         "id": 15,
@@ -1464,8 +1464,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Fin (...ـ) : Famille Bateau & Boucles",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Final Form (...ـ): Boat & Loop Family",
+        "descriptionEn": "Recognize letters regaining their full tail at the end of words."
       },
       {
         "id": 16,
@@ -1566,8 +1566,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Fin (...ـ) : Fermetures et Queues",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Final Form (...ـ): Closings & Tails",
+        "descriptionEn": "Identify letters concluding the word with their distinctive final shape."
       },
       {
         "id": 17,
@@ -1656,8 +1656,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Les 6 Lettres Non-Attachantes (أ د ذ ر ز و)",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "The 6 Non-Connecting Letters (أ د ذ ر ز و)",
+        "descriptionEn": "Master the 6 letters that never attach to the left."
       },
       {
         "id": 18,
@@ -1770,8 +1770,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Grand Challenge des Positions (Début, Milieu, Fin)",
-        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
+        "titleEn": "Grand Letter Positions Challenge (Initial, Medial, Final)",
+        "descriptionEn": "Comprehensive test of letter shapes across all 4 positions in real time."
       }
     ],
     "nameEn": "World 2: The 4 Letter Shapes",
@@ -1896,8 +1896,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "The Fatḥah (ـَ) : Short 'A' sound",
-        "descriptionEn": "Listen to the sound and catch the correct letter."
+        "titleEn": "Fatḥah (ـَ) - Basic Sounds",
+        "descriptionEn": "Read short, crisp 'A' vowels on the first 14 alphabet letters."
       },
       {
         "id": 20,
@@ -2010,8 +2010,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "The Fatḥah (ـَ) : Short 'A' sound",
-        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
+        "titleEn": "Fatḥah (ـَ) - Emphatics & Gutturals",
+        "descriptionEn": "Produce open, resonant 'A' sounds on heavy and throat consonants."
       },
       {
         "id": 21,
@@ -2124,8 +2124,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "The Ḍammah (ـُ) : Short 'U' sound",
-        "descriptionEn": "Listen to the sound and catch the correct letter."
+        "titleEn": "Ḍammah (ـُ) - Basic 'U' Sounds",
+        "descriptionEn": "Round your lips for a crisp 1-beat 'U' (oo) sound on the first 14 letters."
       },
       {
         "id": 22,
@@ -2238,8 +2238,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "The Ḍammah (ـُ) : Short 'U' sound",
-        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
+        "titleEn": "Ḍammah (ـُ) - Advanced 'U' Sounds",
+        "descriptionEn": "Produce rounded 'U' sounds on heavy and throat consonants."
       },
       {
         "id": 23,
@@ -2352,8 +2352,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "The Kasrah (ـِ) : Short 'I' sound",
-        "descriptionEn": "Listen to the sound and catch the correct letter."
+        "titleEn": "Kasrah (ـِ) - Basic 'I' Sounds",
+        "descriptionEn": "Produce a sharp, smiling 1-beat 'I' (ee) sound on the first 14 letters."
       },
       {
         "id": 24,
@@ -2466,8 +2466,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "The Kasrah (ـِ) : Short 'I' sound",
-        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
+        "titleEn": "Kasrah (ـِ) - Advanced 'I' Sounds",
+        "descriptionEn": "Produce smiling 'I' sounds on heavy and throat consonants."
       },
       {
         "id": 25,
@@ -2580,8 +2580,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Duel des 3 Voyelles : A vs OU vs I",
-        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
+        "titleEn": "3-Vowel Duel: A vs U vs I",
+        "descriptionEn": "Instantly switch between the 3 short vowels on the same consonant."
       },
       {
         "id": 26,
@@ -2694,8 +2694,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Grand Challenge des 3 Harakāt",
-        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
+        "titleEn": "Grand 3 Short Vowels Challenge (Harakāt)",
+        "descriptionEn": "Ultimate speed and accuracy test for all short vowels across all 28 letters."
       }
     ],
     "nameEn": "World 3: Short Vowels (Harakāt)",
@@ -2836,8 +2836,8 @@ export const WORLDS: World[] = [
             "translationEn": "For you"
           }
         ],
-        "titleEn": "Series A + A (Emphatic & Simple)",
-        "descriptionEn": "Listen and read the complete sentence with accuracy."
+        "titleEn": "Series A + A (Emphatics & Standard)",
+        "descriptionEn": "Chain two open 'A' vowels in one smooth, uninterrupted breath."
       },
       {
         "id": 28,
@@ -2966,8 +2966,8 @@ export const WORLDS: World[] = [
             "translationEn": ""
           }
         ],
-        "titleEn": "Series A + U (Emphatic & Simple)",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Series A + U (Emphatics & Standard)",
+        "descriptionEn": "Transition from an open mouth (A) to rounded lips (U) at steady tempo."
       },
       {
         "id": 29,
@@ -3112,8 +3112,8 @@ export const WORLDS: World[] = [
             "translationEn": ""
           }
         ],
-        "titleEn": "Series A + I (Throat & Emphatics)",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Series A + I (Throat, Emphatics & Whistling)",
+        "descriptionEn": "Chain open (A) and smiling (I) vowels across difficult consonants."
       },
       {
         "id": 30,
@@ -3263,7 +3263,7 @@ export const WORLDS: World[] = [
         ],
         "wordItems": [],
         "titleEn": "Series U + I & U + A (Emphatics & Pronouns)",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "descriptionEn": "Transition from rounded lips (U) to a smiling sound (I) or open mouth (A)."
       },
       {
         "id": 31,
@@ -3400,8 +3400,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Series I + A & Discrimination Challenge",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Series I + A & Emphatic Discrimination Challenge",
+        "descriptionEn": "Contrast light and heavy syllables with rapid 2-vowel transitions."
       },
       {
         "id": 32,
@@ -3562,12 +3562,12 @@ export const WORLDS: World[] = [
             "translationEn": "She"
           }
         ],
-        "titleEn": "Grand Workshop: All 28 Letters",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Grand 28-Letter & Emphatics Workshop",
+        "descriptionEn": "Master rapid 2-beat syllable chaining across the entire Arabic alphabet."
       }
     ],
     "nameEn": "World 4: 2-Vowel Combinations",
-    "descriptionEn": "Chain two consecutive short vowels smoothly across all 28 letters and emphatic sounds."
+    "descriptionEn": "Chain two short vowels smoothly across all 28 Arabic letters."
   },
   {
     "id": 5,
@@ -3664,8 +3664,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "The Sukūn (ـْ) : The Consonant Stop",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "The Sukūn (ـْ) - Basic Syllables",
+        "descriptionEn": "Lock consonants cleanly with zero vowel sound."
       },
       {
         "id": 34,
@@ -3778,8 +3778,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "The Sukūn (ـْ) : The Consonant Stop",
-        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
+        "titleEn": "The Sukūn (ـْ) - Advanced Syllables",
+        "descriptionEn": "Practice clean stops on heavy and throat consonants."
       },
       {
         "id": 35,
@@ -3868,8 +3868,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Madd Alif (ـَا) : 2-Beat Long 'AA'",
-        "descriptionEn": "Listen to the sound and catch the correct letter."
+        "titleEn": "Madd Alif (ـَا) - Long 'Ā' Sound",
+        "descriptionEn": "Elongate the open 'A' vowel over 2 full beats with Alif."
       },
       {
         "id": 36,
@@ -3958,8 +3958,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Madd Waw (ـُو) : 2-Beat Long 'UU'",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Madd Waw (ـُو) - Long 'Ū' Sound",
+        "descriptionEn": "Elongate the rounded 'U' vowel over 2 full beats with Wāw."
       },
       {
         "id": 37,
@@ -4048,8 +4048,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Madd Ya (ـِي) : 2-Beat Long 'II'",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Madd Ya (ـِي) - Long 'Ī' Sound",
+        "descriptionEn": "Elongate the smiling 'I' vowel over 2 full beats with Yā'."
       },
       {
         "id": 38,
@@ -4162,8 +4162,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Duel Court vs Long : Série A & OU",
-        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
+        "titleEn": "Short vs Long Duel: A & U Series",
+        "descriptionEn": "Listen and contrast short vowels (1 beat) against long vowels (2 beats)."
       },
       {
         "id": 39,
@@ -4276,12 +4276,12 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Duel Court vs Long : Série I & Mixte",
-        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
+        "titleEn": "Short vs Long Duel: I Series & Mixed",
+        "descriptionEn": "Master the timing difference between short Kasrah and long Madd Yā'."
       }
     ],
     "nameEn": "World 5: Sukūn & Long Vowels (Madd)",
-    "descriptionEn": "Contrast consonant stops (Sukūn) with sustained 2-beat long vowels (Alif, Waw, Ya)."
+    "descriptionEn": "Master consonant stops with Sukūn and 2-beat vowel elongations with Madd."
   },
   {
     "id": 6,
@@ -4378,8 +4378,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "The Shaddah (ـّ) : Doubled Consonant",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "The Shaddah (ـّ) : Doubled Stressed Consonant",
+        "descriptionEn": "Hold a firm pause and stress the doubled consonant."
       },
       {
         "id": 41,
@@ -4456,8 +4456,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Tanwīn -an (ـً) : Open Nunation",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Tanwīn in -an (ـً) : Open Ending",
+        "descriptionEn": "Read double Fatḥah with the crisp nunated end sound '-an'."
       },
       {
         "id": 42,
@@ -4534,8 +4534,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Tanwīn -un (ـٌ) : Closed Nunation",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Tanwīn in -un (ـٌ) : Closed Ending",
+        "descriptionEn": "Read double Ḍammah with the crisp nunated end sound '-un'."
       },
       {
         "id": 43,
@@ -4624,8 +4624,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Tanwīn -in (ـٍ) & The 3 Tanwīns Duel",
-        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
+        "titleEn": "Tanwīn in -in (ـٍ) & Grand 3-Tanwīn Duel",
+        "descriptionEn": "Distinguish all three nunation sounds (-an, -un, -in) on noun endings."
       },
       {
         "id": 44,
@@ -4702,8 +4702,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Alif-Lām (الـ) : Moon Letters",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Alif-Lām (الـ) : Lunar Letters (Pronounced Lām)",
+        "descriptionEn": "Pronounce the definite article 'Al-' clearly before lunar letters."
       },
       {
         "id": 45,
@@ -4780,12 +4780,12 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Alif-Lām (الـ) : Sun Letters",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Alif-Lām (الـ) : Solar Letters (Silent Lām + Shaddah)",
+        "descriptionEn": "Assimilate the Lām directly into the following solar letter with Shaddah."
       }
     ],
     "nameEn": "World 6: Shaddah, Tanwīn & Alif-Lām",
-    "descriptionEn": "Double consonants (Shaddah), nunations (Tanwīn), and Solar vs Lunar letters (الـ)."
+    "descriptionEn": "Master doubled consonants, nunation endings, and solar/lunar reading rules."
   },
   {
     "id": 7,
@@ -4824,7 +4824,7 @@ export const WORLDS: World[] = [
               "سَ"
             ],
             "emoji": "✍️",
-            "translationEn": "Write"
+            "translationEn": "To write"
           },
           {
             "id": "darasa",
@@ -4841,7 +4841,7 @@ export const WORLDS: World[] = [
               "تَ"
             ],
             "emoji": "📖",
-            "translationEn": "Study"
+            "translationEn": "To study"
           },
           {
             "id": "qaraa",
@@ -4858,7 +4858,7 @@ export const WORLDS: World[] = [
               "كَ"
             ],
             "emoji": "📚",
-            "translationEn": "Read"
+            "translationEn": "To read"
           },
           {
             "id": "rasama",
@@ -4875,11 +4875,11 @@ export const WORLDS: World[] = [
               "دَ"
             ],
             "emoji": "🎨",
-            "translationEn": "Draw"
+            "translationEn": "To draw"
           }
         ],
-        "titleEn": "3-Letter Base Verbs",
-        "descriptionEn": "Listen and assemble the letters in the correct order."
+        "titleEn": "3-Letter Base Action Verbs",
+        "descriptionEn": "Assemble letters to build and read essential 3-letter Arabic verbs."
       },
       {
         "id": 47,
@@ -4910,7 +4910,7 @@ export const WORLDS: World[] = [
               "دَ"
             ],
             "emoji": "🪑",
-            "translationEn": "Sit"
+            "translationEn": "To sit"
           },
           {
             "id": "dhahaba",
@@ -4927,7 +4927,7 @@ export const WORLDS: World[] = [
               "تَ"
             ],
             "emoji": "🚶",
-            "translationEn": "Leave"
+            "translationEn": "To go / To leave"
           },
           {
             "id": "samia",
@@ -4944,7 +4944,7 @@ export const WORLDS: World[] = [
               "قَ"
             ],
             "emoji": "👂",
-            "translationEn": "Listen"
+            "translationEn": "To hear / To listen"
           },
           {
             "id": "akala",
@@ -4961,7 +4961,7 @@ export const WORLDS: World[] = [
               "بَ"
             ],
             "emoji": "🍽️",
-            "translationEn": "Eat"
+            "translationEn": "To eat"
           },
           {
             "id": "shariba",
@@ -4978,7 +4978,7 @@ export const WORLDS: World[] = [
               "تَ"
             ],
             "emoji": "🥛",
-            "translationEn": "Drink"
+            "translationEn": "To drink"
           },
           {
             "id": "fataha",
@@ -4995,11 +4995,11 @@ export const WORLDS: World[] = [
               "جَ"
             ],
             "emoji": "🚪",
-            "translationEn": "Open"
+            "translationEn": "To open"
           }
         ],
-        "titleEn": "Daily Action Verbs",
-        "descriptionEn": "Listen and assemble the letters in the correct order."
+        "titleEn": "Daily Life Action Verbs",
+        "descriptionEn": "Listen to and construct common daily action verbs."
       },
       {
         "id": 48,
@@ -5082,7 +5082,7 @@ export const WORLDS: World[] = [
               "د"
             ],
             "emoji": "🖥️",
-            "translationEn": "Desk"
+            "translationEn": "Desk / Office"
           },
           {
             "id": "qalam",
@@ -5099,11 +5099,11 @@ export const WORLDS: World[] = [
               "ن"
             ],
             "emoji": "✏️",
-            "translationEn": "Pen"
+            "translationEn": "Pen / Pencil"
           }
         ],
         "titleEn": "Illustrated Words: House & Office",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "descriptionEn": "Read and assemble everyday objects found around the house and desk."
       },
       {
         "id": 49,
@@ -5221,7 +5221,7 @@ export const WORLDS: World[] = [
           }
         ],
         "titleEn": "Animals of the World",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "descriptionEn": "Discover and write the names of popular animals in Arabic."
       },
       {
         "id": 50,
@@ -5342,7 +5342,7 @@ export const WORLDS: World[] = [
           }
         ],
         "titleEn": "Nature & Elements",
-        "descriptionEn": "Listen and assemble the letters in the correct order."
+        "descriptionEn": "Build words related to the sky, water, weather, and plants."
       },
       {
         "id": 51,
@@ -5447,7 +5447,7 @@ export const WORLDS: World[] = [
         ],
         "wordItems": [],
         "titleEn": "Family & People",
-        "descriptionEn": "Recognize the correct Arabic phrase and meaning."
+        "descriptionEn": "Read and recognize family members and everyday social roles."
       },
       {
         "id": 52,
@@ -5511,7 +5511,7 @@ export const WORLDS: World[] = [
               "ر"
             ],
             "emoji": "🍞",
-            "translationEn": "Pain / Bread"
+            "translationEn": "Bread"
           },
           {
             "id": "tamr",
@@ -5565,8 +5565,8 @@ export const WORLDS: World[] = [
             "translationEn": "Apple"
           }
         ],
-        "titleEn": "Food & Drinks",
-        "descriptionEn": "Listen and assemble the letters in the correct order."
+        "titleEn": "Food & Delicious Drinks",
+        "descriptionEn": "Assemble names of fruits, drinks, bread, and meals."
       },
       {
         "id": 53,
@@ -5635,7 +5635,7 @@ export const WORLDS: World[] = [
               "س"
             ],
             "emoji": "🐦",
-            "translationEn": "Bird"
+            "translationEn": "Sparrow / Bird"
           },
           {
             "id": "rumman",
@@ -5656,7 +5656,7 @@ export const WORLDS: World[] = [
           }
         ],
         "titleEn": "Complex Words: Madd, Sukūn & Shaddah",
-        "descriptionEn": "Listen and assemble the letters in the correct order."
+        "descriptionEn": "Assemble rich words combining Madd, Sukūn, and Shaddah."
       },
       {
         "id": 54,
@@ -5751,8 +5751,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Défi Écoute & Orthographe de Mots",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Listening & Spelling Word Challenge",
+        "descriptionEn": "Listen to the pronounced word and burst the matching letter bubble!"
       },
       {
         "id": 55,
@@ -5853,8 +5853,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Grand Challenge de Lecture Rapide de Vocabulaire",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "Grand Speed Reading Vocabulary Challenge",
+        "descriptionEn": "The ultimate rapid word recognition test across all vocabulary themes!"
       }
     ],
     "nameEn": "World 7: Vocabulary & Everyday Words",
@@ -5948,7 +5948,7 @@ export const WORLDS: World[] = [
         ],
         "wordItems": [],
         "titleEn": "Nominal Sentences 1: Subject & Description",
-        "descriptionEn": "Listen and read the complete sentence with accuracy."
+        "descriptionEn": "Read 2-word sentences describing everyday objects and qualities."
       },
       {
         "id": 57,
@@ -6029,7 +6029,7 @@ export const WORLDS: World[] = [
         ],
         "wordItems": [],
         "titleEn": "Nominal Sentences 2: Qualities & States",
-        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
+        "descriptionEn": "Distinguish descriptions and characteristics in short sentences."
       },
       {
         "id": 58,
@@ -6122,7 +6122,7 @@ export const WORLDS: World[] = [
         ],
         "wordItems": [],
         "titleEn": "Verbal Sentences 1: Verb & Subject",
-        "descriptionEn": "Listen and read the complete sentence with accuracy."
+        "descriptionEn": "Read sentences describing actions performed by subjects."
       },
       {
         "id": 59,
@@ -6203,7 +6203,7 @@ export const WORLDS: World[] = [
         ],
         "wordItems": [],
         "titleEn": "Verbal Sentences 2: Actions & Movements",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "descriptionEn": "Understand movements and travel in verbal sentences."
       },
       {
         "id": 60,
@@ -6272,7 +6272,7 @@ export const WORLDS: World[] = [
         ],
         "wordItems": [],
         "titleEn": "Complete Sentences 1: Action on an Object",
-        "descriptionEn": "Listen and read the complete sentence with accuracy."
+        "descriptionEn": "Read 3-element sentences: Subject + Verb + Direct Object."
       },
       {
         "id": 61,
@@ -6342,7 +6342,7 @@ export const WORLDS: World[] = [
         ],
         "wordItems": [],
         "titleEn": "Complete Sentences 2: Daily Life Actions",
-        "descriptionEn": "Listen and read the complete sentence with accuracy."
+        "descriptionEn": "Read concrete daily life sentences with accurate vowels."
       },
       {
         "id": 62,
@@ -6423,7 +6423,7 @@ export const WORLDS: World[] = [
         ],
         "wordItems": [],
         "titleEn": "Politeness & Common Expressions",
-        "descriptionEn": "Recognize the correct Arabic phrase and meaning."
+        "descriptionEn": "Recognize Arabic greetings, thanks, and polite everyday expressions."
       },
       {
         "id": 63,
@@ -6491,8 +6491,8 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "Sentences with Prepositions (fee, ilā, 'alā)",
-        "descriptionEn": "Listen and read the complete sentence with accuracy."
+        "titleEn": "Sentences with Prepositions (fee, ilā, 'alā, fawqa)",
+        "descriptionEn": "Read sentences indicating locations and precise spatial positions."
       },
       {
         "id": 64,
@@ -6549,7 +6549,7 @@ export const WORLDS: World[] = [
         ],
         "wordItems": [],
         "titleEn": "Short Stories & Comprehension",
-        "descriptionEn": "Listen and read the complete sentence with accuracy."
+        "descriptionEn": "Read short paragraph stories enriched with descriptive adjectives."
       },
       {
         "id": 65,
@@ -6631,11 +6631,11 @@ export const WORLDS: World[] = [
           }
         ],
         "wordItems": [],
-        "titleEn": "🏆 Grand Championship de Lecture Fluide",
-        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
+        "titleEn": "🏆 Ultimate Fluent Reading Championship",
+        "descriptionEn": "The supreme reading and comprehension championship in the Arabic language!"
       }
     ],
     "nameEn": "World 8: Short Sentences & Fluency",
-    "descriptionEn": "Read nominal and verbal sentences with prepositions and fluent reading."
+    "descriptionEn": "Read nominal and verbal sentences with prepositions and fluent reading speed."
   }
 ];
