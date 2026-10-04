@@ -352,6 +352,7 @@ export const GENERATED_AUDIO_ASSETS: Record<string, any> = {
   ali_short: require('../../assets/audio/generated/ali_short.mp3'),
   sahi: require('../../assets/audio/generated/sahi.mp3'),
   tafi: require('../../assets/audio/generated/tafi.mp3'),
+  tabi: require('../../assets/audio/generated/tabi.mp3'),
   ghani: require('../../assets/audio/generated/ghani.mp3'),
   khashi: require('../../assets/audio/generated/khashi.mp3'),
   jali: require('../../assets/audio/generated/jali.mp3'),

@@ -2973,7 +2973,7 @@ export const WORLDS: World[] = [
         "id": 29,
         "worldId": 4,
         "title": "Série A + I (Gorge, Emphatiques & Sifflement)",
-        "titleAr": "فَتْحَة + كَسْرَة (صَحِ ، طَفِ ، غَنِ ، خَشِ)",
+        "titleAr": "فَتْحَة + كَسْرَة (صَحِ ، طَبِ ، غَنِ ، خَشِ)",
         "description": "Descends vers la Kasrah après la Fatḥah !",
         "gameType": "wordBuilder",
         "requiredStars": 0,
@@ -3000,17 +3000,17 @@ export const WORLDS: World[] = [
             "translationEn": ""
           },
           {
-            "id": "tafi",
-            "word": "طَفِ",
+            "id": "tabi",
+            "word": "طَبِ",
             "meaning": "",
             "translationFr": "",
             "letters": [
               "طَ",
-              "فِ"
+              "بِ"
             ],
             "distractorLetters": [
               "تَ",
-              "قِ"
+              "بَ"
             ],
             "emoji": "🔤",
             "translationEn": ""
