@@ -416,7 +416,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    gap: 14,
+    gap: 12,
     paddingBottom: 10,
   },
   bubblesColumn: {
@@ -427,8 +427,8 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   bubbleWrapper: {
-    width: (width - 56) / 2,
-    maxWidth: 170,
+    width: (width - 44) / 2,
+    maxWidth: 180,
     aspectRatio: 1,
   },
   bubbleWrapperPhrase: {
@@ -443,8 +443,8 @@ const styles = StyleSheet.create({
     borderWidth: 3.5,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 8,
-    paddingVertical: 8,
+    paddingHorizontal: 6,
+    paddingVertical: 6,
     ...Platform.select({
       ios: { shadowColor: '#000', shadowOffset: { width: 0, height: 6 }, shadowOpacity: 0.12, shadowRadius: 8 },
       android: { elevation: 5 },
@@ -453,28 +453,35 @@ const styles = StyleSheet.create({
   },
   bubblePhrase: {
     height: undefined,
-    minHeight: 64,
+    minHeight: 68,
     borderRadius: 22,
     paddingHorizontal: 16,
     paddingVertical: 10,
   },
   bubbleText: {
     fontFamily: 'Amiri-Bold',
-    fontSize: 50,
+    fontSize: 58,
     fontWeight: '700',
     textAlign: 'center',
-    includeFontPadding: true,
+    textAlignVertical: 'center',
+    includeFontPadding: false,
   },
   bubbleTextMedium: {
-    fontSize: 36,
+    fontSize: 40,
+    textAlignVertical: 'center',
+    includeFontPadding: false,
   },
   bubbleTextSmall: {
-    fontSize: 28,
+    fontSize: 30,
     fontWeight: '700',
+    textAlignVertical: 'center',
+    includeFontPadding: false,
   },
   bubbleTextExtraSmall: {
     fontSize: 24,
     fontWeight: '700',
+    textAlignVertical: 'center',
+    includeFontPadding: false,
   },
   feedbackIcon: {
     position: 'absolute',
