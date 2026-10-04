@@ -232,6 +232,9 @@ export const GENERATED_AUDIO_ASSETS: Record<string, any> = {
   haa_damma: require('../../assets/audio/generated/haa_damma.mp3'),
   haa_kasra: require('../../assets/audio/generated/haa_kasra.mp3'),
   haa_sukun: require('../../assets/audio/generated/haa_sukun.mp3'),
+  ha_fatha: require('../../assets/audio/generated/haa_fatha.mp3'),
+  hu_damma: require('../../assets/audio/generated/haa_damma.mp3'),
+  hi_kasra: require('../../assets/audio/generated/haa_kasra.mp3'),
 
   // Waw
   waw_fatha: require('../../assets/audio/generated/waw_fatha.mp3'),
