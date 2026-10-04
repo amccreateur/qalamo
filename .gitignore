@@ -55,3 +55,7 @@ yarn-error.*
 /test_verbs/
 /test_voices_tanwin/
 /test_audio.html
+*.html
+scripts/temp_audio/
+scripts/test_proposals/
+

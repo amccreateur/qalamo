@@ -112,3 +112,4 @@ async def generate_all():
 if __name__ == "__main__":
     asyncio.run(generate_all())
     print("All audio files for all 28 letters + emphatics generated successfully!")
+

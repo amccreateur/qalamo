@@ -1,0 +1,823 @@
+{
+  "id": 4,
+  "name": "Monde 4 : Les Combinaisons de 2 Voyelles",
+  "nameAr": "العالم الرابع : تَرْكِيبُ الحَرَكَاتِ الثُّنَائِيَّة",
+  "description": "Enchaîne avec fluidité deux lettres portant des voyelles courtes (Fatḥah, Ḍammah, Kasrah) sur les 28 lettres et les sons emphatiques !",
+  "icon": "layers",
+  "color": "#F59E0B",
+  "levels": [
+    {
+      "id": 27,
+      "worldId": 4,
+      "title": "Série A + A (Emphatiques & Simples)",
+      "titleAr": "فَتْحَة + فَتْحَة (صَدَ ، طَلَ ، غَفَ ، خَلَ)",
+      "description": "Lis et assemble tes premières combinaisons ouvertes à 2 Fatḥah !",
+      "gameType": "wordBuilder",
+      "requiredStars": 0,
+      "bgColor": [
+        "#F59E0B",
+        "#B45309"
+      ],
+      "items": [],
+      "wordItems": [
+        {
+          "id": "sada",
+          "word": "صَدَ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "صَ",
+            "دَ"
+          ],
+          "distractorLetters": [
+            "سَ",
+            "ذَ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "tala",
+          "word": "طَلَ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "طَ",
+            "لَ"
+          ],
+          "distractorLetters": [
+            "تَ",
+            "كَ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "ghafa",
+          "word": "غَفَ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "غَ",
+            "فَ"
+          ],
+          "distractorLetters": [
+            "عَ",
+            "قَ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "khala",
+          "word": "خَلَ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "خَ",
+            "لَ"
+          ],
+          "distractorLetters": [
+            "حَ",
+            "جَ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "bata",
+          "word": "بَتَ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "بَ",
+            "تَ"
+          ],
+          "distractorLetters": [
+            "نَ",
+            "دَ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "maa_particle",
+          "word": "مَعَ",
+          "meaning": "Avec",
+          "translationFr": "Avec",
+          "letters": [
+            "مَ",
+            "عَ"
+          ],
+          "distractorLetters": [
+            "غَ",
+            "لَ"
+          ],
+          "emoji": "🤝"
+        },
+        {
+          "id": "laka",
+          "word": "لَكَ",
+          "meaning": "Pour toi",
+          "translationFr": "Pour toi",
+          "letters": [
+            "لَ",
+            "كَ"
+          ],
+          "distractorLetters": [
+            "بَ",
+            "كُ"
+          ],
+          "emoji": "🎁"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "worldId": 4,
+      "title": "Série A + OU (Emphatiques & Simples)",
+      "titleAr": "فَتْحَة + ضَمَّة (ضَرُ ، ظَفُ ، قَتُ ، حَسُ)",
+      "description": "Passe du son 'A' au son 'OU' avec agilité sur les sons lourds et légers !",
+      "gameType": "wordBuilder",
+      "requiredStars": 0,
+      "bgColor": [
+        "#EA580C",
+        "#9A3412"
+      ],
+      "items": [],
+      "wordItems": [
+        {
+          "id": "daru_emph",
+          "word": "ضَرُ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "ضَ",
+            "رُ"
+          ],
+          "distractorLetters": [
+            "دَ",
+            "زُ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "zhafu",
+          "word": "ظَفُ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "ظَ",
+            "فُ"
+          ],
+          "distractorLetters": [
+            "طَ",
+            "قُ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "qatu",
+          "word": "قَتُ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "قَ",
+            "تُ"
+          ],
+          "distractorLetters": [
+            "كَ",
+            "تَ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "hasu",
+          "word": "حَسُ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "حَ",
+            "سُ"
+          ],
+          "distractorLetters": [
+            "خَ",
+            "صُ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "babu",
+          "word": "بَبُ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "بَ",
+            "بُ"
+          ],
+          "distractorLetters": [
+            "تُ",
+            "بِ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "nabu",
+          "word": "نَبُ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "نَ",
+            "بُ"
+          ],
+          "distractorLetters": [
+            "بَ",
+            "نُ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "tadu",
+          "word": "تَدُ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "تَ",
+            "دُ"
+          ],
+          "distractorLetters": [
+            "ثَ",
+            "دَ"
+          ],
+          "emoji": "🔤"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "worldId": 4,
+      "title": "Série A + I (Gorge, Emphatiques & Sifflement)",
+      "titleAr": "فَتْحَة + كَسْرَة (صَحِ ، طَفِ ، غَنِ ، خَشِ)",
+      "description": "Descends vers la Kasrah après la Fatḥah !",
+      "gameType": "wordBuilder",
+      "requiredStars": 0,
+      "bgColor": [
+        "#8B5CF6",
+        "#5B21B6"
+      ],
+      "items": [],
+      "wordItems": [
+        {
+          "id": "sahi",
+          "word": "صَحِ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "صَ",
+            "حِ"
+          ],
+          "distractorLetters": [
+            "سَ",
+            "خِ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "tafi",
+          "word": "طَفِ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "طَ",
+            "فِ"
+          ],
+          "distractorLetters": [
+            "تَ",
+            "قِ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "ghani",
+          "word": "غَنِ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "غَ",
+            "نِ"
+          ],
+          "distractorLetters": [
+            "عَ",
+            "لِ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "khashi",
+          "word": "خَشِ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "خَ",
+            "شِ"
+          ],
+          "distractorLetters": [
+            "حَ",
+            "سِ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "ali_short",
+          "word": "عَلِ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "عَ",
+            "لِ"
+          ],
+          "distractorLetters": [
+            "غَ",
+            "لَ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "jali",
+          "word": "جَلِ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "جَ",
+            "لِ"
+          ],
+          "distractorLetters": [
+            "حَ",
+            "رِ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "dhari",
+          "word": "ذَرِ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "ذَ",
+            "رِ"
+          ],
+          "distractorLetters": [
+            "دَ",
+            "زِ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "zami",
+          "word": "زَمِ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "زَ",
+            "مِ"
+          ],
+          "distractorLetters": [
+            "رَ",
+            "نِ"
+          ],
+          "emoji": "🔤"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "worldId": 4,
+      "title": "Séries OU + I & OU + A (Emphatiques & Pronoms)",
+      "titleAr": "ضَمَّة + كَسْرَة / فَتْحَة (صُرِ ، ضُرِ ، طُبِ ، ظُلِ)",
+      "description": "Attrape les bulles des combinaisons débutant par le son 'OU' !",
+      "gameType": "bubble",
+      "requiredStars": 0,
+      "bgColor": [
+        "#10B981",
+        "#047857"
+      ],
+      "items": [
+        {
+          "id": "suri_emph",
+          "grapheme": "صُرِ",
+          "audioText": "صُرِ",
+          "phonemeDesc": "",
+          "transliteration": "",
+          "distractors": [
+            "سُرِ",
+            "صَرِ",
+            "صُرُ"
+          ]
+        },
+        {
+          "id": "duri_emph",
+          "grapheme": "ضُرِ",
+          "audioText": "ضُرِ",
+          "phonemeDesc": "",
+          "transliteration": "",
+          "distractors": [
+            "دُرِ",
+            "ضَرِ",
+            "ضُرُ"
+          ]
+        },
+        {
+          "id": "tubi",
+          "grapheme": "طُبِ",
+          "audioText": "طُبِ",
+          "phonemeDesc": "",
+          "transliteration": "",
+          "distractors": [
+            "تُبِ",
+            "طَبِ",
+            "طُبُ"
+          ]
+        },
+        {
+          "id": "zhuli",
+          "grapheme": "ظُلِ",
+          "audioText": "ظُلِ",
+          "phonemeDesc": "",
+          "transliteration": "",
+          "distractors": [
+            "ذُلِ",
+            "ظَلِ",
+            "طُلِ"
+          ]
+        },
+        {
+          "id": "quri",
+          "grapheme": "قُرِ",
+          "audioText": "قُرِ",
+          "phonemeDesc": "",
+          "transliteration": "",
+          "distractors": [
+            "كُرِ",
+            "قَرِ",
+            "قُرُ"
+          ]
+        },
+        {
+          "id": "ghufi",
+          "grapheme": "غُفِ",
+          "audioText": "غُفِ",
+          "phonemeDesc": "",
+          "transliteration": "",
+          "distractors": [
+            "عُفِ",
+            "غَفِ",
+            "غُفُ"
+          ]
+        },
+        {
+          "id": "khuli",
+          "grapheme": "خُلِ",
+          "audioText": "خُلِ",
+          "phonemeDesc": "",
+          "transliteration": "",
+          "distractors": [
+            "حُلِ",
+            "خَلِ",
+            "جُلِ"
+          ]
+        },
+        {
+          "id": "humi",
+          "grapheme": "حُمِ",
+          "audioText": "حُمِ",
+          "phonemeDesc": "",
+          "transliteration": "",
+          "distractors": [
+            "خُمِ",
+            "حَمِ",
+            "عُمِ"
+          ]
+        },
+        {
+          "id": "thubi",
+          "grapheme": "ثُبِ",
+          "audioText": "ثُبِ",
+          "phonemeDesc": "",
+          "transliteration": "",
+          "distractors": [
+            "تُبِ",
+            "سُبِ",
+            "ثَبِ"
+          ]
+        },
+        {
+          "id": "huwa",
+          "grapheme": "هُوَ",
+          "audioText": "هُوَ",
+          "phonemeDesc": "Il",
+          "transliteration": "",
+          "distractors": [
+            "هِيَ",
+            "هَوَ",
+            "لَكَ"
+          ]
+        },
+        {
+          "id": "ruba",
+          "grapheme": "رُبَ",
+          "audioText": "رُبَ",
+          "phonemeDesc": "Peut-être",
+          "transliteration": "",
+          "distractors": [
+            "رَبَ",
+            "رُبُ",
+            "زُبَ"
+          ]
+        }
+      ],
+      "wordItems": []
+    },
+    {
+      "id": 31,
+      "worldId": 4,
+      "title": "Série I + A & Défi Discrimination Emphatique",
+      "titleAr": "كَسْرَة + فَتْحَة (طِبَ ، ظِمَ ، صِفَ ، ضِعَ ، قِفَ)",
+      "description": "Vise la bonne cible parmi les sons subtils et emphatiques !",
+      "gameType": "target",
+      "requiredStars": 0,
+      "bgColor": [
+        "#0284C7",
+        "#0369A1"
+      ],
+      "items": [
+        {
+          "id": "tiba",
+          "grapheme": "طِبَ",
+          "audioText": "طِبَ",
+          "phonemeDesc": "",
+          "transliteration": "",
+          "distractors": [
+            "تِبَ",
+            "طُبَ",
+            "طَبَ"
+          ]
+        },
+        {
+          "id": "zhima",
+          "grapheme": "ظِمَ",
+          "audioText": "ظِمَ",
+          "phonemeDesc": "",
+          "transliteration": "",
+          "distractors": [
+            "ذِمَ",
+            "ظُمَ",
+            "طِمَ"
+          ]
+        },
+        {
+          "id": "sifa",
+          "grapheme": "صِفَ",
+          "audioText": "صِفَ",
+          "phonemeDesc": "",
+          "transliteration": "",
+          "distractors": [
+            "سِفَ",
+            "صُفَ",
+            "صَفَ"
+          ]
+        },
+        {
+          "id": "dia",
+          "grapheme": "ضِعَ",
+          "audioText": "ضِعَ",
+          "phonemeDesc": "",
+          "transliteration": "",
+          "distractors": [
+            "دِعَ",
+            "ضُعَ",
+            "ضَعَ"
+          ]
+        },
+        {
+          "id": "qifa",
+          "grapheme": "قِفَ",
+          "audioText": "قِفَ",
+          "phonemeDesc": "",
+          "transliteration": "",
+          "distractors": [
+            "كِفَ",
+            "قُفَ",
+            "قَفَ"
+          ]
+        },
+        {
+          "id": "ghila",
+          "grapheme": "غِلَ",
+          "audioText": "غِلَ",
+          "phonemeDesc": "",
+          "transliteration": "",
+          "distractors": [
+            "عِلَ",
+            "غُلَ",
+            "غَلَ"
+          ]
+        },
+        {
+          "id": "khifa",
+          "grapheme": "خِفَ",
+          "audioText": "خِفَ",
+          "phonemeDesc": "",
+          "transliteration": "",
+          "distractors": [
+            "حِفَ",
+            "خُفَ",
+            "خَفَ"
+          ]
+        },
+        {
+          "id": "hiya",
+          "grapheme": "هِيَ",
+          "audioText": "هِيَ",
+          "phonemeDesc": "Elle",
+          "transliteration": "",
+          "distractors": [
+            "هُوَ",
+            "هَيَ",
+            "لِمَ"
+          ]
+        },
+        {
+          "id": "lima",
+          "grapheme": "لِمَ",
+          "audioText": "لِمَ",
+          "phonemeDesc": "Pourquoi",
+          "transliteration": "",
+          "distractors": [
+            "لَمَ",
+            "لُمَ",
+            "لَكَ"
+          ]
+        },
+        {
+          "id": "bika",
+          "grapheme": "بِكَ",
+          "audioText": "بِكَ",
+          "phonemeDesc": "Par toi",
+          "transliteration": "",
+          "distractors": [
+            "بَكَ",
+            "بُكَ",
+            "بِتَ"
+          ]
+        }
+      ],
+      "wordItems": []
+    },
+    {
+      "id": 32,
+      "worldId": 4,
+      "title": "Grand Atelier des 28 Lettres & Emphatiques",
+      "titleAr": "الوَرْشَةُ الكُبْرَى لِتَرْكِيبِ الحُرُوف الثَّمَانِيَة وَالعِشْرِين",
+      "description": "Construis les combinaisons de voyelles mélangées pour valider ton Monde 4 !",
+      "gameType": "wordBuilder",
+      "requiredStars": 0,
+      "bgColor": [
+        "#D97706",
+        "#92400E"
+      ],
+      "items": [],
+      "wordItems": [
+        {
+          "id": "sada",
+          "word": "صَدَ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "صَ",
+            "دَ"
+          ],
+          "distractorLetters": [
+            "سَ",
+            "ضَ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "daru_emph",
+          "word": "ضَرُ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "ضَ",
+            "رُ"
+          ],
+          "distractorLetters": [
+            "دَ",
+            "ظُ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "tafi",
+          "word": "طَفِ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "طَ",
+            "فِ"
+          ],
+          "distractorLetters": [
+            "تَ",
+            "قِ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "zhuli",
+          "word": "ظُلِ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "ظُ",
+            "لِ"
+          ],
+          "distractorLetters": [
+            "طُ",
+            "ذِ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "quri",
+          "word": "قُرِ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "قُ",
+            "رِ"
+          ],
+          "distractorLetters": [
+            "كُ",
+            "رَ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "ghani",
+          "word": "غَنِ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "غَ",
+            "نِ"
+          ],
+          "distractorLetters": [
+            "عَ",
+            "مِ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "khala",
+          "word": "خَلَ",
+          "meaning": "",
+          "translationFr": "",
+          "letters": [
+            "خَ",
+            "لَ"
+          ],
+          "distractorLetters": [
+            "حَ",
+            "جَ"
+          ],
+          "emoji": "🔤"
+        },
+        {
+          "id": "huwa",
+          "word": "هُوَ",
+          "meaning": "Il",
+          "translationFr": "Il",
+          "letters": [
+            "هُ",
+            "وَ"
+          ],
+          "distractorLetters": [
+            "هَ",
+            "وِ"
+          ],
+          "emoji": "👦"
+        },
+        {
+          "id": "hiya",
+          "word": "هِيَ",
+          "meaning": "Elle",
+          "translationFr": "Elle",
+          "letters": [
+            "هِ",
+            "يَ"
+          ],
+          "distractorLetters": [
+            "هُ",
+            "يُ"
+          ],
+          "emoji": "👧"
+        }
+      ]
+    }
+  ]
+}

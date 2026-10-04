@@ -3119,7 +3119,7 @@ export const WORLDS: World[] = [
         "id": 30,
         "worldId": 4,
         "title": "Séries OU + I & OU + A (Emphatiques & Pronoms)",
-        "titleAr": "ضَمَّة + كَسْرَة / فَتْحَة (صُرِ ، ضُرِ ، طُبِ ، ظُلِ)",
+        "titleAr": "ضَمَّة + كَسْرَة / فَتْحَة (صُبِ ، ضُبِ ، طُبِ ، ظُلِ)",
         "description": "Attrape les bulles des combinaisons débutant par le son 'OU' !",
         "gameType": "bubble",
         "requiredStars": 0,
@@ -3129,27 +3129,27 @@ export const WORLDS: World[] = [
         ],
         "items": [
           {
-            "id": "suri_emph",
-            "grapheme": "صُرِ",
-            "audioText": "صُرِ",
+            "id": "subi",
+            "grapheme": "صُبِ",
+            "audioText": "صُبِ",
             "phonemeDesc": "",
             "transliteration": "",
             "distractors": [
-              "سُرِ",
-              "صَرِ",
-              "صُرُ"
+              "سُبِ",
+              "صَبِ",
+              "صُبُ"
             ]
           },
           {
-            "id": "duri_emph",
-            "grapheme": "ضُرِ",
-            "audioText": "ضُرِ",
+            "id": "dubi",
+            "grapheme": "ضُبِ",
+            "audioText": "ضُبِ",
             "phonemeDesc": "",
             "transliteration": "",
             "distractors": [
-              "دُرِ",
-              "ضَرِ",
-              "ضُرُ"
+              "دُبِ",
+              "ضَبِ",
+              "ضُبُ"
             ]
           },
           {
@@ -3177,15 +3177,15 @@ export const WORLDS: World[] = [
             ]
           },
           {
-            "id": "quri",
-            "grapheme": "قُرِ",
-            "audioText": "قُرِ",
+            "id": "qubi",
+            "grapheme": "قُبِ",
+            "audioText": "قُبِ",
             "phonemeDesc": "",
             "transliteration": "",
             "distractors": [
-              "كُرِ",
-              "قَرِ",
-              "قُرُ"
+              "كُبِ",
+              "قَبِ",
+              "قُبُ"
             ]
           },
           {
@@ -3269,7 +3269,7 @@ export const WORLDS: World[] = [
         "id": 31,
         "worldId": 4,
         "title": "Série I + A & Défi Discrimination Emphatique",
-        "titleAr": "كَسْرَة + فَتْحَة (طِبَ ، ظِمَ ، صِفَ ، ضِعَ ، قِفَ)",
+        "titleAr": "كَسْرَة + فَتْحَة (طِبَ ، ظِمَ ، صِفَ ، ضِعَ ، قِبَ)",
         "description": "Vise la bonne cible parmi les sons subtils et emphatiques !",
         "gameType": "target",
         "requiredStars": 0,
@@ -3327,27 +3327,27 @@ export const WORLDS: World[] = [
             ]
           },
           {
-            "id": "qifa",
-            "grapheme": "قِفَ",
-            "audioText": "قِفَ",
+            "id": "qiba",
+            "grapheme": "قِبَ",
+            "audioText": "قِبَ",
             "phonemeDesc": "",
             "transliteration": "",
             "distractors": [
-              "كِفَ",
-              "قُفَ",
-              "قَفَ"
+              "كِبَ",
+              "قُبَ",
+              "قَبَ"
             ]
           },
           {
-            "id": "ghila",
-            "grapheme": "غِلَ",
-            "audioText": "غِلَ",
+            "id": "ghiba",
+            "grapheme": "غِبَ",
+            "audioText": "غِبَ",
             "phonemeDesc": "",
             "transliteration": "",
             "distractors": [
-              "عِلَ",
-              "غُلَ",
-              "غَلَ"
+              "عِبَ",
+              "غُبَ",
+              "غَبَ"
             ]
           },
           {
@@ -3450,17 +3450,17 @@ export const WORLDS: World[] = [
             "translationEn": ""
           },
           {
-            "id": "tafi",
-            "word": "طَفِ",
+            "id": "tabi",
+            "word": "طَبِ",
             "meaning": "",
             "translationFr": "",
             "letters": [
               "طَ",
-              "فِ"
+              "بِ"
             ],
             "distractorLetters": [
               "تَ",
-              "قِ"
+              "بَ"
             ],
             "emoji": "🔤",
             "translationEn": ""
@@ -3482,17 +3482,17 @@ export const WORLDS: World[] = [
             "translationEn": ""
           },
           {
-            "id": "quri",
-            "word": "قُرِ",
+            "id": "qubi",
+            "word": "قُبِ",
             "meaning": "",
             "translationFr": "",
             "letters": [
               "قُ",
-              "رِ"
+              "بِ"
             ],
             "distractorLetters": [
               "كُ",
-              "رَ"
+              "بَ"
             ],
             "emoji": "🔤",
             "translationEn": ""
