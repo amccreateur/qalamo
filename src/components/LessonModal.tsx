@@ -10,8 +10,9 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { WorldLesson, LessonSample } from '../data/lessons';
+import { WorldLesson, LessonSample, getWorldLessons } from '../data/lessons';
 import { soundService } from '../services/soundService';
+import { useLanguage } from '../i18n/LanguageContext';
 
 interface LessonModalProps {
   visible: boolean;
@@ -26,7 +27,13 @@ export const LessonModal: React.FC<LessonModalProps> = ({
   onClose,
   onStartExercises,
 }) => {
+  const { language, t } = useLanguage();
+
   if (!lesson) return null;
+
+  // Retrieve current language lesson
+  const localizedLessons = getWorldLessons(language);
+  const activeLesson = localizedLessons[lesson.worldId] || lesson;
 
   const handlePlaySample = (sample: LessonSample) => {
     soundService.triggerPop();
@@ -44,13 +51,13 @@ export const LessonModal: React.FC<LessonModalProps> = ({
         <View style={styles.modalContent}>
           {/* Header Gradient */}
           <LinearGradient
-            colors={[lesson.color, '#1E293B']}
+            colors={[activeLesson.color, '#1E293B']}
             style={styles.headerGradient}
           >
             <View style={styles.headerTop}>
               <View style={styles.badgePill}>
                 <Ionicons name="book" size={14} color="#FFFFFF" />
-                <Text style={styles.badgeText}>Fiche Pédagogique</Text>
+                <Text style={styles.badgeText}>{t.pedagogicalGuide}</Text>
               </View>
 
               <TouchableOpacity style={styles.closeBtn} onPress={onClose} activeOpacity={0.8}>
@@ -58,9 +65,9 @@ export const LessonModal: React.FC<LessonModalProps> = ({
               </TouchableOpacity>
             </View>
 
-            <Text style={styles.headerTitle}>{lesson.title}</Text>
-            <Text style={styles.headerTitleAr}>{lesson.titleAr}</Text>
-            <Text style={styles.headerSubtitle}>{lesson.subtitle}</Text>
+            <Text style={styles.headerTitle}>{activeLesson.title}</Text>
+            <Text style={styles.headerTitleAr}>{activeLesson.titleAr}</Text>
+            <Text style={styles.headerSubtitle}>{activeLesson.subtitle}</Text>
           </LinearGradient>
 
           {/* Scrollable Lesson Body */}
@@ -72,11 +79,11 @@ export const LessonModal: React.FC<LessonModalProps> = ({
             {/* World Summary Box */}
             <View style={styles.summaryCard}>
               <Ionicons name="bulb" size={22} color="#F59E0B" style={styles.summaryIcon} />
-              <Text style={styles.summaryText}>{lesson.summary}</Text>
+              <Text style={styles.summaryText}>{activeLesson.summary}</Text>
             </View>
 
             {/* Lesson Sections */}
-            {lesson.sections.map((section, sIdx) => (
+            {activeLesson.sections.map((section, sIdx) => (
               <View key={sIdx} style={styles.sectionCard}>
                 <View style={styles.sectionHeader}>
                   <Text style={styles.sectionTitle}>{section.title}</Text>
@@ -97,7 +104,7 @@ export const LessonModal: React.FC<LessonModalProps> = ({
                 {section.samples && section.samples.length > 0 && (
                   <View style={styles.samplesContainer}>
                     <Text style={styles.samplesInstruction}>
-                      👉 Touchez une carte pour écouter le son :
+                      {t.tapToListenInstruction}
                     </Text>
                     <View style={styles.samplesGrid}>
                       {section.samples.map((sample, idx) => {
@@ -153,7 +160,7 @@ export const LessonModal: React.FC<LessonModalProps> = ({
                 colors={['#10B981', '#059669']}
                 style={styles.primaryBtnGradient}
               >
-                <Text style={styles.primaryBtnText}>C'est compris, passer aux exercices !</Text>
+                <Text style={styles.primaryBtnText}>{t.startExercisesBtn}</Text>
                 <Ionicons name="arrow-forward" size={18} color="#FFFFFF" />
               </LinearGradient>
             </TouchableOpacity>

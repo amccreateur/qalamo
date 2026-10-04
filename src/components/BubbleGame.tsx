@@ -13,6 +13,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { PhonemeItem } from '../types/game';
 import { soundService } from '../services/soundService';
 import { COLORS } from '../theme/colors';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const { width } = Dimensions.get('window');
 
@@ -30,6 +31,7 @@ interface BubbleOption {
 }
 
 export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExit }) => {
+  const { language, t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [options, setOptions] = useState<BubbleOption[]>([]);
   const [score, setScore] = useState(0);
@@ -50,6 +52,17 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
     const baseLetters = opt.grapheme.replace(/[\u064B-\u065F\u0670]/g, '');
     return opt.grapheme.includes(' ') || baseLetters.length > 7;
   });
+
+  const getLocalizedPhonemeDesc = (desc?: string): string => {
+    if (!desc) return '';
+    if (language === 'fr') return desc;
+    const d = desc.toLowerCase();
+    if (d.includes('début')) return t.posInitial;
+    if (d.includes('milieu')) return t.posMedial;
+    if (d.includes('fin')) return t.posFinal;
+    if (d.includes('isol')) return t.posIsolated;
+    return desc;
+  };
 
   useEffect(() => {
     // Floating animation loop
@@ -193,8 +206,8 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
           {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
           currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
           currentItem.phonemeDesc?.toLowerCase().includes('fin')
-            ? `Trouve la forme : ${currentItem.phonemeDesc}`
-            : 'Écoute et trouve la bonne lettre :'}
+            ? `${t.bubbleInstructionShape} ${getLocalizedPhonemeDesc(currentItem.phonemeDesc)}`
+            : t.bubbleInstructionLetter}
         </Text>
         <Text style={styles.instructionAr}>
           {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
@@ -217,10 +230,10 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
         currentItem.phonemeDesc?.toLowerCase().includes('fin') ? (
           <View style={styles.hintPill}>
             <Ionicons name="locate" size={14} color="#1E40AF" />
-            <Text style={styles.hintPillText}>{currentItem.phonemeDesc}</Text>
+            <Text style={styles.hintPillText}>{getLocalizedPhonemeDesc(currentItem.phonemeDesc)}</Text>
           </View>
         ) : (
-          <Text style={styles.phonemeHint}>Touche le haut-parleur pour réécouter</Text>
+          <Text style={styles.phonemeHint}>{t.bubbleReplayHint}</Text>
         )}
       </View>
 

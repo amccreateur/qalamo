@@ -10,6 +10,7 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { soundService } from '../services/soundService';
+import { useLanguage } from '../i18n/LanguageContext';
 
 interface SoundExplorerProps {
   onBack: () => void;
@@ -49,6 +50,7 @@ const ARABIC_LETTERS = [
 type VowelMode = 'raw' | 'fatha' | 'damma' | 'kasra' | 'sukun';
 
 export const SoundExplorer: React.FC<SoundExplorerProps> = ({ onBack }) => {
+  const { t } = useLanguage();
   const [selectedVowel, setSelectedVowel] = useState<VowelMode>('raw');
   const [activeLetter, setActiveLetter] = useState<string | null>(null);
 
@@ -85,8 +87,8 @@ export const SoundExplorer: React.FC<SoundExplorerProps> = ({ onBack }) => {
           <Ionicons name="arrow-back" size={24} color="#0F172A" />
         </TouchableOpacity>
         <View style={styles.headerTitleContainer}>
-          <Text style={styles.headerTitle}>Explorateur Sonore</Text>
-          <Text style={styles.headerTitleAr}>مُسْتَكْشِفُ الأَصْوَات</Text>
+          <Text style={styles.headerTitle}>{t.soundExplorerTitle}</Text>
+          <Text style={styles.headerTitleAr}>{t.soundExplorerTitleAr}</Text>
         </View>
         <View style={{ width: 44 }} />
       </View>
@@ -99,7 +101,7 @@ export const SoundExplorer: React.FC<SoundExplorerProps> = ({ onBack }) => {
             onPress={() => setSelectedVowel('raw')}
           >
             <Text style={[styles.vowelTabText, selectedVowel === 'raw' && styles.vowelTabTextActive]}>
-              Alphabet de base
+              {t.tabRawLetters}
             </Text>
           </TouchableOpacity>
 
@@ -108,7 +110,7 @@ export const SoundExplorer: React.FC<SoundExplorerProps> = ({ onBack }) => {
             onPress={() => setSelectedVowel('fatha')}
           >
             <Text style={[styles.vowelTabText, selectedVowel === 'fatha' && styles.vowelTabTextActive]}>
-              Fatḥah ( ـَ / A)
+              {t.tabFatha}
             </Text>
           </TouchableOpacity>
 
@@ -117,7 +119,7 @@ export const SoundExplorer: React.FC<SoundExplorerProps> = ({ onBack }) => {
             onPress={() => setSelectedVowel('damma')}
           >
             <Text style={[styles.vowelTabText, selectedVowel === 'damma' && styles.vowelTabTextActive]}>
-              Ḍammah ( ـُ / OU)
+              {t.tabDamma}
             </Text>
           </TouchableOpacity>
 
@@ -126,7 +128,7 @@ export const SoundExplorer: React.FC<SoundExplorerProps> = ({ onBack }) => {
             onPress={() => setSelectedVowel('kasra')}
           >
             <Text style={[styles.vowelTabText, selectedVowel === 'kasra' && styles.vowelTabTextActive]}>
-              Kasrah ( ـِ / I)
+              {t.tabKasra}
             </Text>
           </TouchableOpacity>
 
@@ -135,7 +137,7 @@ export const SoundExplorer: React.FC<SoundExplorerProps> = ({ onBack }) => {
             onPress={() => setSelectedVowel('sukun')}
           >
             <Text style={[styles.vowelTabText, selectedVowel === 'sukun' && styles.vowelTabTextActive]}>
-              Sukūn ( ـْ )
+              {t.tabSukun}
             </Text>
           </TouchableOpacity>
         </ScrollView>

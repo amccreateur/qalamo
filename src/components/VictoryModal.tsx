@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Modal, TouchableOpacity, Animated, Platform } f
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../theme/colors';
 import { soundService } from '../services/soundService';
+import { useLanguage } from '../i18n/LanguageContext';
 
 interface VictoryModalProps {
   visible: boolean;
@@ -25,6 +26,7 @@ export const VictoryModal: React.FC<VictoryModalProps> = ({
   onNext,
   onHome,
 }) => {
+  const { language, t } = useLanguage();
   const scaleAnim = useRef(new Animated.Value(0.3)).current;
   const starScale1 = useRef(new Animated.Value(0)).current;
   const starScale2 = useRef(new Animated.Value(0)).current;
@@ -67,9 +69,9 @@ export const VictoryModal: React.FC<VictoryModalProps> = ({
   }, [visible, stars]);
 
   const getEncouragement = (s: number) => {
-    if (s === 3) return { ar: 'مُمْتَاز !', fr: 'Parfait ! Tu es un champion !' };
-    if (s === 2) return { ar: 'أَحْسَنْت !', fr: 'Très bien ! Continue ainsi !' };
-    return { ar: 'جَيِّد !', fr: 'Bien joué ! Entraîne-toi encore !' };
+    if (s === 3) return { ar: t.perfectEncouragementAr, text: t.perfectEncouragementText };
+    if (s === 2) return { ar: t.greatEncouragementAr, text: t.greatEncouragementText };
+    return { ar: t.goodEncouragementAr, text: t.goodEncouragementText };
   };
 
   const enc = getEncouragement(stars);
@@ -81,7 +83,7 @@ export const VictoryModal: React.FC<VictoryModalProps> = ({
           {/* Header Banner */}
           <View style={styles.banner}>
             <Text style={styles.bannerAr}>{enc.ar}</Text>
-            <Text style={styles.bannerFr}>{enc.fr}</Text>
+            <Text style={styles.bannerFr}>{enc.text}</Text>
           </View>
 
           {/* Stars Display */}
@@ -113,18 +115,18 @@ export const VictoryModal: React.FC<VictoryModalProps> = ({
           <View style={styles.buttonsContainer}>
             <TouchableOpacity style={styles.replayButton} onPress={onReplay} activeOpacity={0.8}>
               <Ionicons name="refresh" size={24} color="#475569" />
-              <Text style={styles.replayText}>Rejouer</Text>
+              <Text style={styles.replayText}>{t.replay}</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.nextButton} onPress={onNext} activeOpacity={0.8}>
-              <Text style={styles.nextText}>Niveau Suivant</Text>
+              <Text style={styles.nextText}>{t.nextLevel}</Text>
               <Ionicons name="arrow-forward" size={24} color="#FFFFFF" />
             </TouchableOpacity>
           </View>
 
           <TouchableOpacity style={styles.homeLink} onPress={onHome} activeOpacity={0.7}>
             <Ionicons name="map" size={18} color="#64748B" />
-            <Text style={styles.homeText}>Retour à la carte des mondes</Text>
+            <Text style={styles.homeText}>{language === 'en' ? 'Back to World Map' : 'Retour à la carte des mondes'}</Text>
           </TouchableOpacity>
         </Animated.View>
       </View>

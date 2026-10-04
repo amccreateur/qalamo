@@ -16,6 +16,7 @@ import { SoundExplorer } from './src/components/SoundExplorer';
 import { AvatarCustomizer } from './src/components/AvatarCustomizer';
 import { VictoryModal } from './src/components/VictoryModal';
 import { LessonModal } from './src/components/LessonModal';
+import { LanguageProvider } from './src/i18n/LanguageContext';
 
 type AppView = 'map' | 'playing' | 'explorer' | 'avatar';
 
@@ -144,67 +145,69 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={styles.safeArea}>
-        <ExpoStatusBar style="dark" />
-        <View style={styles.container}>
-          {/* Top Header Stats (shown when not playing full-screen game) */}
-          {view !== 'playing' && (
-            <HeaderStats
-              coins={progress.coins}
-              totalStars={calculateTotalStars()}
-              avatarBase={progress.avatar.base}
-              onAvatarPress={() => setView('avatar')}
-              onHomePress={handleReturnHome}
-              showHome={view !== 'map'}
+      <LanguageProvider>
+        <SafeAreaView style={styles.safeArea}>
+          <ExpoStatusBar style="dark" />
+          <View style={styles.container}>
+            {/* Top Header Stats (shown when not playing full-screen game) */}
+            {view !== 'playing' && (
+              <HeaderStats
+                coins={progress.coins}
+                totalStars={calculateTotalStars()}
+                avatarBase={progress.avatar.base}
+                onAvatarPress={() => setView('avatar')}
+                onHomePress={handleReturnHome}
+                showHome={view !== 'map'}
+              />
+            )}
+
+            {/* View Router */}
+            {view === 'map' && (
+              <LevelMap
+                progress={progress}
+                onSelectLevel={handleStartLevel}
+                onOpenExplorer={() => setView('explorer')}
+                onOpenAvatar={() => setView('avatar')}
+                onOpenLesson={(worldId) => setActiveLessonWorldId(worldId)}
+              />
+            )}
+
+            {view === 'playing' && renderCurrentGame()}
+
+            {view === 'explorer' && (
+              <SoundExplorer onBack={handleReturnHome} />
+            )}
+
+            {view === 'avatar' && (
+              <AvatarCustomizer
+                progress={progress}
+                onUpdate={setProgress}
+                onBack={handleReturnHome}
+              />
+            )}
+
+            {/* Victory Modal */}
+            <VictoryModal
+              visible={victoryVisible}
+              stars={earnedStars}
+              earnedCoins={earnedCoins}
+              score={gameScore}
+              totalQuestions={totalQuestions}
+              onReplay={handleReplayLevel}
+              onNext={handleNextLevel}
+              onHome={handleReturnHome}
             />
-          )}
 
-          {/* View Router */}
-          {view === 'map' && (
-            <LevelMap
-              progress={progress}
-              onSelectLevel={handleStartLevel}
-              onOpenExplorer={() => setView('explorer')}
-              onOpenAvatar={() => setView('avatar')}
-              onOpenLesson={(worldId) => setActiveLessonWorldId(worldId)}
+            {/* World Pedagogical Lesson Modal */}
+            <LessonModal
+              visible={activeLessonWorldId !== null}
+              lesson={activeLessonWorldId ? WORLD_LESSONS[activeLessonWorldId] : null}
+              onClose={() => setActiveLessonWorldId(null)}
+              onStartExercises={() => setActiveLessonWorldId(null)}
             />
-          )}
-
-          {view === 'playing' && renderCurrentGame()}
-
-          {view === 'explorer' && (
-            <SoundExplorer onBack={handleReturnHome} />
-          )}
-
-          {view === 'avatar' && (
-            <AvatarCustomizer
-              progress={progress}
-              onUpdate={setProgress}
-              onBack={handleReturnHome}
-            />
-          )}
-
-          {/* Victory Modal */}
-          <VictoryModal
-            visible={victoryVisible}
-            stars={earnedStars}
-            earnedCoins={earnedCoins}
-            score={gameScore}
-            totalQuestions={totalQuestions}
-            onReplay={handleReplayLevel}
-            onNext={handleNextLevel}
-            onHome={handleReturnHome}
-          />
-
-          {/* World Pedagogical Lesson Modal */}
-          <LessonModal
-            visible={activeLessonWorldId !== null}
-            lesson={activeLessonWorldId ? WORLD_LESSONS[activeLessonWorldId] : null}
-            onClose={() => setActiveLessonWorldId(null)}
-            onStartExercises={() => setActiveLessonWorldId(null)}
-          />
-        </View>
-      </SafeAreaView>
+          </View>
+        </SafeAreaView>
+      </LanguageProvider>
     </SafeAreaProvider>
   );
 }

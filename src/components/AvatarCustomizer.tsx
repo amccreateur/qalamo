@@ -11,6 +11,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { UserProgress } from '../types/game';
 import { storageService } from '../services/storageService';
 import { soundService } from '../services/soundService';
+import { useLanguage } from '../i18n/LanguageContext';
 
 interface AvatarCustomizerProps {
   progress: UserProgress;
@@ -18,25 +19,26 @@ interface AvatarCustomizerProps {
   onBack: () => void;
 }
 
-const AVATARS = [
-  { id: 'lion', name: 'Lionceau Courageux', emoji: '🦁' },
-  { id: 'falcon', name: 'Faucon Rapide', emoji: '🦅' },
-  { id: 'boy1', name: 'Petit Explorateur', emoji: '👦' },
-  { id: 'girl1', name: 'Petite Aventurière', emoji: '👧' },
-  { id: 'cat', name: 'Chat Curieux', emoji: '🐱' },
-];
-
-const ACCESSORIES = [
-  { id: 'cap', name: 'Casquette Cool', emoji: '🧢', price: 0 },
-  { id: 'crown', name: 'Couronne Royale', emoji: '👑', price: 30 },
-  { id: 'glasses', name: 'Lunettes Savantes', emoji: '👓', price: 20 },
-  { id: 'star_hat', name: 'Chapeau d\'Étoiles', emoji: '🎩', price: 40 },
-  { id: 'medal', name: 'Médaille d\'Or', emoji: '🏅', price: 50 },
-];
-
 export const AvatarCustomizer: React.FC<AvatarCustomizerProps> = ({ progress, onUpdate, onBack }) => {
+  const { language, t } = useLanguage();
   const [selectedBase, setSelectedBase] = useState(progress.avatar.base);
   const [selectedAcc, setSelectedAcc] = useState(progress.avatar.accessory);
+
+  const avatarsList = [
+    { id: 'lion', name: t.avatarLion, emoji: '🦁' },
+    { id: 'falcon', name: t.avatarFalcon, emoji: '🦅' },
+    { id: 'boy1', name: t.avatarBoy, emoji: '👦' },
+    { id: 'girl1', name: t.avatarGirl, emoji: '👧' },
+    { id: 'cat', name: t.avatarCat, emoji: '🐱' },
+  ];
+
+  const accessoriesList = [
+    { id: 'cap', name: t.accCap, emoji: '🧢', price: 0 },
+    { id: 'crown', name: t.accCrown, emoji: '👑', price: 30 },
+    { id: 'glasses', name: t.accGlasses, emoji: '👓', price: 20 },
+    { id: 'star_hat', name: t.accStarHat, emoji: '🎩', price: 40 },
+    { id: 'medal', name: t.accMedal, emoji: '🏅', price: 50 },
+  ];
 
   const handleSelectAvatar = async (baseId: string) => {
     soundService.triggerPop();
@@ -49,7 +51,7 @@ export const AvatarCustomizer: React.FC<AvatarCustomizerProps> = ({ progress, on
     onUpdate(updated);
   };
 
-  const handleSelectAccessory = async (acc: typeof ACCESSORIES[0]) => {
+  const handleSelectAccessory = async (acc: typeof accessoriesList[0]) => {
     const isOwned = progress.ownedAccessories.includes(acc.id) || acc.price === 0;
 
     if (isOwned) {
@@ -80,8 +82,8 @@ export const AvatarCustomizer: React.FC<AvatarCustomizerProps> = ({ progress, on
     }
   };
 
-  const currentAvatarEmoji = AVATARS.find((a) => a.id === selectedBase)?.emoji || '🦁';
-  const currentAccEmoji = ACCESSORIES.find((a) => a.id === selectedAcc)?.emoji || '';
+  const currentAvatarEmoji = avatarsList.find((a) => a.id === selectedBase)?.emoji || '🦁';
+  const currentAccEmoji = accessoriesList.find((a) => a.id === selectedAcc)?.emoji || '';
 
   return (
     <View style={styles.container}>
@@ -90,7 +92,7 @@ export const AvatarCustomizer: React.FC<AvatarCustomizerProps> = ({ progress, on
         <TouchableOpacity style={styles.backBtn} onPress={onBack} activeOpacity={0.8}>
           <Ionicons name="arrow-back" size={24} color="#0F172A" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Mon Avatar & Boutique</Text>
+        <Text style={styles.headerTitle}>{t.avatarShopTitle}</Text>
         <View style={styles.coinPill}>
           <Ionicons name="diamond" size={16} color="#06B6D4" />
           <Text style={styles.coinPillText}>{progress.coins}</Text>
@@ -104,13 +106,13 @@ export const AvatarCustomizer: React.FC<AvatarCustomizerProps> = ({ progress, on
             <Text style={styles.largeEmoji}>{currentAvatarEmoji}</Text>
             {currentAccEmoji ? <Text style={styles.accessoryEmoji}>{currentAccEmoji}</Text> : null}
           </View>
-          <Text style={styles.avatarTitle}>Personnage de lecture</Text>
+          <Text style={styles.avatarTitle}>{language === 'en' ? 'Reading Character' : 'Personnage de lecture'}</Text>
         </View>
 
         {/* Section 1: Choose Base Character */}
-        <Text style={styles.sectionTitle}>1. Choisis ton personnage :</Text>
+        <Text style={styles.sectionTitle}>{language === 'en' ? '1. Choose your character:' : '1. Choisis ton personnage :'}</Text>
         <View style={styles.grid}>
-          {AVATARS.map((av) => {
+          {avatarsList.map((av) => {
             const isSelected = selectedBase === av.id;
             return (
               <TouchableOpacity
@@ -127,9 +129,9 @@ export const AvatarCustomizer: React.FC<AvatarCustomizerProps> = ({ progress, on
         </View>
 
         {/* Section 2: Choose Accessories */}
-        <Text style={[styles.sectionTitle, { marginTop: 24 }]}>2. Accessoires & Trophées :</Text>
+        <Text style={[styles.sectionTitle, { marginTop: 24 }]}>{language === 'en' ? '2. Accessories & Trophies:' : '2. Accessoires & Trophées :'}</Text>
         <View style={styles.grid}>
-          {ACCESSORIES.map((acc) => {
+          {accessoriesList.map((acc) => {
             const isOwned = progress.ownedAccessories.includes(acc.id) || acc.price === 0;
             const isSelected = selectedAcc === acc.id;
 
@@ -145,7 +147,7 @@ export const AvatarCustomizer: React.FC<AvatarCustomizerProps> = ({ progress, on
 
                 {isOwned ? (
                   <View style={styles.ownedBadge}>
-                    <Text style={styles.ownedText}>{isSelected ? 'Équipé' : 'Possédé'}</Text>
+                    <Text style={styles.ownedText}>{isSelected ? t.equippedBadge : (language === 'en' ? 'Owned' : 'Possédé')}</Text>
                   </View>
                 ) : (
                   <View style={styles.priceBadge}>

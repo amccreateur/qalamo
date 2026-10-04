@@ -1,0 +1,285 @@
+export type Language = 'fr' | 'en';
+
+export interface Translations {
+  // Navigation & Common
+  appTitle: string;
+  home: string;
+  back: string;
+  close: string;
+  replay: string;
+  nextLevel: string;
+  loading: string;
+  
+  // HeaderStats
+  stars: string;
+  coins: string;
+  mute: string;
+  unmute: string;
+  langSwitch: string;
+
+  // LevelMap
+  quickExplorerTitle: string;
+  quickExplorerSubtitle: string;
+  quickAvatarTitle: string;
+  quickAvatarSubtitle: string;
+  discoverLessonBtn: string;
+  bubbleGameLabel: string;
+  targetGameLabel: string;
+  wordBuilderGameLabel: string;
+  miniGameLabel: string;
+  levelPrefix: string;
+
+  // LessonModal
+  pedagogicalGuide: string;
+  lessonSummary: string;
+  tapToListenInstruction: string;
+  startExercisesBtn: string;
+  tipPrefix: string;
+
+  // BubbleGame
+  bubbleInstructionLetter: string;
+  bubbleInstructionShape: string;
+  bubbleReplayHint: string;
+  bubbleShapePrefix: string;
+
+  // TargetGame
+  targetStageTitleSound: string;
+  targetStageTitlePosition: string;
+  targetStageSubtitleSound: string;
+  targetStageSubtitlePosition: string;
+  targetReplay: string;
+
+  // WordBuilderGame
+  listenWordBtn: string;
+  orderLettersInstruction: string;
+  clearBtn: string;
+
+  // VictoryModal
+  perfectEncouragementAr: string;
+  perfectEncouragementText: string;
+  greatEncouragementAr: string;
+  greatEncouragementText: string;
+  goodEncouragementAr: string;
+  goodEncouragementText: string;
+  scoreAccuracy: string;
+  coinsWon: string;
+
+  // AvatarCustomizer
+  avatarShopTitle: string;
+  chooseAvatarSection: string;
+  accessoriesSection: string;
+  equippedBadge: string;
+  equipBtn: string;
+  buyBtn: string;
+  priceCoins: string;
+
+  // Avatars & Accessories names
+  avatarLion: string;
+  avatarFalcon: string;
+  avatarBoy: string;
+  avatarGirl: string;
+  avatarCat: string;
+  accCap: string;
+  accCrown: string;
+  accGlasses: string;
+  accStarHat: string;
+  accMedal: string;
+
+  // SoundExplorer
+  soundExplorerTitle: string;
+  soundExplorerTitleAr: string;
+  tabRawLetters: string;
+  tabFatha: string;
+  tabDamma: string;
+  tabKasra: string;
+  tabSukun: string;
+  explorerHint: string;
+
+  // Letter Positions
+  posInitial: string;
+  posMedial: string;
+  posFinal: string;
+  posIsolated: string;
+}
+
+export const TRANSLATIONS: Record<Language, Translations> = {
+  fr: {
+    appTitle: 'Qalamo — Apprendre à lire l\'arabe',
+    home: 'Accueil',
+    back: 'Retour',
+    close: 'Fermer',
+    replay: 'Rejouer',
+    nextLevel: 'Niveau Suivant',
+    loading: 'Chargement...',
+
+    stars: 'Étoiles',
+    coins: 'Pièces',
+    mute: 'Couper le son',
+    unmute: 'Activer le son',
+    langSwitch: 'FR',
+
+    quickExplorerTitle: 'Explorateur',
+    quickExplorerSubtitle: 'Écouter l\'alphabet',
+    quickAvatarTitle: 'Mon Avatar',
+    quickAvatarSubtitle: 'Boutique & Styles',
+    discoverLessonBtn: '📖 Découvrir la Leçon & Règles',
+    bubbleGameLabel: 'Jeu de Bulles',
+    targetGameLabel: 'Tir Sonore',
+    wordBuilderGameLabel: 'Mots & Syllabes',
+    miniGameLabel: 'Mini-jeu',
+    levelPrefix: 'Niveau',
+
+    pedagogicalGuide: 'Fiche Pédagogique',
+    lessonSummary: 'Résumé de la Leçon',
+    tapToListenInstruction: '👉 Touchez une carte pour écouter le son :',
+    startExercisesBtn: 'C\'est compris, passer aux exercices !',
+    tipPrefix: '💡 Conseil :',
+
+    bubbleInstructionLetter: 'Écoute et trouve la bonne lettre :',
+    bubbleInstructionShape: 'Trouve la forme :',
+    bubbleReplayHint: 'Touche le haut-parleur pour réécouter',
+    bubbleShapePrefix: 'Position :',
+
+    targetStageTitleSound: 'Tir Sonore / تَطَابُقُ الأَصْوَات',
+    targetStageTitlePosition: 'Position de la Lettre / مَوْقِعُ الحَرْف',
+    targetStageSubtitleSound: 'Quel signe correspond à ce son ?',
+    targetStageSubtitlePosition: 'Trouve la forme :',
+    targetReplay: 'Réécouter',
+
+    listenWordBtn: 'Écouter le mot',
+    orderLettersInstruction: 'Touche les lettres dans le bon ordre :',
+    clearBtn: 'Effacer',
+
+    perfectEncouragementAr: 'مُمْتَاز !',
+    perfectEncouragementText: 'Parfait ! Tu es un champion !',
+    greatEncouragementAr: 'أَحْسَنْت !',
+    greatEncouragementText: 'Très bien ! Continue ainsi !',
+    goodEncouragementAr: 'جَيِّد !',
+    goodEncouragementText: 'Bien joué ! Entraîne-toi encore !',
+    scoreAccuracy: 'Précision',
+    coinsWon: 'Pièces gagnées',
+
+    avatarShopTitle: 'Mon Avatar & Boutique',
+    chooseAvatarSection: 'Choisis ton Avatar',
+    accessoriesSection: 'Accessoires & Chapeaux',
+    equippedBadge: 'Équipé',
+    equipBtn: 'Équiper',
+    buyBtn: 'Acheter',
+    priceCoins: 'pièces',
+
+    avatarLion: 'Lionceau Courageux',
+    avatarFalcon: 'Faucon Rapide',
+    avatarBoy: 'Petit Explorateur',
+    avatarGirl: 'Petite Aventurière',
+    avatarCat: 'Chat Curieux',
+    accCap: 'Casquette Cool',
+    accCrown: 'Couronne Royale',
+    accGlasses: 'Lunettes Savantes',
+    accStarHat: 'Chapeau d\'Étoiles',
+    accMedal: 'Médaille d\'Or',
+
+    soundExplorerTitle: 'Explorateur Sonore',
+    soundExplorerTitleAr: 'مُسْتَكْشِفُ الأَصْوَات',
+    tabRawLetters: 'Lettres brutes',
+    tabFatha: 'Avec Fatḥah ( ـَ )',
+    tabDamma: 'Avec Ḍammah ( ـُ )',
+    tabKasra: 'Avec Kasrah ( ـِ )',
+    tabSukun: 'Avec Sukūn ( ـْ )',
+    explorerHint: 'Touchez n\'importe quelle lettre pour entendre sa vocalisation studio',
+
+    posInitial: 'Début de mot',
+    posMedial: 'Milieu de mot',
+    posFinal: 'Fin de mot',
+    posIsolated: 'Forme isolée',
+  },
+
+  en: {
+    appTitle: 'Qalamo — Learn to Read Arabic',
+    home: 'Home',
+    back: 'Back',
+    close: 'Close',
+    replay: 'Replay',
+    nextLevel: 'Next Level',
+    loading: 'Loading...',
+
+    stars: 'Stars',
+    coins: 'Coins',
+    mute: 'Mute audio',
+    unmute: 'Unmute audio',
+    langSwitch: 'EN',
+
+    quickExplorerTitle: 'Explorer',
+    quickExplorerSubtitle: 'Listen to the alphabet',
+    quickAvatarTitle: 'My Avatar',
+    quickAvatarSubtitle: 'Shop & Styles',
+    discoverLessonBtn: '📖 Discover Lesson & Rules',
+    bubbleGameLabel: 'Bubble Game',
+    targetGameLabel: 'Sound Target',
+    wordBuilderGameLabel: 'Words & Syllables',
+    miniGameLabel: 'Mini-game',
+    levelPrefix: 'Level',
+
+    pedagogicalGuide: 'Pedagogical Guide',
+    lessonSummary: 'Lesson Summary',
+    tapToListenInstruction: '👉 Tap a card to listen to the sound:',
+    startExercisesBtn: 'Got it, start the exercises!',
+    tipPrefix: '💡 Tip:',
+
+    bubbleInstructionLetter: 'Listen and find the right letter:',
+    bubbleInstructionShape: 'Find the shape:',
+    bubbleReplayHint: 'Tap the speaker to replay',
+    bubbleShapePrefix: 'Position:',
+
+    targetStageTitleSound: 'Sound Target / تَطَابُقُ الأَصْوَات',
+    targetStageTitlePosition: 'Letter Position / مَوْقِعُ الحَرْف',
+    targetStageSubtitleSound: 'Which sign corresponds to this sound?',
+    targetStageSubtitlePosition: 'Find the shape:',
+    targetReplay: 'Replay',
+
+    listenWordBtn: 'Listen to the word',
+    orderLettersInstruction: 'Tap the letters in the correct order:',
+    clearBtn: 'Clear',
+
+    perfectEncouragementAr: 'مُمْتَاز !',
+    perfectEncouragementText: 'Perfect! You are a champion!',
+    greatEncouragementAr: 'أَحْسَنْت !',
+    greatEncouragementText: 'Great job! Keep it up!',
+    goodEncouragementAr: 'جَيِّد !',
+    goodEncouragementText: 'Well done! Keep practicing!',
+    scoreAccuracy: 'Accuracy',
+    coinsWon: 'Coins earned',
+
+    avatarShopTitle: 'My Avatar & Shop',
+    chooseAvatarSection: 'Choose your Avatar',
+    accessoriesSection: 'Accessories & Hats',
+    equippedBadge: 'Equipped',
+    equipBtn: 'Equip',
+    buyBtn: 'Buy',
+    priceCoins: 'coins',
+
+    avatarLion: 'Brave Lion Cub',
+    avatarFalcon: 'Swift Falcon',
+    avatarBoy: 'Little Explorer',
+    avatarGirl: 'Little Adventurer',
+    avatarCat: 'Curious Cat',
+    accCap: 'Cool Cap',
+    accCrown: 'Royal Crown',
+    accGlasses: 'Scholar Glasses',
+    accStarHat: 'Star Top Hat',
+    accMedal: 'Gold Medal',
+
+    soundExplorerTitle: 'Sound Explorer',
+    soundExplorerTitleAr: 'مُسْتَكْشِفُ الأَصْوَات',
+    tabRawLetters: 'Raw letters',
+    tabFatha: 'With Fatḥah ( ـَ )',
+    tabDamma: 'With Ḍammah ( ـُ )',
+    tabKasra: 'With Kasrah ( ـِ )',
+    tabSukun: 'With Sukūn ( ـْ )',
+    explorerHint: 'Tap any letter to hear its clear studio pronunciation',
+
+    posInitial: 'Beginning of word',
+    posMedial: 'Middle of word',
+    posFinal: 'End of word',
+    posIsolated: 'Isolated form',
+  },
+};

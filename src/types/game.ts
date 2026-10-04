@@ -5,6 +5,7 @@ export interface PhonemeItem {
   grapheme: string; // ex: 'بَ' ou 'ب'
   audioText: string; // texte prononcé par TTS ou audio
   phonemeDesc: string; // ex: 'Ba avec Fatha'
+  phonemeDescEn?: string; // ex: 'Ba with Fatha'
   transliteration: string; // ex: 'ba'
   distractors: string[]; // ex: ['تَ', 'دَ', 'نَ']
   forms?: {
@@ -20,6 +21,7 @@ export interface WordItem {
   word: string; // ex: 'كَتَبَ'
   meaning: string; // ex: 'Il a écrit'
   translationFr: string;
+  translationEn?: string;
   letters: string[]; // ['كَ', 'تَ', 'بَ']
   distractorLetters: string[]; // ['سَ', 'رَ']
   emoji?: string; // ex: '✍️'
@@ -29,8 +31,10 @@ export interface Level {
   id: number;
   worldId: number;
   title: string;
+  titleEn?: string;
   titleAr: string;
   description: string;
+  descriptionEn?: string;
   gameType: GameMode;
   items: PhonemeItem[];
   wordItems?: WordItem[];
@@ -41,8 +45,10 @@ export interface Level {
 export interface World {
   id: number;
   name: string;
+  nameEn?: string;
   nameAr: string;
   description: string;
+  descriptionEn?: string;
   icon: string;
   color: string;
   levels: Level[];

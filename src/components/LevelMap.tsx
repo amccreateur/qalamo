@@ -12,6 +12,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { World, Level, UserProgress } from '../types/game';
 import { WORLDS } from '../data/curriculum';
 import { soundService } from '../services/soundService';
+import { useLanguage } from '../i18n/LanguageContext';
 
 interface LevelMapProps {
   progress: UserProgress;
@@ -28,6 +29,8 @@ export const LevelMap: React.FC<LevelMapProps> = ({
   onOpenAvatar,
   onOpenLesson,
 }) => {
+  const { language, t } = useLanguage();
+
   const getGameIcon = (type: Level['gameType']) => {
     switch (type) {
       case 'bubble': return 'radio-button-on';
@@ -39,10 +42,10 @@ export const LevelMap: React.FC<LevelMapProps> = ({
 
   const getGameLabel = (type: Level['gameType']) => {
     switch (type) {
-      case 'bubble': return 'Jeu de Bulles';
-      case 'target': return 'Tir Sonore';
-      case 'wordBuilder': return 'Mots & Syllabes';
-      default: return 'Mini-jeu';
+      case 'bubble': return t.bubbleGameLabel;
+      case 'target': return t.targetGameLabel;
+      case 'wordBuilder': return t.wordBuilderGameLabel;
+      default: return t.miniGameLabel;
     }
   };
 
@@ -54,8 +57,8 @@ export const LevelMap: React.FC<LevelMapProps> = ({
           <LinearGradient colors={['#3B82F6', '#1D4ED8']} style={styles.quickGradient}>
             <Ionicons name="mic" size={24} color="#FFFFFF" />
             <View>
-              <Text style={styles.quickTitle}>Explorateur</Text>
-              <Text style={styles.quickSubtitle}>Écouter l'alphabet</Text>
+              <Text style={styles.quickTitle}>{t.quickExplorerTitle}</Text>
+              <Text style={styles.quickSubtitle}>{t.quickExplorerSubtitle}</Text>
             </View>
           </LinearGradient>
         </TouchableOpacity>
@@ -64,8 +67,8 @@ export const LevelMap: React.FC<LevelMapProps> = ({
           <LinearGradient colors={['#F59E0B', '#D97706']} style={styles.quickGradient}>
             <Ionicons name="shirt" size={24} color="#FFFFFF" />
             <View>
-              <Text style={styles.quickTitle}>Mon Avatar</Text>
-              <Text style={styles.quickSubtitle}>Boutique & Styles</Text>
+              <Text style={styles.quickTitle}>{t.quickAvatarTitle}</Text>
+              <Text style={styles.quickSubtitle}>{t.quickAvatarSubtitle}</Text>
             </View>
           </LinearGradient>
         </TouchableOpacity>
@@ -73,6 +76,9 @@ export const LevelMap: React.FC<LevelMapProps> = ({
 
       {/* Worlds and Levels List */}
       {WORLDS.map((world: World, wIdx: number) => {
+        const worldName = language === 'en' ? (world.nameEn || world.name) : world.name;
+        const worldDesc = language === 'en' ? (world.descriptionEn || world.description) : world.description;
+
         return (
           <View key={world.id} style={styles.worldContainer}>
             {/* World Header Card */}
@@ -81,9 +87,9 @@ export const LevelMap: React.FC<LevelMapProps> = ({
                 <Ionicons name="planet" size={24} color="#FFFFFF" />
               </View>
               <View style={styles.worldTitleBox}>
-                <Text style={styles.worldName}>{world.name}</Text>
+                <Text style={styles.worldName}>{worldName}</Text>
                 <Text style={styles.worldNameAr}>{world.nameAr}</Text>
-                <Text style={styles.worldDesc}>{world.description}</Text>
+                <Text style={styles.worldDesc}>{worldDesc}</Text>
 
                 {/* Lesson button for the world */}
                 <TouchableOpacity
@@ -93,7 +99,7 @@ export const LevelMap: React.FC<LevelMapProps> = ({
                 >
                   <Ionicons name="book" size={14} color={world.color} />
                   <Text style={[styles.lessonPillText, { color: world.color }]}>
-                    📖 Découvrir la Leçon & Règles
+                    {t.discoverLessonBtn}
                   </Text>
                   <Ionicons name="chevron-forward" size={12} color={world.color} />
                 </TouchableOpacity>
@@ -105,6 +111,7 @@ export const LevelMap: React.FC<LevelMapProps> = ({
               {world.levels.map((level: Level, lIdx: number) => {
                 const isUnlocked = true; // Débloqué pour tests
                 const earnedStars = progress.starsByLevel[level.id] || 0;
+                const levelTitle = language === 'en' ? (level.titleEn || level.title) : level.title;
 
                 return (
                   <TouchableOpacity
@@ -154,7 +161,7 @@ export const LevelMap: React.FC<LevelMapProps> = ({
                           </Text>
                         </View>
                         <Text style={[styles.levelTitle, { color: isUnlocked ? '#FFFFFF' : '#475569' }]}>
-                          {level.title}
+                          {levelTitle}
                         </Text>
                         <Text style={[styles.levelTitleAr, { color: isUnlocked ? '#FEF08A' : '#94A3B8' }]}>
                           {level.titleAr}
@@ -175,7 +182,7 @@ export const LevelMap: React.FC<LevelMapProps> = ({
                         </View>
                         {isUnlocked && (
                           <View style={styles.playButtonPill}>
-                            <Text style={styles.playButtonText}>Jouer</Text>
+                            <Text style={styles.playButtonText}>{language === 'en' ? 'Play' : 'Jouer'}</Text>
                             <Ionicons name="chevron-forward" size={14} color="#1E293B" />
                           </View>
                         )}

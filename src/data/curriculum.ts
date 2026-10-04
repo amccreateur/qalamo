@@ -95,7 +95,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Group 1 : أ, ب, ت, ث",
+        "descriptionEn": "Listen to the sound and catch the correct letter."
       },
       {
         "id": 2,
@@ -183,7 +185,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Group 2 : ج, ح, خ, د",
+        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
       },
       {
         "id": 3,
@@ -271,7 +275,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Group 3 : ذ, ر, ز, س",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 4,
@@ -359,7 +365,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Group 4 : ش, ص, ض, ط",
+        "descriptionEn": "Recognize the correct Arabic phrase and meaning."
       },
       {
         "id": 5,
@@ -447,7 +455,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Group 5 : ظ, ع, غ, ف",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 6,
@@ -535,7 +545,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Group 6 : ق, ك, ل, م",
+        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
       },
       {
         "id": 7,
@@ -623,7 +635,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Group 7 : ن, هـ, و, ي",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 8,
@@ -723,7 +737,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Duel des Points : ب, ت, ث, ن, ي",
+        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
       },
       {
         "id": 9,
@@ -823,7 +839,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Duel Emphatiques & Gutturales",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 10,
@@ -935,9 +953,13 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Grand Challenge de l'Alphabet",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       }
-    ]
+    ],
+    "nameEn": "World 1: The Alphabet & 28 Sounds",
+    "descriptionEn": "Discover the clear studio sound of each fundamental Arabic letter."
   },
   {
     "id": 2,
@@ -1033,7 +1055,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Début (ـ...) : Famille Bateau & Boucles",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 12,
@@ -1145,7 +1169,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Début (ـ...) : Sifflantes, Emphatiques & Autres",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 13,
@@ -1233,7 +1259,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Milieu (ـ...ـ) : Famille Bateau & Boucles",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 14,
@@ -1345,7 +1373,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Milieu (ـ...ـ) : Sifflantes, Emphatiques & Autres",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 15,
@@ -1433,7 +1463,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Fin (...ـ) : Famille Bateau & Boucles",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 16,
@@ -1533,7 +1565,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Fin (...ـ) : Fermetures et Queues",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 17,
@@ -1621,7 +1655,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Les 6 Lettres Non-Attachantes (أ د ذ ر ز و)",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 18,
@@ -1733,9 +1769,13 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Grand Challenge des Positions (Début, Milieu, Fin)",
+        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
       }
-    ]
+    ],
+    "nameEn": "World 2: The 4 Letter Shapes",
+    "descriptionEn": "Learn the 4 positions of letters: Isolated, Initial, Medial, and Final."
   },
   {
     "id": 3,
@@ -1855,7 +1895,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "The Fatḥah (ـَ) : Short 'A' sound",
+        "descriptionEn": "Listen to the sound and catch the correct letter."
       },
       {
         "id": 20,
@@ -1967,7 +2009,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "The Fatḥah (ـَ) : Short 'A' sound",
+        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
       },
       {
         "id": 21,
@@ -2079,7 +2123,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "The Ḍammah (ـُ) : Short 'U' sound",
+        "descriptionEn": "Listen to the sound and catch the correct letter."
       },
       {
         "id": 22,
@@ -2191,7 +2237,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "The Ḍammah (ـُ) : Short 'U' sound",
+        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
       },
       {
         "id": 23,
@@ -2303,7 +2351,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "The Kasrah (ـِ) : Short 'I' sound",
+        "descriptionEn": "Listen to the sound and catch the correct letter."
       },
       {
         "id": 24,
@@ -2415,7 +2465,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "The Kasrah (ـِ) : Short 'I' sound",
+        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
       },
       {
         "id": 25,
@@ -2527,7 +2579,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Duel des 3 Voyelles : A vs OU vs I",
+        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
       },
       {
         "id": 26,
@@ -2639,9 +2693,13 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Grand Challenge des 3 Harakāt",
+        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
       }
-    ]
+    ],
+    "nameEn": "World 3: Short Vowels (Harakāt)",
+    "descriptionEn": "Master the 3 short vowel signs: Fatḥah (A), Ḍammah (U), and Kasrah (I)."
   },
   {
     "id": 4,
@@ -2678,7 +2736,8 @@ export const WORLDS: World[] = [
               "سَ",
               "ذَ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "tala",
@@ -2693,7 +2752,8 @@ export const WORLDS: World[] = [
               "تَ",
               "كَ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "ghafa",
@@ -2708,7 +2768,8 @@ export const WORLDS: World[] = [
               "عَ",
               "قَ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "khala",
@@ -2723,7 +2784,8 @@ export const WORLDS: World[] = [
               "حَ",
               "جَ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "bata",
@@ -2738,7 +2800,8 @@ export const WORLDS: World[] = [
               "نَ",
               "دَ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "maa_particle",
@@ -2753,7 +2816,8 @@ export const WORLDS: World[] = [
               "غَ",
               "لَ"
             ],
-            "emoji": "🤝"
+            "emoji": "🤝",
+            "translationEn": "With"
           },
           {
             "id": "laka",
@@ -2768,9 +2832,12 @@ export const WORLDS: World[] = [
               "بَ",
               "كُ"
             ],
-            "emoji": "🎁"
+            "emoji": "🎁",
+            "translationEn": "For you"
           }
-        ]
+        ],
+        "titleEn": "Series A + A (Emphatic & Simple)",
+        "descriptionEn": "Listen and read the complete sentence with accuracy."
       },
       {
         "id": 28,
@@ -2799,7 +2866,8 @@ export const WORLDS: World[] = [
               "دَ",
               "زُ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "zhafu",
@@ -2814,7 +2882,8 @@ export const WORLDS: World[] = [
               "طَ",
               "قُ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "qatu",
@@ -2829,7 +2898,8 @@ export const WORLDS: World[] = [
               "كَ",
               "تَ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "hasu",
@@ -2844,7 +2914,8 @@ export const WORLDS: World[] = [
               "خَ",
               "صُ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "babu",
@@ -2859,7 +2930,8 @@ export const WORLDS: World[] = [
               "تُ",
               "بِ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "nabu",
@@ -2874,7 +2946,8 @@ export const WORLDS: World[] = [
               "بَ",
               "نُ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "tadu",
@@ -2889,9 +2962,12 @@ export const WORLDS: World[] = [
               "ثَ",
               "دَ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           }
-        ]
+        ],
+        "titleEn": "Series A + U (Emphatic & Simple)",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 29,
@@ -2920,7 +2996,8 @@ export const WORLDS: World[] = [
               "سَ",
               "خِ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "tafi",
@@ -2935,7 +3012,8 @@ export const WORLDS: World[] = [
               "تَ",
               "قِ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "ghani",
@@ -2950,7 +3028,8 @@ export const WORLDS: World[] = [
               "عَ",
               "لِ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "khashi",
@@ -2965,7 +3044,8 @@ export const WORLDS: World[] = [
               "حَ",
               "سِ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "ali_short",
@@ -2980,7 +3060,8 @@ export const WORLDS: World[] = [
               "غَ",
               "لَ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "jali",
@@ -2995,7 +3076,8 @@ export const WORLDS: World[] = [
               "حَ",
               "رِ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "dhari",
@@ -3010,7 +3092,8 @@ export const WORLDS: World[] = [
               "دَ",
               "زِ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "zami",
@@ -3025,9 +3108,12 @@ export const WORLDS: World[] = [
               "رَ",
               "نِ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           }
-        ]
+        ],
+        "titleEn": "Series A + I (Throat & Emphatics)",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 30,
@@ -3175,7 +3261,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Series U + I & U + A (Emphatics & Pronouns)",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 31,
@@ -3311,7 +3399,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Series I + A & Discrimination Challenge",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 32,
@@ -3340,7 +3430,8 @@ export const WORLDS: World[] = [
               "سَ",
               "ضَ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "daru_emph",
@@ -3355,7 +3446,8 @@ export const WORLDS: World[] = [
               "دَ",
               "ظُ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "tafi",
@@ -3370,7 +3462,8 @@ export const WORLDS: World[] = [
               "تَ",
               "قِ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "zhuli",
@@ -3385,7 +3478,8 @@ export const WORLDS: World[] = [
               "طُ",
               "ذِ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "quri",
@@ -3400,7 +3494,8 @@ export const WORLDS: World[] = [
               "كُ",
               "رَ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "ghani",
@@ -3415,7 +3510,8 @@ export const WORLDS: World[] = [
               "عَ",
               "مِ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "khala",
@@ -3430,7 +3526,8 @@ export const WORLDS: World[] = [
               "حَ",
               "جَ"
             ],
-            "emoji": "🔤"
+            "emoji": "🔤",
+            "translationEn": ""
           },
           {
             "id": "huwa",
@@ -3445,7 +3542,8 @@ export const WORLDS: World[] = [
               "هَ",
               "وِ"
             ],
-            "emoji": "👦"
+            "emoji": "👦",
+            "translationEn": "He"
           },
           {
             "id": "hiya",
@@ -3460,11 +3558,16 @@ export const WORLDS: World[] = [
               "هُ",
               "يُ"
             ],
-            "emoji": "👧"
+            "emoji": "👧",
+            "translationEn": "She"
           }
-        ]
+        ],
+        "titleEn": "Grand Workshop: All 28 Letters",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       }
-    ]
+    ],
+    "nameEn": "World 4: 2-Vowel Combinations",
+    "descriptionEn": "Chain two consecutive short vowels smoothly across all 28 letters and emphatic sounds."
   },
   {
     "id": 5,
@@ -3560,7 +3663,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "The Sukūn (ـْ) : The Consonant Stop",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 34,
@@ -3672,7 +3777,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "The Sukūn (ـْ) : The Consonant Stop",
+        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
       },
       {
         "id": 35,
@@ -3760,7 +3867,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Madd Alif (ـَا) : 2-Beat Long 'AA'",
+        "descriptionEn": "Listen to the sound and catch the correct letter."
       },
       {
         "id": 36,
@@ -3848,7 +3957,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Madd Waw (ـُو) : 2-Beat Long 'UU'",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 37,
@@ -3936,7 +4047,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Madd Ya (ـِي) : 2-Beat Long 'II'",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 38,
@@ -4048,7 +4161,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Duel Court vs Long : Série A & OU",
+        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
       },
       {
         "id": 39,
@@ -4160,9 +4275,13 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Duel Court vs Long : Série I & Mixte",
+        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
       }
-    ]
+    ],
+    "nameEn": "World 5: Sukūn & Long Vowels (Madd)",
+    "descriptionEn": "Contrast consonant stops (Sukūn) with sustained 2-beat long vowels (Alif, Waw, Ya)."
   },
   {
     "id": 6,
@@ -4258,7 +4377,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "The Shaddah (ـّ) : Doubled Consonant",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 41,
@@ -4334,7 +4455,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Tanwīn -an (ـً) : Open Nunation",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 42,
@@ -4410,7 +4533,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Tanwīn -un (ـٌ) : Closed Nunation",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 43,
@@ -4498,7 +4623,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Tanwīn -in (ـٍ) & The 3 Tanwīns Duel",
+        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
       },
       {
         "id": 44,
@@ -4574,7 +4701,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Alif-Lām (الـ) : Moon Letters",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 45,
@@ -4650,9 +4779,13 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Alif-Lām (الـ) : Sun Letters",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       }
-    ]
+    ],
+    "nameEn": "World 6: Shaddah, Tanwīn & Alif-Lām",
+    "descriptionEn": "Double consonants (Shaddah), nunations (Tanwīn), and Solar vs Lunar letters (الـ)."
   },
   {
     "id": 7,
@@ -4690,7 +4823,8 @@ export const WORLDS: World[] = [
               "رَ",
               "سَ"
             ],
-            "emoji": "✍️"
+            "emoji": "✍️",
+            "translationEn": "Write"
           },
           {
             "id": "darasa",
@@ -4706,7 +4840,8 @@ export const WORLDS: World[] = [
               "زَ",
               "تَ"
             ],
-            "emoji": "📖"
+            "emoji": "📖",
+            "translationEn": "Study"
           },
           {
             "id": "qaraa",
@@ -4722,7 +4857,8 @@ export const WORLDS: World[] = [
               "فَ",
               "كَ"
             ],
-            "emoji": "📚"
+            "emoji": "📚",
+            "translationEn": "Read"
           },
           {
             "id": "rasama",
@@ -4738,9 +4874,12 @@ export const WORLDS: World[] = [
               "نَ",
               "دَ"
             ],
-            "emoji": "🎨"
+            "emoji": "🎨",
+            "translationEn": "Draw"
           }
-        ]
+        ],
+        "titleEn": "3-Letter Base Verbs",
+        "descriptionEn": "Listen and assemble the letters in the correct order."
       },
       {
         "id": 47,
@@ -4770,7 +4909,8 @@ export const WORLDS: World[] = [
               "حَ",
               "دَ"
             ],
-            "emoji": "🪑"
+            "emoji": "🪑",
+            "translationEn": "Sit"
           },
           {
             "id": "dhahaba",
@@ -4786,7 +4926,8 @@ export const WORLDS: World[] = [
               "دَ",
               "تَ"
             ],
-            "emoji": "🚶"
+            "emoji": "🚶",
+            "translationEn": "Leave"
           },
           {
             "id": "samia",
@@ -4802,7 +4943,8 @@ export const WORLDS: World[] = [
               "شَ",
               "قَ"
             ],
-            "emoji": "👂"
+            "emoji": "👂",
+            "translationEn": "Listen"
           },
           {
             "id": "akala",
@@ -4818,7 +4960,8 @@ export const WORLDS: World[] = [
               "نَ",
               "بَ"
             ],
-            "emoji": "🍽️"
+            "emoji": "🍽️",
+            "translationEn": "Eat"
           },
           {
             "id": "shariba",
@@ -4834,7 +4977,8 @@ export const WORLDS: World[] = [
               "سَ",
               "تَ"
             ],
-            "emoji": "🥛"
+            "emoji": "🥛",
+            "translationEn": "Drink"
           },
           {
             "id": "fataha",
@@ -4850,9 +4994,12 @@ export const WORLDS: World[] = [
               "قَ",
               "جَ"
             ],
-            "emoji": "🚪"
+            "emoji": "🚪",
+            "translationEn": "Open"
           }
-        ]
+        ],
+        "titleEn": "Daily Action Verbs",
+        "descriptionEn": "Listen and assemble the letters in the correct order."
       },
       {
         "id": 48,
@@ -4881,7 +5028,8 @@ export const WORLDS: World[] = [
               "ت",
               "د"
             ],
-            "emoji": "🚪"
+            "emoji": "🚪",
+            "translationEn": "Door"
           },
           {
             "id": "bayt",
@@ -4897,7 +5045,8 @@ export const WORLDS: World[] = [
               "ن",
               "ك"
             ],
-            "emoji": "🏠"
+            "emoji": "🏠",
+            "translationEn": "House"
           },
           {
             "id": "kursiy",
@@ -4914,7 +5063,8 @@ export const WORLDS: World[] = [
               "م",
               "ل"
             ],
-            "emoji": "🪑"
+            "emoji": "🪑",
+            "translationEn": "Chair"
           },
           {
             "id": "maktab",
@@ -4931,7 +5081,8 @@ export const WORLDS: World[] = [
               "ن",
               "د"
             ],
-            "emoji": "🖥️"
+            "emoji": "🖥️",
+            "translationEn": "Desk"
           },
           {
             "id": "qalam",
@@ -4947,9 +5098,12 @@ export const WORLDS: World[] = [
               "ك",
               "ن"
             ],
-            "emoji": "✏️"
+            "emoji": "✏️",
+            "translationEn": "Pen"
           }
-        ]
+        ],
+        "titleEn": "Illustrated Words: House & Office",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 49,
@@ -4979,7 +5133,8 @@ export const WORLDS: World[] = [
               "ذ",
               "ر"
             ],
-            "emoji": "🦁"
+            "emoji": "🦁",
+            "translationEn": "Lion"
           },
           {
             "id": "jamal",
@@ -4995,7 +5150,8 @@ export const WORLDS: World[] = [
               "ح",
               "ن"
             ],
-            "emoji": "🐪"
+            "emoji": "🐪",
+            "translationEn": "Camel"
           },
           {
             "id": "feel",
@@ -5010,7 +5166,8 @@ export const WORLDS: World[] = [
               "ق",
               "ب"
             ],
-            "emoji": "🐘"
+            "emoji": "🐘",
+            "translationEn": "Elephant"
           },
           {
             "id": "tayr",
@@ -5026,7 +5183,8 @@ export const WORLDS: World[] = [
               "ت",
               "ز"
             ],
-            "emoji": "🐦"
+            "emoji": "🐦",
+            "translationEn": "Bird"
           },
           {
             "id": "qitt",
@@ -5041,7 +5199,8 @@ export const WORLDS: World[] = [
               "ك",
               "ت"
             ],
-            "emoji": "🐱"
+            "emoji": "🐱",
+            "translationEn": "Cat"
           },
           {
             "id": "kalb",
@@ -5057,9 +5216,12 @@ export const WORLDS: World[] = [
               "ق",
               "د"
             ],
-            "emoji": "🐶"
+            "emoji": "🐶",
+            "translationEn": "Dog"
           }
-        ]
+        ],
+        "titleEn": "Animals of the World",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 50,
@@ -5089,7 +5251,8 @@ export const WORLDS: World[] = [
               "ص",
               "ز"
             ],
-            "emoji": "☀️"
+            "emoji": "☀️",
+            "translationEn": "Sun"
           },
           {
             "id": "qamar",
@@ -5105,7 +5268,8 @@ export const WORLDS: World[] = [
               "غ",
               "ل"
             ],
-            "emoji": "🌙"
+            "emoji": "🌙",
+            "translationEn": "Moon"
           },
           {
             "id": "najm",
@@ -5121,7 +5285,8 @@ export const WORLDS: World[] = [
               "ح",
               "ت"
             ],
-            "emoji": "⭐"
+            "emoji": "⭐",
+            "translationEn": "Star"
           },
           {
             "id": "bahr",
@@ -5137,7 +5302,8 @@ export const WORLDS: World[] = [
               "ج",
               "ز"
             ],
-            "emoji": "🌊"
+            "emoji": "🌊",
+            "translationEn": "Sea"
           },
           {
             "id": "samaa",
@@ -5153,7 +5319,8 @@ export const WORLDS: World[] = [
               "ش",
               "د"
             ],
-            "emoji": "☁️"
+            "emoji": "☁️",
+            "translationEn": "Sky"
           },
           {
             "id": "shajara",
@@ -5170,9 +5337,12 @@ export const WORLDS: World[] = [
               "س",
               "د"
             ],
-            "emoji": "🌳"
+            "emoji": "🌳",
+            "translationEn": "Tree"
           }
-        ]
+        ],
+        "titleEn": "Nature & Elements",
+        "descriptionEn": "Listen and assemble the letters in the correct order."
       },
       {
         "id": 51,
@@ -5197,7 +5367,8 @@ export const WORLDS: World[] = [
               "أُمّ",
               "أَخ",
               "أُخْت"
-            ]
+            ],
+            "phonemeDescEn": "Father"
           },
           {
             "id": "umm",
@@ -5209,7 +5380,8 @@ export const WORLDS: World[] = [
               "أَب",
               "بِنْت",
               "وَلَد"
-            ]
+            ],
+            "phonemeDescEn": "Mother"
           },
           {
             "id": "akh",
@@ -5221,7 +5393,8 @@ export const WORLDS: World[] = [
               "أُخْت",
               "أَب",
               "مُعَلِّم"
-            ]
+            ],
+            "phonemeDescEn": "Brother"
           },
           {
             "id": "ukht",
@@ -5272,7 +5445,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Family & People",
+        "descriptionEn": "Recognize the correct Arabic phrase and meaning."
       },
       {
         "id": 52,
@@ -5301,7 +5476,8 @@ export const WORLDS: World[] = [
               "ن",
               "ب"
             ],
-            "emoji": "💧"
+            "emoji": "💧",
+            "translationEn": "Water"
           },
           {
             "id": "haleeb",
@@ -5317,7 +5493,8 @@ export const WORLDS: World[] = [
               "ج",
               "ت"
             ],
-            "emoji": "🥛"
+            "emoji": "🥛",
+            "translationEn": "Milk"
           },
           {
             "id": "khubz",
@@ -5333,7 +5510,8 @@ export const WORLDS: World[] = [
               "ح",
               "ر"
             ],
-            "emoji": "🍞"
+            "emoji": "🍞",
+            "translationEn": "Pain / Bread"
           },
           {
             "id": "tamr",
@@ -5349,7 +5527,8 @@ export const WORLDS: World[] = [
               "ث",
               "ز"
             ],
-            "emoji": "🌴"
+            "emoji": "🌴",
+            "translationEn": "Dates"
           },
           {
             "id": "inab",
@@ -5365,7 +5544,8 @@ export const WORLDS: World[] = [
               "غ",
               "ت"
             ],
-            "emoji": "🍇"
+            "emoji": "🍇",
+            "translationEn": "Grapes"
           },
           {
             "id": "tuffah",
@@ -5381,9 +5561,12 @@ export const WORLDS: World[] = [
               "ب",
               "ج"
             ],
-            "emoji": "🍎"
+            "emoji": "🍎",
+            "translationEn": "Apple"
           }
-        ]
+        ],
+        "titleEn": "Food & Drinks",
+        "descriptionEn": "Listen and assemble the letters in the correct order."
       },
       {
         "id": 53,
@@ -5415,7 +5598,8 @@ export const WORLDS: World[] = [
               "ت",
               "ن"
             ],
-            "emoji": "🏫"
+            "emoji": "🏫",
+            "translationEn": "School"
           },
           {
             "id": "hadeeqa",
@@ -5432,7 +5616,8 @@ export const WORLDS: World[] = [
               "خ",
               "ت"
             ],
-            "emoji": "🌸"
+            "emoji": "🌸",
+            "translationEn": "Garden"
           },
           {
             "id": "ousfoor",
@@ -5449,7 +5634,8 @@ export const WORLDS: World[] = [
               "غ",
               "س"
             ],
-            "emoji": "🐦"
+            "emoji": "🐦",
+            "translationEn": "Bird"
           },
           {
             "id": "rumman",
@@ -5465,9 +5651,12 @@ export const WORLDS: World[] = [
               "ز",
               "ل"
             ],
-            "emoji": "🫐"
+            "emoji": "🫐",
+            "translationEn": "Pomegranate"
           }
-        ]
+        ],
+        "titleEn": "Complex Words: Madd, Sukūn & Shaddah",
+        "descriptionEn": "Listen and assemble the letters in the correct order."
       },
       {
         "id": 54,
@@ -5492,7 +5681,8 @@ export const WORLDS: World[] = [
               "قَلَم",
               "بَاب",
               "بَيْت"
-            ]
+            ],
+            "phonemeDescEn": "Book"
           },
           {
             "id": "qalam",
@@ -5504,7 +5694,8 @@ export const WORLDS: World[] = [
               "كِتَاب",
               "كُرْسِيّ",
               "مَكْتَب"
-            ]
+            ],
+            "phonemeDescEn": "Pen"
           },
           {
             "id": "kursiy",
@@ -5516,7 +5707,8 @@ export const WORLDS: World[] = [
               "مَكْتَب",
               "بَاب",
               "بَيْت"
-            ]
+            ],
+            "phonemeDescEn": "Chair"
           },
           {
             "id": "maktab",
@@ -5528,7 +5720,8 @@ export const WORLDS: World[] = [
               "كُرْسِيّ",
               "قَلَم",
               "كِتَاب"
-            ]
+            ],
+            "phonemeDescEn": "Desk"
           },
           {
             "id": "madrasa",
@@ -5540,7 +5733,8 @@ export const WORLDS: World[] = [
               "حَدِيقَة",
               "بَيْت",
               "شَجَرَة"
-            ]
+            ],
+            "phonemeDescEn": "School"
           },
           {
             "id": "hadeeqa",
@@ -5552,10 +5746,13 @@ export const WORLDS: World[] = [
               "مَدْرَسَة",
               "زَهْرَة",
               "شَجَرَة"
-            ]
+            ],
+            "phonemeDescEn": "Garden"
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Défi Écoute & Orthographe de Mots",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 55,
@@ -5655,9 +5852,13 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Grand Challenge de Lecture Rapide de Vocabulaire",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       }
-    ]
+    ],
+    "nameEn": "World 7: Vocabulary & Everyday Words",
+    "descriptionEn": "Read and assemble everyday nouns, action verbs, and illustrated vocabulary."
   },
   {
     "id": 8,
@@ -5690,7 +5891,8 @@ export const WORLDS: World[] = [
               "المَاءُ بَارِدٌ",
               "الكِتَابُ مُفِيدٌ",
               "الشَّمْسُ مُشْرِقَةٌ"
-            ]
+            ],
+            "phonemeDescEn": "The house is big"
           },
           {
             "id": "almaa_baarid",
@@ -5702,7 +5904,8 @@ export const WORLDS: World[] = [
               "البَيْتُ كَبِيرٌ",
               "القَمَرُ مُنِيرٌ",
               "الكِتَابُ مُفِيدٌ"
-            ]
+            ],
+            "phonemeDescEn": "The water is cold"
           },
           {
             "id": "alkitaab_mufeed",
@@ -5714,7 +5917,8 @@ export const WORLDS: World[] = [
               "البَيْتُ كَبِيرٌ",
               "المَاءُ بَارِدٌ",
               "الشَّمْسُ مُشْرِقَةٌ"
-            ]
+            ],
+            "phonemeDescEn": "The book is useful"
           },
           {
             "id": "ashshams_mushriqa",
@@ -5726,7 +5930,8 @@ export const WORLDS: World[] = [
               "القَمَرُ مُنِيرٌ",
               "المَاءُ بَارِدٌ",
               "البَيْتُ كَبِيرٌ"
-            ]
+            ],
+            "phonemeDescEn": "The sun is shining"
           },
           {
             "id": "alqamar_muneer",
@@ -5741,7 +5946,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Nominal Sentences 1: Subject & Description",
+        "descriptionEn": "Listen and read the complete sentence with accuracy."
       },
       {
         "id": 57,
@@ -5766,7 +5973,8 @@ export const WORLDS: World[] = [
               "البِنْتُ ذَكِيَّةٌ",
               "القَلَمُ جَدِيدٌ",
               "البَابُ مَفْتُوحٌ"
-            ]
+            ],
+            "phonemeDescEn": "The boy is energetic"
           },
           {
             "id": "albint_dhakiyya",
@@ -5778,7 +5986,8 @@ export const WORLDS: World[] = [
               "الوَلَدُ نَشِيطٌ",
               "الزَّهْرَةُ جَمِيلَةٌ",
               "القَلَمُ جَدِيدٌ"
-            ]
+            ],
+            "phonemeDescEn": "The girl is smart"
           },
           {
             "id": "alqalam_jadeed",
@@ -5790,7 +5999,8 @@ export const WORLDS: World[] = [
               "البَابُ مَفْتُوحٌ",
               "الوَلَدُ نَشِيطٌ",
               "البِنْتُ ذَكِيَّةٌ"
-            ]
+            ],
+            "phonemeDescEn": "The pen is new"
           },
           {
             "id": "albaab_maftooh",
@@ -5817,7 +6027,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Nominal Sentences 2: Qualities & States",
+        "descriptionEn": "Listen carefully and distinguish the subtle sound differences."
       },
       {
         "id": 58,
@@ -5842,7 +6054,8 @@ export const WORLDS: World[] = [
               "قَرَأَ الطَّالِبُ",
               "جَلَسَ الأَبُ",
               "أَكَلَ الطِّفْلُ"
-            ]
+            ],
+            "phonemeDescEn": "The child wrote"
           },
           {
             "id": "qaraa_attaalib",
@@ -5854,7 +6067,8 @@ export const WORLDS: World[] = [
               "كَتَبَ الوَلَدُ",
               "شَرِبَ الوَلَدُ",
               "نَامَ الطِّفْلُ"
-            ]
+            ],
+            "phonemeDescEn": "The student read"
           },
           {
             "id": "jalasa_alab",
@@ -5866,7 +6080,8 @@ export const WORLDS: World[] = [
               "كَتَبَ الوَلَدُ",
               "قَرَأَ الطَّالِبُ",
               "أَكَلَ الطِّفْلُ"
-            ]
+            ],
+            "phonemeDescEn": "The father sat down"
           },
           {
             "id": "akala_attifl",
@@ -5905,7 +6120,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Verbal Sentences 1: Verb & Subject",
+        "descriptionEn": "Listen and read the complete sentence with accuracy."
       },
       {
         "id": 59,
@@ -5930,7 +6147,8 @@ export const WORLDS: World[] = [
               "رَجَعَ الأَبُ",
               "خَرَجَ المُعَلِّمُ",
               "دَخَلَ الطَّالِبُ"
-            ]
+            ],
+            "phonemeDescEn": "The boy left"
           },
           {
             "id": "rajaa_alab",
@@ -5942,7 +6160,8 @@ export const WORLDS: World[] = [
               "ذَهَبَ الوَلَدُ",
               "خَرَجَ المُعَلِّمُ",
               "طَارَ العُصْفُورُ"
-            ]
+            ],
+            "phonemeDescEn": "The father returned"
           },
           {
             "id": "kharaja_almuallim",
@@ -5954,7 +6173,8 @@ export const WORLDS: World[] = [
               "دَخَلَ الطَّالِبُ",
               "ذَهَبَ الوَلَدُ",
               "رَجَعَ الأَبُ"
-            ]
+            ],
+            "phonemeDescEn": "The teacher went out"
           },
           {
             "id": "dakhala_attaalib",
@@ -5981,7 +6201,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Verbal Sentences 2: Actions & Movements",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       },
       {
         "id": 60,
@@ -6006,7 +6228,8 @@ export const WORLDS: World[] = [
               "كَتَبَ الطَّالِبُ الدَّرْسَ",
               "شَرِبَ الطِّفْلُ الحَلِيبَ",
               "أَكَلَ الوَلَدُ التَّمْرَ"
-            ]
+            ],
+            "phonemeDescEn": "The child read the book"
           },
           {
             "id": "kataba_attaalib_addars",
@@ -6018,7 +6241,8 @@ export const WORLDS: World[] = [
               "قَرَأَ الوَلَدُ الكِتَابَ",
               "فَتَحَ الأَبُ البَابَ",
               "شَرِبَ الطِّفْلُ الحَلِيبَ"
-            ]
+            ],
+            "phonemeDescEn": "The student wrote the lesson"
           },
           {
             "id": "shariba_attifl_alhaleeb",
@@ -6030,7 +6254,8 @@ export const WORLDS: World[] = [
               "أَكَلَ الوَلَدُ التَّمْرَ",
               "قَرَأَ الوَلَدُ الكِتَابَ",
               "كَتَبَ الطَّالِبُ الدَّرْسَ"
-            ]
+            ],
+            "phonemeDescEn": "The child drank the milk"
           },
           {
             "id": "akala_alwalad_attamr",
@@ -6045,7 +6270,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Complete Sentences 1: Action on an Object",
+        "descriptionEn": "Listen and read the complete sentence with accuracy."
       },
       {
         "id": 61,
@@ -6070,7 +6297,8 @@ export const WORLDS: World[] = [
               "رَسَمَ الوَلَدُ الشَّجَرَةَ",
               "قَرَأَ الوَلَدُ الكِتَابَ",
               "كَتَبَ الطَّالِبُ الدَّرْسَ"
-            ]
+            ],
+            "phonemeDescEn": "The father opened the door"
           },
           {
             "id": "rasama_alwalad_ashshajara",
@@ -6082,7 +6310,8 @@ export const WORLDS: World[] = [
               "فَتَحَ الأَبُ البَابَ",
               "أَكَلَ الوَلَدُ التَّمْرَ",
               "شَرِبَ الطِّفْلُ الحَلِيبَ"
-            ]
+            ],
+            "phonemeDescEn": "The child drew the tree"
           },
           {
             "id": "qaraa_alwalad_alkitaab",
@@ -6094,7 +6323,8 @@ export const WORLDS: World[] = [
               "رَسَمَ الوَلَدُ الشَّجَرَةَ",
               "فَتَحَ الأَبُ البَابَ",
               "كَتَبَ الطَّالِبُ الدَّرْسَ"
-            ]
+            ],
+            "phonemeDescEn": "The child read the book"
           },
           {
             "id": "kataba_attaalib_addars",
@@ -6106,10 +6336,13 @@ export const WORLDS: World[] = [
               "فَتَحَ الأَبُ البَابَ",
               "رَسَمَ الوَلَدُ الشَّجَرَةَ",
               "أَكَلَ الوَلَدُ التَّمْرَ"
-            ]
+            ],
+            "phonemeDescEn": "The student wrote the lesson"
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Complete Sentences 2: Daily Life Actions",
+        "descriptionEn": "Listen and read the complete sentence with accuracy."
       },
       {
         "id": 62,
@@ -6134,7 +6367,8 @@ export const WORLDS: World[] = [
               "أَهْلًا وَسَهْلًا",
               "شُكْرًا جَزِيلًا",
               "صَبَاحُ الخَيْرِ"
-            ]
+            ],
+            "phonemeDescEn": "Peace be upon you"
           },
           {
             "id": "ahlan_wa_sahlan",
@@ -6146,7 +6380,8 @@ export const WORLDS: World[] = [
               "السَّلَامُ عَلَيْكُمْ",
               "مَسَاءُ الخَيْرِ",
               "شُكْرًا جَزِيلًا"
-            ]
+            ],
+            "phonemeDescEn": "Welcome"
           },
           {
             "id": "shukran_jazeelan",
@@ -6158,7 +6393,8 @@ export const WORLDS: World[] = [
               "صَبَاحُ الخَيْرِ",
               "أَهْلًا وَسَهْلًا",
               "السَّلَامُ عَلَيْكُمْ"
-            ]
+            ],
+            "phonemeDescEn": "Thank you very much"
           },
           {
             "id": "sabahu_alkhayr",
@@ -6185,7 +6421,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Politeness & Common Expressions",
+        "descriptionEn": "Recognize the correct Arabic phrase and meaning."
       },
       {
         "id": 63,
@@ -6210,7 +6448,8 @@ export const WORLDS: World[] = [
               "جَلَسَ الأَبُ عَلَى الكُرْسِيِّ",
               "الكِتَابُ فِي الحَقِيبَةِ",
               "العُصْفُورُ فَوْقَ الشَّجَرَةِ"
-            ]
+            ],
+            "phonemeDescEn": "The child went to school"
           },
           {
             "id": "jalasa_alab_alal_kursiyy",
@@ -6222,7 +6461,8 @@ export const WORLDS: World[] = [
               "ذَهَبَ الوَلَدُ إِلَى المَدْرَسَةِ",
               "الكِتَابُ فِي الحَقِيبَةِ",
               "العُصْفُورُ فَوْقَ الشَّجَرَةِ"
-            ]
+            ],
+            "phonemeDescEn": "The father sat on the chair"
           },
           {
             "id": "alkitaab_fil_haqeeba",
@@ -6234,7 +6474,8 @@ export const WORLDS: World[] = [
               "العُصْفُورُ فَوْقَ الشَّجَرَةِ",
               "ذَهَبَ الوَلَدُ إِلَى المَدْرَسَةِ",
               "جَلَسَ الأَبُ عَلَى الكُرْسِيِّ"
-            ]
+            ],
+            "phonemeDescEn": "The book is in the schoolbag"
           },
           {
             "id": "alousfoor_fawqa_ashshajara",
@@ -6249,7 +6490,9 @@ export const WORLDS: World[] = [
             ]
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Sentences with Prepositions (fee, ilā, 'alā)",
+        "descriptionEn": "Listen and read the complete sentence with accuracy."
       },
       {
         "id": 64,
@@ -6274,7 +6517,8 @@ export const WORLDS: World[] = [
               "ذَهَبَتْ فَاطِمَةُ إِلَى الحَدِيقَةِ",
               "أَكَلَ الوَلَدُ تُفَّاحَةً لَذِيذَةً",
               "جَلَسَ الأَبُ عَلَى الكُرْسِيِّ"
-            ]
+            ],
+            "phonemeDescEn": "Ahmad read an instructive book"
           },
           {
             "id": "dhahabat_fatima_ilal_hadeeqa",
@@ -6286,7 +6530,8 @@ export const WORLDS: World[] = [
               "قَرَأَ أَحْمَدُ كِتَابًا مُفِيدًا",
               "أَكَلَ الوَلَدُ تُفَّاحَةً لَذِيذَةً",
               "الكِتَابُ فِي الحَقِيبَةِ"
-            ]
+            ],
+            "phonemeDescEn": "Fatima went to the garden"
           },
           {
             "id": "akala_alwalad_tuffahatan",
@@ -6298,10 +6543,13 @@ export const WORLDS: World[] = [
               "قَرَأَ أَحْمَدُ كِتَابًا مُفِيدًا",
               "ذَهَبَتْ فَاطِمَةُ إِلَى الحَدِيقَةِ",
               "ذَهَبَ الوَلَدُ إِلَى المَدْرَسَةِ"
-            ]
+            ],
+            "phonemeDescEn": "The boy ate a delicious apple"
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "Short Stories & Comprehension",
+        "descriptionEn": "Listen and read the complete sentence with accuracy."
       },
       {
         "id": 65,
@@ -6326,7 +6574,8 @@ export const WORLDS: World[] = [
               "كَتَبَ الطَّالِبُ الدَّرْسَ",
               "ذَهَبَ الوَلَدُ إِلَى المَدْرَسَةِ",
               "الشَّمْسُ مُشْرِقَةٌ"
-            ]
+            ],
+            "phonemeDescEn": "The child read the book"
           },
           {
             "id": "dhahaba_alwalad_ilal_madrasa",
@@ -6338,7 +6587,8 @@ export const WORLDS: World[] = [
               "جَلَسَ الأَبُ عَلَى الكُرْسِيِّ",
               "قَرَأَ أَحْمَدُ كِتَابًا مُفِيدًا",
               "البَيْتُ كَبِيرٌ"
-            ]
+            ],
+            "phonemeDescEn": "The child went to school"
           },
           {
             "id": "ashshams_mushriqa",
@@ -6350,7 +6600,8 @@ export const WORLDS: World[] = [
               "القَمَرُ مُنِيرٌ",
               "المَاءُ بَارِدٌ",
               "الكِتَابُ مُفِيدٌ"
-            ]
+            ],
+            "phonemeDescEn": "The sun is shining"
           },
           {
             "id": "assalamu_alaykum",
@@ -6362,7 +6613,8 @@ export const WORLDS: World[] = [
               "أَهْلًا وَسَهْلًا",
               "شُكْرًا جَزِيلًا",
               "صَبَاحُ الخَيْرِ"
-            ]
+            ],
+            "phonemeDescEn": "Peace be upon you"
           },
           {
             "id": "qaraa_ahmad_kitaaban_mufeedan",
@@ -6374,11 +6626,16 @@ export const WORLDS: World[] = [
               "أَكَلَ الوَلَدُ تُفَّاحَةً لَذِيذَةً",
               "ذَهَبَتْ فَاطِمَةُ إِلَى الحَدِيقَةِ",
               "كَتَبَ الطَّالِبُ الدَّرْسَ"
-            ]
+            ],
+            "phonemeDescEn": "Ahmad read an instructive book"
           }
         ],
-        "wordItems": []
+        "wordItems": [],
+        "titleEn": "🏆 Grand Championship de Lecture Fluide",
+        "descriptionEn": "Listen attentively and select the corresponding letter or sign."
       }
-    ]
+    ],
+    "nameEn": "World 8: Short Sentences & Fluency",
+    "descriptionEn": "Read nominal and verbal sentences with prepositions and fluent reading."
   }
 ];

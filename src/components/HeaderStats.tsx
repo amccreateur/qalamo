@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../theme/colors';
 import { soundService } from '../services/soundService';
+import { useLanguage } from '../i18n/LanguageContext';
 
 interface HeaderStatsProps {
   coins: number;
@@ -22,11 +23,17 @@ export const HeaderStats: React.FC<HeaderStatsProps> = ({
   showHome = false,
 }) => {
   const [isMuted, setIsMuted] = useState(soundService.getMuted());
+  const { language, toggleLanguage, t } = useLanguage();
 
   const toggleMute = () => {
     const next = !isMuted;
     setIsMuted(next);
     soundService.setMuted(next);
+  };
+
+  const handleLanguageToggle = () => {
+    soundService.triggerPop();
+    toggleLanguage();
   };
 
   const getAvatarEmoji = (base: string) => {
@@ -53,6 +60,16 @@ export const HeaderStats: React.FC<HeaderStatsProps> = ({
       )}
 
       <View style={styles.statsRow}>
+        {/* Language Switcher Button (FR / EN) */}
+        <TouchableOpacity
+          style={styles.langButton}
+          onPress={handleLanguageToggle}
+          activeOpacity={0.7}
+        >
+          <Text style={styles.langFlag}>{language === 'fr' ? '🇫🇷' : '🇬🇧'}</Text>
+          <Text style={styles.langText}>{language.toUpperCase()}</Text>
+        </TouchableOpacity>
+
         {/* Stars */}
         <View style={[styles.badge, styles.starBadge]}>
           <Ionicons name="star" size={18} color="#F59E0B" />
@@ -69,7 +86,7 @@ export const HeaderStats: React.FC<HeaderStatsProps> = ({
         <TouchableOpacity style={styles.soundButton} onPress={toggleMute} activeOpacity={0.8}>
           <Ionicons
             name={isMuted ? 'volume-mute' : 'volume-high'}
-            size={22}
+            size={20}
             color={isMuted ? '#EF4444' : '#3B82F6'}
           />
         </TouchableOpacity>
@@ -85,7 +102,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 16,
     paddingVertical: 10,
-    backgroundColor: 'rgba(255, 255, 255, 0.92)',
+    backgroundColor: 'rgba(255, 255, 255, 0.94)',
     borderBottomWidth: 1,
     borderBottomColor: 'rgba(226, 232, 240, 0.8)',
     zIndex: 10,
@@ -119,15 +136,34 @@ const styles = StyleSheet.create({
   statsRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 10,
+    gap: 8,
+  },
+  langButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F1F5F9',
+    paddingHorizontal: 8,
+    paddingVertical: 5,
+    borderRadius: 16,
+    borderWidth: 1.5,
+    borderColor: '#CBD5E1',
+    gap: 4,
+  },
+  langFlag: {
+    fontSize: 14,
+  },
+  langText: {
+    fontSize: 12,
+    fontWeight: '800',
+    color: '#334155',
   },
   badge: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 20,
-    gap: 6,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 18,
+    gap: 5,
   },
   starBadge: {
     backgroundColor: '#FEF3C7',
@@ -140,14 +176,14 @@ const styles = StyleSheet.create({
     borderColor: '#A5F3FC',
   },
   badgeText: {
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: '800',
     color: '#1E293B',
   },
   soundButton: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    width: 36,
+    height: 36,
+    borderRadius: 18,
     backgroundColor: '#EFF6FF',
     justifyContent: 'center',
     alignItems: 'center',
@@ -155,4 +191,3 @@ const styles = StyleSheet.create({
     borderColor: '#BFDBFE',
   },
 });
-

@@ -11,6 +11,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { PhonemeItem } from '../types/game';
 import { soundService } from '../services/soundService';
+import { useLanguage } from '../i18n/LanguageContext';
 
 interface TargetGameProps {
   items: PhonemeItem[];
@@ -25,6 +26,7 @@ interface TargetOption {
 }
 
 export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExit }) => {
+  const { language, t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [options, setOptions] = useState<TargetOption[]>([]);
   const [score, setScore] = useState(0);
@@ -38,6 +40,17 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
     const baseLetters = opt.grapheme.replace(/[\u064B-\u065F\u0670]/g, '');
     return opt.grapheme.includes(' ') || baseLetters.length > 7;
   });
+
+  const getLocalizedPhonemeDesc = (desc?: string): string => {
+    if (!desc) return '';
+    if (language === 'fr') return desc;
+    const d = desc.toLowerCase();
+    if (d.includes('début')) return t.posInitial;
+    if (d.includes('milieu')) return t.posMedial;
+    if (d.includes('fin')) return t.posFinal;
+    if (d.includes('isol')) return t.posIsolated;
+    return desc;
+  };
 
   useEffect(() => {
     if (!currentItem) return;
@@ -143,22 +156,22 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
           {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
           currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
           currentItem.phonemeDesc?.toLowerCase().includes('fin')
-            ? 'Position de la Lettre / مَوْقِعُ الحَرْف'
-            : 'Tir Sonore / تَطَابُقُ الأَصْوَات'}
+            ? t.targetStageTitlePosition
+            : t.targetStageTitleSound}
         </Text>
         <Text style={styles.stageSubtitle}>
           {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
           currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
           currentItem.phonemeDesc?.toLowerCase().includes('fin')
-            ? `Trouve la forme : ${currentItem.phonemeDesc}`
-            : 'Quel signe correspond à ce son ?'}
+            ? `${t.targetStageSubtitlePosition} ${getLocalizedPhonemeDesc(currentItem.phonemeDesc)}`
+            : t.targetStageSubtitleSound}
         </Text>
 
         <TouchableOpacity style={styles.targetOrb} onPress={playSound} activeOpacity={0.8}>
           <Animated.View style={[styles.targetInner, { transform: [{ scale: bounceAnim }] }]}>
             <LinearGradient colors={['#F59E0B', '#EF4444']} style={styles.orbGradient}>
               <Ionicons name="volume-high" size={48} color="#FFFFFF" />
-              <Text style={styles.tapListenText}>Réécouter</Text>
+              <Text style={styles.tapListenText}>{t.targetReplay}</Text>
             </LinearGradient>
           </Animated.View>
         </TouchableOpacity>
@@ -168,7 +181,7 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
           currentItem.phonemeDesc?.toLowerCase().includes('fin')) && (
           <View style={styles.targetHintBadge}>
             <Ionicons name="locate" size={16} color="#FEF08A" />
-            <Text style={styles.targetHintText}>{currentItem.phonemeDesc}</Text>
+            <Text style={styles.targetHintText}>{getLocalizedPhonemeDesc(currentItem.phonemeDesc)}</Text>
           </View>
         )}
       </View>

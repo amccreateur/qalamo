@@ -11,6 +11,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { WordItem } from '../types/game';
 import { soundService } from '../services/soundService';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const { width } = Dimensions.get('window');
 
@@ -21,6 +22,7 @@ interface WordBuilderGameProps {
 }
 
 export const WordBuilderGame: React.FC<WordBuilderGameProps> = ({ items, onComplete, onExit }) => {
+  const { language, t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [placedLetters, setPlacedLetters] = useState<string[]>([]);
   const [poolLetters, setPoolLetters] = useState<{ id: string; letter: string }[]>([]);
@@ -145,12 +147,22 @@ export const WordBuilderGame: React.FC<WordBuilderGameProps> = ({ items, onCompl
         
         <TouchableOpacity style={styles.speakerPill} onPress={playWordAudio} activeOpacity={0.8}>
           <Ionicons name="volume-high" size={26} color="#065F46" />
-          <Text style={styles.speakerPillText}>Écouter le mot</Text>
+          <Text style={styles.speakerPillText}>{t.listenWordBtn}</Text>
         </TouchableOpacity>
 
-        {Boolean((currentWord.translationFr || currentWord.meaning || '').replace(/\s*\([^)]*\)/g, '').trim()) && (
+        {Boolean(
+          ((language === 'en'
+            ? currentWord.translationEn || currentWord.translationFr || currentWord.meaning
+            : currentWord.translationFr || currentWord.meaning) || '')
+            .replace(/\s*\([^)]*\)/g, '')
+            .trim()
+        ) && (
           <Text style={styles.meaningText}>
-            {(currentWord.translationFr || currentWord.meaning || '').replace(/\s*\([^)]*\)/g, '').trim()}
+            {((language === 'en'
+              ? currentWord.translationEn || currentWord.translationFr || currentWord.meaning
+              : currentWord.translationFr || currentWord.meaning) || '')
+              .replace(/\s*\([^)]*\)/g, '')
+              .trim()}
           </Text>
         )}
       </View>
@@ -185,11 +197,11 @@ export const WordBuilderGame: React.FC<WordBuilderGameProps> = ({ items, onCompl
       {/* Available Letters Pool */}
       <View style={styles.poolSection}>
         <View style={styles.poolHeader}>
-          <Text style={styles.poolInstruction}>Touche les lettres dans le bon ordre :</Text>
+          <Text style={styles.poolInstruction}>{t.orderLettersInstruction}</Text>
           {placedLetters.length > 0 && !isCompletedWord && (
             <TouchableOpacity onPress={handleResetCurrent} style={styles.resetBtn}>
               <Ionicons name="refresh" size={16} color="#FFFFFF" />
-              <Text style={styles.resetBtnText}>Effacer</Text>
+              <Text style={styles.resetBtnText}>{t.clearBtn}</Text>
             </TouchableOpacity>
           )}
         </View>
