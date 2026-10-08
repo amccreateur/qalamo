@@ -55,5 +55,7 @@ yarn-error.*
 /test_verbs/
 /test_audio.html
 *.html
+!docs/**/*.html
+!docs/*.html
 scripts/temp_audio/
 scripts/test_proposals/
