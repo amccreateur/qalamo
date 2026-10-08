@@ -56,3 +56,4 @@ You can reset your progress or manage profiles directly inside the settings scre
 Qalamo respecte votre vie privée. L'application ne collecte aucune donnée personnelle, ne requiert aucun compte utilisateur et ne contient aucun traqueur publicitaire tiers.
 
 Pour consulter la politique complète : [Politique de Confidentialité](https://github.com/amccreateur/qalamo/blob/master/docs/privacy.html) (ou `docs/index.html`).
+
