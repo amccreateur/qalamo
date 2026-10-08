@@ -270,7 +270,7 @@ const styles = StyleSheet.create({
   },
   cardChar: {
     fontFamily: 'Amiri-Bold',
-    fontSize: 38,
+    fontSize: 50,
     fontWeight: '700',
     color: '#1E293B',
     marginBottom: 2,

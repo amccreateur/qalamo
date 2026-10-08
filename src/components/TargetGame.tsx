@@ -223,7 +223,9 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
                   style={[
                     styles.cardArabicText,
                     { color: textColor },
-                    opt.grapheme.length > 16
+                    opt.grapheme.length > 25
+                      ? styles.cardArabicTextPhraseLong
+                      : opt.grapheme.length > 16
                       ? styles.cardArabicTextExtraSmall
                       : opt.grapheme.length > 8
                       ? styles.cardArabicTextSmall
@@ -363,8 +365,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   targetHintText: {
-    fontSize: 15,
-    fontWeight: '800',
+    fontFamily: 'Amiri-Bold',
+    fontSize: 18,
+    fontWeight: '700',
     color: '#FEF08A',
   },
   cardsRow: {
@@ -414,7 +417,7 @@ const styles = StyleSheet.create({
   },
   cardArabicText: {
     fontFamily: 'Amiri-Bold',
-    fontSize: 58,
+    fontSize: 68,
     fontWeight: '700',
     textAlign: 'center',
     textAlignVertical: 'center',
@@ -423,7 +426,7 @@ const styles = StyleSheet.create({
     includeFontPadding: false,
   },
   cardArabicTextMedium: {
-    fontSize: 40,
+    fontSize: 48,
     textAlign: 'center',
     textAlignVertical: 'center',
     alignSelf: 'center',
@@ -431,7 +434,7 @@ const styles = StyleSheet.create({
     includeFontPadding: false,
   },
   cardArabicTextSmall: {
-    fontSize: 30,
+    fontSize: 36,
     fontWeight: '700',
     textAlign: 'center',
     textAlignVertical: 'center',
@@ -440,12 +443,22 @@ const styles = StyleSheet.create({
     includeFontPadding: false,
   },
   cardArabicTextExtraSmall: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: '700',
     textAlign: 'center',
     textAlignVertical: 'center',
     alignSelf: 'center',
     width: '100%',
+    includeFontPadding: false,
+  },
+  cardArabicTextPhraseLong: {
+    fontSize: 22,
+    fontWeight: '700',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    alignSelf: 'center',
+    width: '100%',
+    lineHeight: 32,
     includeFontPadding: false,
   },
   cardBadge: {

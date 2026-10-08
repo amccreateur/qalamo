@@ -274,7 +274,8 @@ const styles = StyleSheet.create({
     color: '#1E293B',
   },
   worldNameAr: {
-    fontSize: 14,
+    fontFamily: 'Amiri-Bold',
+    fontSize: 18,
     fontWeight: '700',
     color: '#3B82F6',
     marginTop: 2,
@@ -353,7 +354,7 @@ const styles = StyleSheet.create({
   },
   levelTitleAr: {
     fontFamily: 'Amiri-Bold',
-    fontSize: 18,
+    fontSize: 21,
     fontWeight: '700',
     marginTop: 2,
   },

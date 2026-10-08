@@ -275,7 +275,9 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
                   style={[
                     styles.bubbleText,
                     { color: color.text },
-                    opt.grapheme.length > 16
+                    opt.grapheme.length > 25
+                      ? styles.bubbleTextPhraseLong
+                      : opt.grapheme.length > 16
                       ? styles.bubbleTextExtraSmall
                       : opt.grapheme.length > 8
                       ? styles.bubbleTextSmall
@@ -468,7 +470,7 @@ const styles = StyleSheet.create({
   },
   bubbleText: {
     fontFamily: 'Amiri-Bold',
-    fontSize: 58,
+    fontSize: 68,
     fontWeight: '700',
     textAlign: 'center',
     textAlignVertical: 'center',
@@ -477,7 +479,7 @@ const styles = StyleSheet.create({
     includeFontPadding: false,
   },
   bubbleTextMedium: {
-    fontSize: 40,
+    fontSize: 48,
     textAlign: 'center',
     textAlignVertical: 'center',
     alignSelf: 'center',
@@ -485,7 +487,7 @@ const styles = StyleSheet.create({
     includeFontPadding: false,
   },
   bubbleTextSmall: {
-    fontSize: 30,
+    fontSize: 36,
     fontWeight: '700',
     textAlign: 'center',
     textAlignVertical: 'center',
@@ -494,12 +496,22 @@ const styles = StyleSheet.create({
     includeFontPadding: false,
   },
   bubbleTextExtraSmall: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: '700',
     textAlign: 'center',
     textAlignVertical: 'center',
     alignSelf: 'center',
     width: '100%',
+    includeFontPadding: false,
+  },
+  bubbleTextPhraseLong: {
+    fontSize: 22,
+    fontWeight: '700',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    alignSelf: 'center',
+    width: '100%',
+    lineHeight: 32,
     includeFontPadding: false,
   },
   feedbackIcon: {

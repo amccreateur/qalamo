@@ -108,7 +108,9 @@ export const LessonModal: React.FC<LessonModalProps> = ({
                     </Text>
                     <View style={styles.samplesGrid}>
                       {section.samples.map((sample, idx) => {
-                        const isWide = sample.char.length > 5 || sample.char.includes(' ');
+                        const isVeryLong = sample.char.length > 25 || sample.char.includes('=') || sample.char.includes('+');
+                        const isLong = sample.char.length > 12;
+                        const isWide = sample.char.length > 5 || sample.char.includes(' ') || isVeryLong;
                         return (
                           <TouchableOpacity
                             key={idx}
@@ -127,8 +129,10 @@ export const LessonModal: React.FC<LessonModalProps> = ({
                                 style={[
                                   styles.sampleArabicChar,
                                   isWide && styles.sampleArabicCharWide,
+                                  isLong && styles.sampleArabicCharLong,
+                                  isVeryLong && styles.sampleArabicCharVeryLong,
                                 ]}
-                                numberOfLines={2}
+                                numberOfLines={3}
                                 adjustsFontSizeToFit
                               >
                                 {sample.char}
@@ -225,11 +229,11 @@ const styles = StyleSheet.create({
   },
   headerTitleAr: {
     fontFamily: 'Amiri-Bold',
-    fontSize: 22,
+    fontSize: 28,
     fontWeight: '700',
     color: '#FEF08A',
     marginTop: 2,
-    lineHeight: 32,
+    lineHeight: 38,
   },
   headerSubtitle: {
     fontSize: 13,
@@ -287,10 +291,11 @@ const styles = StyleSheet.create({
   },
   sectionTitleAr: {
     fontFamily: 'Amiri-Bold',
-    fontSize: 17,
+    fontSize: 22,
     fontWeight: '700',
     color: '#3B82F6',
     marginTop: 2,
+    lineHeight: 30,
   },
   sectionContent: {
     fontSize: 14,
@@ -331,7 +336,7 @@ const styles = StyleSheet.create({
     flex: 1,
     minWidth: '45%',
     maxWidth: '48%',
-    borderRadius: 16,
+    borderRadius: 18,
     overflow: 'hidden',
     borderWidth: 1.5,
     borderColor: '#CBD5E1',
@@ -341,7 +346,7 @@ const styles = StyleSheet.create({
     maxWidth: '100%',
   },
   sampleChipGradient: {
-    padding: 12,
+    padding: 14,
     alignItems: 'center',
     position: 'relative',
   },
@@ -349,26 +354,34 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 6,
     right: 6,
-    width: 22,
-    height: 22,
-    borderRadius: 11,
+    width: 24,
+    height: 24,
+    borderRadius: 12,
     backgroundColor: '#EFF6FF',
     justifyContent: 'center',
     alignItems: 'center',
   },
   sampleArabicChar: {
     fontFamily: 'Amiri-Bold',
-    fontSize: 38,
+    fontSize: 48,
     fontWeight: '700',
     color: '#0F172A',
     includeFontPadding: true,
     textAlign: 'center',
-    lineHeight: 52,
+    lineHeight: 60,
     marginVertical: 4,
   },
   sampleArabicCharWide: {
-    fontSize: 32,
-    lineHeight: 46,
+    fontSize: 36,
+    lineHeight: 48,
+  },
+  sampleArabicCharLong: {
+    fontSize: 26,
+    lineHeight: 36,
+  },
+  sampleArabicCharVeryLong: {
+    fontSize: 20,
+    lineHeight: 30,
   },
   sampleTranscription: {
     fontSize: 14,

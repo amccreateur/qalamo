@@ -309,9 +309,9 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   slot: {
-    minWidth: 72,
-    maxWidth: 90,
-    height: 84,
+    minWidth: 76,
+    maxWidth: 96,
+    height: 90,
     paddingHorizontal: 8,
     borderRadius: 20,
     justifyContent: 'center',
@@ -332,7 +332,7 @@ const styles = StyleSheet.create({
   },
   slotText: {
     fontFamily: 'Amiri-Bold',
-    fontSize: 44,
+    fontSize: 54,
     fontWeight: '700',
     color: '#064E3B',
     includeFontPadding: true,
@@ -355,7 +355,7 @@ const styles = StyleSheet.create({
   },
   fullWordText: {
     fontFamily: 'Amiri-Bold',
-    fontSize: 46,
+    fontSize: 56,
     fontWeight: '700',
     color: '#713F12',
     textAlign: 'center',
@@ -398,8 +398,8 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   letterTile: {
-    minWidth: 70,
-    height: 72,
+    minWidth: 76,
+    height: 80,
     paddingHorizontal: 10,
     borderRadius: 20,
     backgroundColor: '#FFFFFF',
@@ -415,7 +415,7 @@ const styles = StyleSheet.create({
   },
   letterTileText: {
     fontFamily: 'Amiri-Bold',
-    fontSize: 44,
+    fontSize: 52,
     fontWeight: '700',
     color: '#1F2937',
     includeFontPadding: false,

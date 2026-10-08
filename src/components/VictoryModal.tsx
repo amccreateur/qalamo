@@ -160,8 +160,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   bannerAr: {
-    fontSize: 34,
-    fontWeight: '900',
+    fontFamily: 'Amiri-Bold',
+    fontSize: 42,
+    fontWeight: '700',
     color: '#3B82F6',
     marginBottom: 4,
   },
