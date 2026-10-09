@@ -157,15 +157,15 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
       </View>
 
       {/* Target Center Stage */}
-      <View style={styles.targetStage}>
-        <Text style={styles.stageTitle}>
+      <View style={[styles.targetStage, isPhraseLevel && styles.targetStagePhrase]}>
+        <Text style={[styles.stageTitle, isPhraseLevel && styles.stageTitlePhrase]}>
           {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
           currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
           currentItem.phonemeDesc?.toLowerCase().includes('fin')
             ? t.targetStageTitlePosition
             : t.targetStageTitleSound}
         </Text>
-        <Text style={styles.stageSubtitle}>
+        <Text style={[styles.stageSubtitle, isPhraseLevel && styles.stageSubtitlePhrase]}>
           {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
           currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
           currentItem.phonemeDesc?.toLowerCase().includes('fin')
@@ -173,11 +173,15 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
             : t.targetStageSubtitleSound}
         </Text>
 
-        <TouchableOpacity style={styles.targetOrb} onPress={playSound} activeOpacity={0.8}>
-          <Animated.View style={[styles.targetInner, { transform: [{ scale: bounceAnim }] }]}>
+        <TouchableOpacity style={[styles.targetOrb, isPhraseLevel && styles.targetOrbPhrase]} onPress={playSound} activeOpacity={0.8}>
+          <Animated.View style={[
+            styles.targetInner,
+            isPhraseLevel && styles.targetInnerPhrase,
+            { transform: [{ scale: bounceAnim }] }
+          ]}>
             <LinearGradient colors={['#F59E0B', '#EF4444']} style={styles.orbGradient}>
-              <Ionicons name="volume-high" size={48} color="#FFFFFF" />
-              <Text style={styles.tapListenText}>{t.targetReplay}</Text>
+              <Ionicons name="volume-high" size={isPhraseLevel ? 34 : 48} color="#FFFFFF" />
+              <Text style={[styles.tapListenText, isPhraseLevel && styles.tapListenTextPhrase]}>{t.targetReplay}</Text>
             </LinearGradient>
           </Animated.View>
         </TouchableOpacity>
@@ -211,9 +215,8 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
             <TouchableOpacity
               key={opt.id}
               style={[
-                styles.targetCard,
+                isPhraseLevel ? styles.targetCardPhrase : styles.targetCardRegular,
                 { backgroundColor: cardBg, borderColor: borderColor },
-                isPhraseLevel ? styles.targetCardPhrase : null,
               ]}
               onPress={() => handleSelect(opt)}
               activeOpacity={0.7}
@@ -306,11 +309,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: 6,
   },
+  targetStagePhrase: {
+    marginVertical: 2,
+  },
   stageTitle: {
     fontSize: 20,
     fontWeight: '800',
     color: '#FCD34D',
     marginBottom: 4,
+  },
+  stageTitlePhrase: {
+    fontSize: 17,
+    marginBottom: 2,
   },
   stageSubtitle: {
     fontSize: 15,
@@ -318,8 +328,15 @@ const styles = StyleSheet.create({
     color: '#E0E7FF',
     marginBottom: 14,
   },
+  stageSubtitlePhrase: {
+    fontSize: 13,
+    marginBottom: 8,
+  },
   targetOrb: {
     marginVertical: 4,
+  },
+  targetOrbPhrase: {
+    marginVertical: 2,
   },
   targetInner: {
     width: 110,
@@ -330,6 +347,11 @@ const styles = StyleSheet.create({
       android: { elevation: 10 },
       web: { boxShadow: '0 0 25px rgba(245, 158, 11, 0.6)' } as any,
     }),
+  },
+  targetInnerPhrase: {
+    width: 78,
+    height: 78,
+    borderRadius: 39,
   },
   orbGradient: {
     width: '100%',
@@ -345,6 +367,10 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     color: '#FFFFFF',
     marginTop: 2,
+  },
+  tapListenTextPhrase: {
+    fontSize: 10,
+    marginTop: 1,
   },
   phonemeDesc: {
     marginTop: 12,
@@ -382,9 +408,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexWrap: 'nowrap',
     width: '100%',
-    gap: 10,
+    gap: 8,
   },
-  targetCard: {
+  targetCardRegular: {
     width: (width - 44) / 2,
     maxWidth: 180,
     aspectRatio: 1,
@@ -403,11 +429,18 @@ const styles = StyleSheet.create({
   targetCardPhrase: {
     width: '100%',
     maxWidth: 420,
-    aspectRatio: undefined,
-    minHeight: 68,
-    borderRadius: 22,
+    height: 62,
+    borderRadius: 18,
+    borderWidth: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingHorizontal: 16,
-    paddingVertical: 10,
+    paddingVertical: 6,
+    ...Platform.select({
+      ios: { shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.15, shadowRadius: 6 },
+      android: { elevation: 4 },
+      web: { boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' } as any,
+    }),
   },
   cardContentWrapper: {
     width: '100%',

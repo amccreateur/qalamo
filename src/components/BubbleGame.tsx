@@ -201,15 +201,15 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
       </View>
 
       {/* Center Sound Speaker (The Grapho Audio Prompt) */}
-      <View style={styles.promptArea}>
-        <Text style={styles.instructionText}>
+      <View style={[styles.promptArea, isPhraseLevel && styles.promptAreaPhrase]}>
+        <Text style={[styles.instructionText, isPhraseLevel && styles.instructionTextPhrase]}>
           {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
           currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
           currentItem.phonemeDesc?.toLowerCase().includes('fin')
             ? `${t.bubbleInstructionShape} ${getLocalizedPhonemeDesc(currentItem.phonemeDesc)}`
             : t.bubbleInstructionLetter}
         </Text>
-        <Text style={styles.instructionAr}>
+        <Text style={[styles.instructionAr, isPhraseLevel && styles.instructionArPhrase]}>
           {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
           currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
           currentItem.phonemeDesc?.toLowerCase().includes('fin')
@@ -217,10 +217,14 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
             : 'اِسْتَمِعْ وَاخْتَرِ الحَرْفَ المُنَاسِب'}
         </Text>
 
-        <TouchableOpacity style={styles.speakerButton} onPress={playCurrentSound} activeOpacity={0.8}>
-          <Animated.View style={[styles.speakerInner, { transform: [{ scale: pulseAnim }] }]}>
+        <TouchableOpacity style={[styles.speakerButton, isPhraseLevel && styles.speakerButtonPhrase]} onPress={playCurrentSound} activeOpacity={0.8}>
+          <Animated.View style={[
+            styles.speakerInner,
+            isPhraseLevel && styles.speakerInnerPhrase,
+            { transform: [{ scale: pulseAnim }] }
+          ]}>
             <LinearGradient colors={['#3B82F6', '#1D4ED8']} style={styles.speakerGradient}>
-              <Ionicons name="volume-high" size={44} color="#FFFFFF" />
+              <Ionicons name="volume-high" size={isPhraseLevel ? 32 : 44} color="#FFFFFF" />
             </LinearGradient>
           </Animated.View>
         </TouchableOpacity>
@@ -233,7 +237,7 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
             <Text style={styles.hintPillText}>{getLocalizedPhonemeDesc(currentItem.phonemeDesc)}</Text>
           </View>
         ) : (
-          <Text style={styles.phonemeHint}>{t.bubbleReplayHint}</Text>
+          <Text style={[styles.phonemeHint, isPhraseLevel && styles.phonemeHintPhrase]}>{t.bubbleReplayHint}</Text>
         )}
       </View>
 
@@ -256,15 +260,13 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
             <Animated.View
               key={opt.id}
               style={[
-                styles.bubbleWrapper,
-                isPhraseLevel && styles.bubbleWrapperPhrase,
+                isPhraseLevel ? styles.bubbleWrapperPhrase : styles.bubbleWrapperRegular,
                 { transform: [{ translateY: anim }] },
               ]}
             >
               <TouchableOpacity
                 style={[
-                  styles.bubble,
-                  isPhraseLevel && styles.bubblePhrase,
+                  isPhraseLevel ? styles.bubblePhrase : styles.bubbleRegular,
                   { backgroundColor: bubbleBg, borderColor: bubbleBorder },
                 ]}
                 onPress={() => handleBubblePress(opt)}
@@ -359,20 +361,35 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 6,
   },
+  promptAreaPhrase: {
+    marginTop: 2,
+  },
   instructionText: {
     fontSize: 15,
     fontWeight: '700',
     color: '#1E3A8A',
     marginBottom: 2,
   },
+  instructionTextPhrase: {
+    fontSize: 14,
+    marginBottom: 1,
+  },
   instructionAr: {
+    fontFamily: 'Amiri-Bold',
     fontSize: 17,
     fontWeight: '800',
     color: '#1E40AF',
     marginBottom: 10,
   },
+  instructionArPhrase: {
+    fontSize: 15,
+    marginBottom: 4,
+  },
   speakerButton: {
     marginVertical: 4,
+  },
+  speakerButtonPhrase: {
+    marginVertical: 2,
   },
   speakerInner: {
     width: 88,
@@ -383,6 +400,11 @@ const styles = StyleSheet.create({
       android: { elevation: 8 },
       web: { boxShadow: '0 10px 15px -3px rgba(29, 78, 216, 0.4)' } as any,
     }),
+  },
+  speakerInnerPhrase: {
+    width: 74,
+    height: 74,
+    borderRadius: 37,
   },
   speakerGradient: {
     width: '100%',
@@ -398,6 +420,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     color: '#334155',
+  },
+  phonemeHintPhrase: {
+    marginTop: 2,
+    fontSize: 11,
   },
   hintPill: {
     flexDirection: 'row',
@@ -428,9 +454,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexWrap: 'nowrap',
     width: '100%',
-    gap: 10,
+    gap: 8,
   },
-  bubbleWrapper: {
+  bubbleWrapperRegular: {
     width: (width - 44) / 2,
     maxWidth: 180,
     aspectRatio: 1,
@@ -438,9 +464,9 @@ const styles = StyleSheet.create({
   bubbleWrapperPhrase: {
     width: '100%',
     maxWidth: 420,
-    aspectRatio: undefined,
+    height: 62,
   },
-  bubble: {
+  bubbleRegular: {
     width: '100%',
     height: '100%',
     borderRadius: 36,
@@ -456,11 +482,19 @@ const styles = StyleSheet.create({
     }),
   },
   bubblePhrase: {
-    height: undefined,
-    minHeight: 68,
-    borderRadius: 22,
+    width: '100%',
+    height: '100%',
+    borderRadius: 18,
+    borderWidth: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingHorizontal: 16,
-    paddingVertical: 10,
+    paddingVertical: 6,
+    ...Platform.select({
+      ios: { shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.12, shadowRadius: 6 },
+      android: { elevation: 4 },
+      web: { boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' } as any,
+    }),
   },
   bubbleContentWrapper: {
     width: '100%',
