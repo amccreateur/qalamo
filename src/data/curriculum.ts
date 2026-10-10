@@ -5888,9 +5888,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "La maison est grande",
             "transliteration": "",
             "distractors": [
-              "المَاءُ بَارِدٌ",
-              "الكِتَابُ مُفِيدٌ",
-              "الشَّمْسُ مُشْرِقَةٌ"
+              "البَيْتُ صَغِيرٌ",
+              "البَابُ كَبِيرٌ",
+              "بَيْتٌ كَبِيرٌ"
             ],
             "phonemeDescEn": "The house is big"
           },
@@ -5901,9 +5901,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "L'eau est fraîche",
             "transliteration": "",
             "distractors": [
-              "البَيْتُ كَبِيرٌ",
-              "القَمَرُ مُنِيرٌ",
-              "الكِتَابُ مُفِيدٌ"
+              "المَاءُ حَارٌّ",
+              "الحَلِيبُ بَارِدٌ",
+              "مَاءٌ بَارِدٌ"
             ],
             "phonemeDescEn": "The water is cold"
           },
@@ -5914,9 +5914,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le livre est utile",
             "transliteration": "",
             "distractors": [
-              "البَيْتُ كَبِيرٌ",
-              "المَاءُ بَارِدٌ",
-              "الشَّمْسُ مُشْرِقَةٌ"
+              "الكِتَابُ جَدِيدٌ",
+              "القَلَمُ مُفِيدٌ",
+              "كِتَابٌ مُفِيدٌ"
             ],
             "phonemeDescEn": "The book is useful"
           },
@@ -5927,9 +5927,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le soleil brille",
             "transliteration": "",
             "distractors": [
-              "القَمَرُ مُنِيرٌ",
-              "المَاءُ بَارِدٌ",
-              "البَيْتُ كَبِيرٌ"
+              "الشَّمْسُ حَارَّةٌ",
+              "السَّمَاءُ مُشْرِقَةٌ",
+              "شَمْسٌ مُشْرِقَةٌ"
             ],
             "phonemeDescEn": "The sun is shining"
           },
@@ -5940,9 +5940,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "La lune est lumineuse",
             "transliteration": "",
             "distractors": [
-              "الشَّمْسُ مُشْرِقَةٌ",
-              "الكِتَابُ مُفِيدٌ",
-              "المَاءُ بَارِدٌ"
+              "القَمَرُ بَعِيدٌ",
+              "النَّجْمُ مُنِيرٌ",
+              "قَمَرٌ مُنِيرٌ"
             ]
           }
         ],
@@ -5970,9 +5970,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le garçon est énergique",
             "transliteration": "",
             "distractors": [
-              "البِنْتُ ذَكِيَّةٌ",
-              "القَلَمُ جَدِيدٌ",
-              "البَابُ مَفْتُوحٌ"
+              "الوَلَدُ ذَكِيٌّ",
+              "الطَّالِبُ نَشِيطٌ",
+              "وَلَدٌ نَشِيطٌ"
             ],
             "phonemeDescEn": "The boy is energetic"
           },
@@ -5983,9 +5983,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "La fille est intelligente",
             "transliteration": "",
             "distractors": [
-              "الوَلَدُ نَشِيطٌ",
-              "الزَّهْرَةُ جَمِيلَةٌ",
-              "القَلَمُ جَدِيدٌ"
+              "البِنْتُ نَشِيطَةٌ",
+              "المُعَلِّمَةُ ذَكِيَّةٌ",
+              "بِنْتٌ ذَكِيَّةٌ"
             ],
             "phonemeDescEn": "The girl is smart"
           },
@@ -5996,9 +5996,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le stylo est neuf",
             "transliteration": "",
             "distractors": [
-              "البَابُ مَفْتُوحٌ",
-              "الوَلَدُ نَشِيطٌ",
-              "البِنْتُ ذَكِيَّةٌ"
+              "القَلَمُ صَغِيرٌ",
+              "الكِتَابُ جَدِيدٌ",
+              "قَلَمٌ جَدِيدٌ"
             ],
             "phonemeDescEn": "The pen is new"
           },
@@ -6009,9 +6009,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "La porte est ouverte",
             "transliteration": "",
             "distractors": [
-              "القَلَمُ جَدِيدٌ",
-              "الزَّهْرَةُ جَمِيلَةٌ",
-              "الوَلَدُ نَشِيطٌ"
+              "البَابُ مُغْلَقٌ",
+              "البَيْتُ مَفْتُوحٌ",
+              "بَابٌ مَفْتُوحٌ"
             ]
           },
           {
@@ -6021,9 +6021,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "La fleur est belle",
             "transliteration": "",
             "distractors": [
-              "البِنْتُ ذَكِيَّةٌ",
-              "البَابُ مَفْتُوحٌ",
-              "القَلَمُ جَدِيدٌ"
+              "الزَّهْرَةُ حَمْرَاءُ",
+              "الحَدِيقَةُ جَمِيلَةٌ",
+              "زَهْرَةٌ جَمِيلَةٌ"
             ]
           }
         ],
@@ -6051,9 +6051,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "L'enfant a écrit",
             "transliteration": "",
             "distractors": [
-              "قَرَأَ الطَّالِبُ",
-              "جَلَسَ الأَبُ",
-              "أَكَلَ الطِّفْلُ"
+              "قَرَأَ الوَلَدُ",
+              "كَتَبَ الطَّالِبُ",
+              "كَتَبَتِ البِنْتُ"
             ],
             "phonemeDescEn": "The child wrote"
           },
@@ -6064,9 +6064,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "L'élève a lu",
             "transliteration": "",
             "distractors": [
-              "كَتَبَ الوَلَدُ",
-              "شَرِبَ الوَلَدُ",
-              "نَامَ الطِّفْلُ"
+              "كَتَبَ الطَّالِبُ",
+              "قَرَأَ المُعَلِّمُ",
+              "قَرَأَتِ الطَّالِبَةُ"
             ],
             "phonemeDescEn": "The student read"
           },
@@ -6077,9 +6077,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le père s'est assis",
             "transliteration": "",
             "distractors": [
-              "كَتَبَ الوَلَدُ",
-              "قَرَأَ الطَّالِبُ",
-              "أَكَلَ الطِّفْلُ"
+              "قَامَ الأَبُ",
+              "جَلَسَ الوَلَدُ",
+              "جَلَسَتِ الأُمُّ"
             ],
             "phonemeDescEn": "The father sat down"
           },
@@ -6090,9 +6090,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le petit a mangé",
             "transliteration": "",
             "distractors": [
-              "شَرِبَ الوَلَدُ",
-              "جَلَسَ الأَبُ",
-              "نَامَ الطِّفْلُ"
+              "شَرِبَ الطِّفْلُ",
+              "أَكَلَ الوَلَدُ",
+              "أَكَلَتِ البِنْتُ"
             ]
           },
           {
@@ -6102,9 +6102,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le garçon a bu",
             "transliteration": "",
             "distractors": [
-              "أَكَلَ الطِّفْلُ",
-              "كَتَبَ الوَلَدُ",
-              "قَرَأَ الطَّالِبُ"
+              "أَكَلَ الوَلَدُ",
+              "شَرِبَ الطِّفْلُ",
+              "شَرِبَتِ البِنْتُ"
             ]
           },
           {
@@ -6114,9 +6114,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le bébé a dormi",
             "transliteration": "",
             "distractors": [
-              "جَلَسَ الأَبُ",
-              "شَرِبَ الوَلَدُ",
-              "أَكَلَ الطِّفْلُ"
+              "قَامَ الطِّفْلُ",
+              "نَامَ الوَلَدُ",
+              "نَامَتِ البِنْتُ"
             ]
           }
         ],
@@ -6144,9 +6144,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le garçon est parti",
             "transliteration": "",
             "distractors": [
-              "رَجَعَ الأَبُ",
-              "خَرَجَ المُعَلِّمُ",
-              "دَخَلَ الطَّالِبُ"
+              "رَجَعَ الوَلَدُ",
+              "ذَهَبَ الطَّالِبُ",
+              "ذَهَبَتِ البِنْتُ"
             ],
             "phonemeDescEn": "The boy left"
           },
@@ -6157,9 +6157,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le père est revenu",
             "transliteration": "",
             "distractors": [
-              "ذَهَبَ الوَلَدُ",
-              "خَرَجَ المُعَلِّمُ",
-              "طَارَ العُصْفُورُ"
+              "ذَهَبَ الأَبُ",
+              "رَجَعَ الوَلَدُ",
+              "رَجَعَتِ الأُمُّ"
             ],
             "phonemeDescEn": "The father returned"
           },
@@ -6170,9 +6170,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le maître est sorti",
             "transliteration": "",
             "distractors": [
-              "دَخَلَ الطَّالِبُ",
-              "ذَهَبَ الوَلَدُ",
-              "رَجَعَ الأَبُ"
+              "دَخَلَ المُعَلِّمُ",
+              "خَرَجَ الطَّالِبُ",
+              "خَرَجَتِ المُعَلِّمَةُ"
             ],
             "phonemeDescEn": "The teacher went out"
           },
@@ -6183,9 +6183,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "L'élève est entré",
             "transliteration": "",
             "distractors": [
-              "خَرَجَ المُعَلِّمُ",
-              "طَارَ العُصْفُورُ",
-              "ذَهَبَ الوَلَدُ"
+              "خَرَجَ الطَّالِبُ",
+              "دَخَلَ المُعَلِّمُ",
+              "دَخَلَتِ الطَّالِبَةُ"
             ]
           },
           {
@@ -6195,9 +6195,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "L'oiseau s'est envolé",
             "transliteration": "",
             "distractors": [
-              "دَخَلَ الطَّالِبُ",
-              "رَجَعَ الأَبُ",
-              "خَرَجَ المُعَلِّمُ"
+              "حَطَّ العُصْفُورُ",
+              "طَارَ الطَّيْرُ",
+              "طَارَتِ الحَمَامَةُ"
             ]
           }
         ],
@@ -6225,9 +6225,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "L'enfant a lu le livre",
             "transliteration": "",
             "distractors": [
-              "كَتَبَ الطَّالِبُ الدَّرْسَ",
-              "شَرِبَ الطِّفْلُ الحَلِيبَ",
-              "أَكَلَ الوَلَدُ التَّمْرَ"
+              "كَتَبَ الوَلَدُ الكِتَابَ",
+              "قَرَأَ الوَلَدُ الدَّرْسَ",
+              "قَرَأَ الطَّالِبُ الكِتَابَ"
             ],
             "phonemeDescEn": "The child read the book"
           },
@@ -6238,9 +6238,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "L'élève a écrit la leçon",
             "transliteration": "",
             "distractors": [
-              "قَرَأَ الوَلَدُ الكِتَابَ",
-              "فَتَحَ الأَبُ البَابَ",
-              "شَرِبَ الطِّفْلُ الحَلِيبَ"
+              "قَرَأَ الطَّالِبُ الدَّرْسَ",
+              "كَتَبَ الطَّالِبُ الكِتَابَ",
+              "كَتَبَ الوَلَدُ الدَّرْسَ"
             ],
             "phonemeDescEn": "The student wrote the lesson"
           },
@@ -6251,9 +6251,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "L'enfant a bu le lait",
             "transliteration": "",
             "distractors": [
-              "أَكَلَ الوَلَدُ التَّمْرَ",
-              "قَرَأَ الوَلَدُ الكِتَابَ",
-              "كَتَبَ الطَّالِبُ الدَّرْسَ"
+              "شَرِبَ الطِّفْلُ المَاءَ",
+              "أَكَلَ الطِّفْلُ الحَلِيبَ",
+              "شَرِبَ الوَلَدُ الحَلِيبَ"
             ],
             "phonemeDescEn": "The child drank the milk"
           },
@@ -6264,9 +6264,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le garçon a mangé la datte",
             "transliteration": "",
             "distractors": [
-              "شَرِبَ الطِّفْلُ الحَلِيبَ",
-              "فَتَحَ الأَبُ البَابَ",
-              "كَتَبَ الطَّالِبُ الدَّرْسَ"
+              "أَكَلَ الوَلَدُ التُّفَّاحَ",
+              "شَرِبَ الوَلَدُ التَّمْرَ",
+              "أَكَلَ الطِّفْلُ التَّمْرَ"
             ]
           }
         ],
@@ -6294,9 +6294,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le père a ouvert la porte",
             "transliteration": "",
             "distractors": [
-              "رَسَمَ الوَلَدُ الشَّجَرَةَ",
-              "قَرَأَ الوَلَدُ الكِتَابَ",
-              "كَتَبَ الطَّالِبُ الدَّرْسَ"
+              "أَغْلَقَ الأَبُ البَابَ",
+              "فَتَحَ الأَبُ الكِتَابَ",
+              "فَتَحَ الوَلَدُ البَابَ"
             ],
             "phonemeDescEn": "The father opened the door"
           },
@@ -6307,9 +6307,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "L'enfant a dessiné l'arbre",
             "transliteration": "",
             "distractors": [
-              "فَتَحَ الأَبُ البَابَ",
-              "أَكَلَ الوَلَدُ التَّمْرَ",
-              "شَرِبَ الطِّفْلُ الحَلِيبَ"
+              "رَسَمَ الوَلَدُ الزَّهْرَةَ",
+              "قَطَفَ الوَلَدُ الشَّجَرَةَ",
+              "رَسَمَتِ البِنْتُ الشَّجَرَةَ"
             ],
             "phonemeDescEn": "The child drew the tree"
           },
@@ -6320,9 +6320,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "L'enfant a lu le livre",
             "transliteration": "",
             "distractors": [
-              "رَسَمَ الوَلَدُ الشَّجَرَةَ",
-              "فَتَحَ الأَبُ البَابَ",
-              "كَتَبَ الطَّالِبُ الدَّرْسَ"
+              "فَتَحَ الوَلَدُ الكِتَابَ",
+              "قَرَأَ الوَلَدُ الدَّرْسَ",
+              "قَرَأَتِ البِنْتُ الكِتَابَ"
             ],
             "phonemeDescEn": "The child read the book"
           },
@@ -6333,9 +6333,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "L'élève a écrit la leçon",
             "transliteration": "",
             "distractors": [
-              "فَتَحَ الأَبُ البَابَ",
-              "رَسَمَ الوَلَدُ الشَّجَرَةَ",
-              "أَكَلَ الوَلَدُ التَّمْرَ"
+              "فَهِمَ الطَّالِبُ الدَّرْسَ",
+              "كَتَبَ الطَّالِبُ القِصَّةَ",
+              "كَتَبَتِ الطَّالِبَةُ الدَّرْسَ"
             ],
             "phonemeDescEn": "The student wrote the lesson"
           }
@@ -6364,9 +6364,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Que la paix soit sur vous",
             "transliteration": "",
             "distractors": [
-              "أَهْلًا وَسَهْلًا",
-              "شُكْرًا جَزِيلًا",
-              "صَبَاحُ الخَيْرِ"
+              "السَّلَامُ عَلَيْكَ",
+              "السَّلَامُ عَلَيْكِ",
+              "عَلَيْكُمُ السَّلَامُ"
             ],
             "phonemeDescEn": "Peace be upon you"
           },
@@ -6377,9 +6377,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Bienvenue",
             "transliteration": "",
             "distractors": [
-              "السَّلَامُ عَلَيْكُمْ",
-              "مَسَاءُ الخَيْرِ",
-              "شُكْرًا جَزِيلًا"
+              "أَهْلًا بِكُمْ",
+              "أَهْلًا بِكَ",
+              "سَهْلًا وَأَهْلًا"
             ],
             "phonemeDescEn": "Welcome"
           },
@@ -6390,9 +6390,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Merci beaucoup",
             "transliteration": "",
             "distractors": [
-              "صَبَاحُ الخَيْرِ",
-              "أَهْلًا وَسَهْلًا",
-              "السَّلَامُ عَلَيْكُمْ"
+              "شُكْرًا لَكُمْ",
+              "عَفْوًا جَزِيلًا",
+              "شُكْرًا كَثِيرًا"
             ],
             "phonemeDescEn": "Thank you very much"
           },
@@ -6403,9 +6403,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Bonjour",
             "transliteration": "",
             "distractors": [
+              "صَبَاحُ النُّورِ",
               "مَسَاءُ الخَيْرِ",
-              "شُكْرًا جَزِيلًا",
-              "أَهْلًا وَسَهْلًا"
+              "صَبَاحُ الوَرْدِ"
             ]
           },
           {
@@ -6415,9 +6415,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Bonsoir",
             "transliteration": "",
             "distractors": [
+              "مَسَاءُ النُّورِ",
               "صَبَاحُ الخَيْرِ",
-              "السَّلَامُ عَلَيْكُمْ",
-              "شُكْرًا جَزِيلًا"
+              "مَسَاءُ الوَرْدِ"
             ]
           }
         ],
@@ -6445,9 +6445,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "L'enfant est allé à l'école",
             "transliteration": "",
             "distractors": [
-              "جَلَسَ الأَبُ عَلَى الكُرْسِيِّ",
-              "الكِتَابُ فِي الحَقِيبَةِ",
-              "العُصْفُورُ فَوْقَ الشَّجَرَةِ"
+              "ذَهَبَ الوَلَدُ إِلَى الحَدِيقَةِ",
+              "رَجَعَ الوَلَدُ مِنَ المَدْرَسَةِ",
+              "ذَهَبَ الطَّالِبُ إِلَى المَدْرَسَةِ"
             ],
             "phonemeDescEn": "The child went to school"
           },
@@ -6458,9 +6458,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le père s'est assis sur la chaise",
             "transliteration": "",
             "distractors": [
-              "ذَهَبَ الوَلَدُ إِلَى المَدْرَسَةِ",
-              "الكِتَابُ فِي الحَقِيبَةِ",
-              "العُصْفُورُ فَوْقَ الشَّجَرَةِ"
+              "جَلَسَ الوَلَدُ عَلَى الكُرْسِيِّ",
+              "قَامَ الأَبُ عَنِ الكُرْسِيِّ",
+              "جَلَسَ الأَبُ فِي البَيْتِ"
             ],
             "phonemeDescEn": "The father sat on the chair"
           },
@@ -6471,9 +6471,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le livre est dans le cartable",
             "transliteration": "",
             "distractors": [
-              "العُصْفُورُ فَوْقَ الشَّجَرَةِ",
-              "ذَهَبَ الوَلَدُ إِلَى المَدْرَسَةِ",
-              "جَلَسَ الأَبُ عَلَى الكُرْسِيِّ"
+              "القَلَمُ فِي الحَقِيبَةِ",
+              "الكِتَابُ عَلَى المَكْتَبِ",
+              "كِتَابٌ فِي الحَقِيبَةِ"
             ],
             "phonemeDescEn": "The book is in the schoolbag"
           },
@@ -6484,9 +6484,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "L'oiseau est sur l'arbre",
             "transliteration": "",
             "distractors": [
-              "الكِتَابُ فِي الحَقِيبَةِ",
-              "جَلَسَ الأَبُ عَلَى الكُرْسِيِّ",
-              "ذَهَبَ الوَلَدُ إِلَى المَدْرَسَةِ"
+              "العُصْفُورُ عَلَى الشَّجَرَةِ",
+              "القِطُّ تَحْتَ الشَّجَرَةِ",
+              "الطَّيْرُ فَوْقَ الشَّجَرَةِ"
             ]
           }
         ],
@@ -6514,9 +6514,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Ahmad a lu un livre instructif",
             "transliteration": "",
             "distractors": [
-              "ذَهَبَتْ فَاطِمَةُ إِلَى الحَدِيقَةِ",
-              "أَكَلَ الوَلَدُ تُفَّاحَةً لَذِيذَةً",
-              "جَلَسَ الأَبُ عَلَى الكُرْسِيِّ"
+              "قَرَأَ أَحْمَدُ كِتَابًا جَدِيدًا",
+              "كَتَبَ أَحْمَدُ كِتَابًا مُفِيدًا",
+              "قَرَأَ عُمَرُ كِتَابًا مُفِيدًا"
             ],
             "phonemeDescEn": "Ahmad read an instructive book"
           },
@@ -6527,9 +6527,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Fatima est allée au jardin",
             "transliteration": "",
             "distractors": [
-              "قَرَأَ أَحْمَدُ كِتَابًا مُفِيدًا",
-              "أَكَلَ الوَلَدُ تُفَّاحَةً لَذِيذَةً",
-              "الكِتَابُ فِي الحَقِيبَةِ"
+              "ذَهَبَتْ فَاطِمَةُ إِلَى المَدْرَسَةِ",
+              "رَجَعَتْ فَاطِمَةُ مِنَ الحَدِيقَةِ",
+              "ذَهَبَتْ مَرْيَمُ إِلَى الحَدِيقَةِ"
             ],
             "phonemeDescEn": "Fatima went to the garden"
           },
@@ -6540,9 +6540,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le garçon a mangé une délicieuse pomme",
             "transliteration": "",
             "distractors": [
-              "قَرَأَ أَحْمَدُ كِتَابًا مُفِيدًا",
-              "ذَهَبَتْ فَاطِمَةُ إِلَى الحَدِيقَةِ",
-              "ذَهَبَ الوَلَدُ إِلَى المَدْرَسَةِ"
+              "أَكَلَ الوَلَدُ تُفَّاحَةً حَمْرَاءَ",
+              "أَكَلَتِ البِنْتُ تُفَّاحَةً لَذِيذَةً",
+              "شَرِبَ الوَلَدُ عَصِيرًا لَذِيذًا"
             ],
             "phonemeDescEn": "The boy ate a delicious apple"
           }
@@ -6571,9 +6571,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "L'enfant a lu le livre",
             "transliteration": "",
             "distractors": [
-              "كَتَبَ الطَّالِبُ الدَّرْسَ",
-              "ذَهَبَ الوَلَدُ إِلَى المَدْرَسَةِ",
-              "الشَّمْسُ مُشْرِقَةٌ"
+              "قَرَأَ الوَلَدُ الدَّرْسَ",
+              "كَتَبَ الوَلَدُ الكِتَابَ",
+              "قَرَأَ الطَّالِبُ الكِتَابَ"
             ],
             "phonemeDescEn": "The child read the book"
           },
@@ -6584,9 +6584,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "L'enfant est allé à l'école",
             "transliteration": "",
             "distractors": [
-              "جَلَسَ الأَبُ عَلَى الكُرْسِيِّ",
-              "قَرَأَ أَحْمَدُ كِتَابًا مُفِيدًا",
-              "البَيْتُ كَبِيرٌ"
+              "ذَهَبَ الوَلَدُ إِلَى الحَدِيقَةِ",
+              "رَجَعَ الوَلَدُ مِنَ المَدْرَسَةِ",
+              "ذَهَبَ الطَّالِبُ إِلَى المَدْرَسَةِ"
             ],
             "phonemeDescEn": "The child went to school"
           },
@@ -6597,9 +6597,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Le soleil brille",
             "transliteration": "",
             "distractors": [
-              "القَمَرُ مُنِيرٌ",
-              "المَاءُ بَارِدٌ",
-              "الكِتَابُ مُفِيدٌ"
+              "الشَّمْسُ حَارَّةٌ",
+              "السَّمَاءُ مُشْرِقَةٌ",
+              "شَمْسٌ مُشْرِقَةٌ"
             ],
             "phonemeDescEn": "The sun is shining"
           },
@@ -6610,9 +6610,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Que la paix soit sur vous",
             "transliteration": "",
             "distractors": [
-              "أَهْلًا وَسَهْلًا",
-              "شُكْرًا جَزِيلًا",
-              "صَبَاحُ الخَيْرِ"
+              "السَّلَامُ عَلَيْكَ",
+              "السَّلَامُ عَلَيْكِ",
+              "عَلَيْكُمُ السَّلَامُ"
             ],
             "phonemeDescEn": "Peace be upon you"
           },
@@ -6623,9 +6623,9 @@ export const WORLDS: World[] = [
             "phonemeDesc": "Ahmad a lu un livre instructif",
             "transliteration": "",
             "distractors": [
-              "أَكَلَ الوَلَدُ تُفَّاحَةً لَذِيذَةً",
-              "ذَهَبَتْ فَاطِمَةُ إِلَى الحَدِيقَةِ",
-              "كَتَبَ الطَّالِبُ الدَّرْسَ"
+              "قَرَأَ أَحْمَدُ كِتَابًا جَدِيدًا",
+              "كَتَبَ أَحْمَدُ كِتَابًا مُفِيدًا",
+              "قَرَأَ عُمَرُ كِتَابًا مُفِيدًا"
             ],
             "phonemeDescEn": "Ahmad read an instructive book"
           }
