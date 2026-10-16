@@ -20,3 +20,4 @@ if idx != -1:
                 for it in lvl.get('items', []):
                     print(f"  Target: '{it['grapheme']}' ({it.get('phonemeDesc','')})")
                     print(f"    Distractors: {it.get('distractors', [])}")
+
