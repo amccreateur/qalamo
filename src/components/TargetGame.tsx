@@ -43,10 +43,10 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
 
   const bounceAnim = useRef(new Animated.Value(0.95)).current;
   const currentItem = items[currentIndex];
-  const isPhraseLevel = options.some((opt) => {
-    const baseLetters = opt.grapheme.replace(/[\u064B-\u065F\u0670]/g, '');
-    return opt.grapheme.includes(' ') || baseLetters.length > 7;
-  });
+  const isPhraseLevel = items.some((item) => {
+    const baseLetters = item.grapheme.replace(/[\u064B-\u065F\u0670]/g, '');
+    return item.grapheme.includes(' ') || baseLetters.length > 7;
+  }) || options.some((opt) => opt.grapheme.includes(' '));
   const isWordOrPhrase = isPhraseLevel || (currentItem && (currentItem.grapheme.length > 2 || (currentItem.phonemeDesc && currentItem.phonemeDesc.length > 0)));
 
   const getLocalizedPhonemeDesc = (desc?: string): string => {
