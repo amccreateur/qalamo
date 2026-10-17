@@ -13,7 +13,7 @@ import { WordItem } from '../types/game';
 import { soundService } from '../services/soundService';
 import { useLanguage } from '../i18n/LanguageContext';
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 const isTablet = width >= 600;
 
 interface WordBuilderGameProps {
@@ -44,6 +44,11 @@ export const WordBuilderGame: React.FC<WordBuilderGameProps> = ({ items, onCompl
 
   const currentWord = items[currentIndex];
 
+  const playWordAudio = () => {
+    if (!currentWord) return;
+    soundService.playSound(currentWord.id, currentWord.word);
+  };
+
   useEffect(() => {
     if (!currentWord) return;
 
@@ -70,11 +75,6 @@ export const WordBuilderGame: React.FC<WordBuilderGameProps> = ({ items, onCompl
 
     return () => clearTimeout(timer);
   }, [currentIndex]);
-
-  const playWordAudio = () => {
-    if (!currentWord) return;
-    soundService.playSound(currentWord.id, currentWord.word);
-  };
 
   const handleSelectLetter = (poolItem: { id: string; letter: string }) => {
     if (isCompletedWord) return;
