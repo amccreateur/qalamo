@@ -12,6 +12,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { WordItem } from '../types/game';
 import { soundService } from '../services/soundService';
 import { useLanguage } from '../i18n/LanguageContext';
+import { PlaybackSpeedToggle } from './PlaybackSpeedToggle';
 
 const { width } = Dimensions.get('window');
 const isTablet = width >= 600;
@@ -41,12 +42,18 @@ export const WordBuilderGame: React.FC<WordBuilderGameProps> = ({ items, onCompl
   const [score, setScore] = useState(0);
   const [mistakes, setMistakes] = useState<string[]>([]);
   const [isCompletedWord, setIsCompletedWord] = useState(false);
+  const [playbackSpeed, setPlaybackSpeed] = useState<number>(soundService.getPlaybackSpeed());
 
   const currentWord = items[currentIndex];
 
-  const playWordAudio = () => {
+  const playWordAudio = (speed?: number) => {
     if (!currentWord) return;
-    soundService.playSound(currentWord.id, currentWord.word);
+    soundService.playSound(currentWord.id, currentWord.word, speed);
+  };
+
+  const handleSpeedChange = (newSpeed: number) => {
+    setPlaybackSpeed(newSpeed);
+    playWordAudio(newSpeed);
   };
 
   useEffect(() => {
@@ -158,10 +165,18 @@ export const WordBuilderGame: React.FC<WordBuilderGameProps> = ({ items, onCompl
         <View style={styles.wordStage}>
           {currentWord.emoji ? <Text style={styles.emoji}>{currentWord.emoji}</Text> : null}
           
-          <TouchableOpacity style={styles.speakerPill} onPress={playWordAudio} activeOpacity={0.8}>
-            <Ionicons name="volume-high" size={26} color="#065F46" />
-            <Text style={styles.speakerPillText}>{t.listenWordBtn}</Text>
-          </TouchableOpacity>
+          <View style={styles.audioControlsRow}>
+            <TouchableOpacity style={styles.speakerPill} onPress={() => playWordAudio()} activeOpacity={0.8}>
+              <Ionicons name="volume-high" size={26} color="#065F46" />
+              <Text style={styles.speakerPillText}>{t.listenWordBtn}</Text>
+            </TouchableOpacity>
+
+            <PlaybackSpeedToggle
+              currentSpeed={playbackSpeed}
+              onSpeedChange={handleSpeedChange}
+              variant="green"
+            />
+          </View>
 
           {Boolean(
             ((language === 'en'
@@ -313,6 +328,13 @@ const styles = StyleSheet.create({
   emoji: {
     fontSize: isTablet ? 76 : 60,
     marginBottom: isTablet ? 12 : 6,
+  },
+  audioControlsRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 12,
+    flexWrap: 'wrap',
   },
   speakerPill: {
     flexDirection: 'row',

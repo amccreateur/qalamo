@@ -14,6 +14,7 @@ import { PhonemeItem } from '../types/game';
 import { soundService } from '../services/soundService';
 import { COLORS } from '../theme/colors';
 import { useLanguage } from '../i18n/LanguageContext';
+import { PlaybackSpeedToggle } from './PlaybackSpeedToggle';
 
 const { width } = Dimensions.get('window');
 
@@ -38,6 +39,7 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
   const [mistakes, setMistakes] = useState<string[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
+  const [playbackSpeed, setPlaybackSpeed] = useState<number>(soundService.getPlaybackSpeed());
 
   const bounceAnim = useRef(new Animated.Value(0.95)).current;
   const currentItem = items[currentIndex];
@@ -45,6 +47,7 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
     const baseLetters = opt.grapheme.replace(/[\u064B-\u065F\u0670]/g, '');
     return opt.grapheme.includes(' ') || baseLetters.length > 7;
   });
+  const isWordOrPhrase = isPhraseLevel || (currentItem && (currentItem.grapheme.length > 2 || (currentItem.phonemeDesc && currentItem.phonemeDesc.length > 0)));
 
   const getLocalizedPhonemeDesc = (desc?: string): string => {
     if (!desc) return '';
@@ -55,6 +58,21 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
     if (d.includes('fin')) return t.posFinal;
     if (d.includes('isol')) return t.posIsolated;
     return desc;
+  };
+
+  const playSound = (speed?: number) => {
+    if (!currentItem) return;
+    soundService.playSound(currentItem.id, currentItem.audioText || currentItem.grapheme, speed);
+
+    Animated.sequence([
+      Animated.timing(bounceAnim, { toValue: 1.15, duration: 150, useNativeDriver: true }),
+      Animated.timing(bounceAnim, { toValue: 1, duration: 150, useNativeDriver: true }),
+    ]).start();
+  };
+
+  const handleSpeedChange = (newSpeed: number) => {
+    setPlaybackSpeed(newSpeed);
+    playSound(newSpeed);
   };
 
   useEffect(() => {
@@ -87,16 +105,6 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
 
     return () => clearTimeout(timer);
   }, [currentIndex]);
-
-  const playSound = () => {
-    if (!currentItem) return;
-    soundService.playSound(currentItem.id, currentItem.audioText || currentItem.grapheme);
-
-    Animated.sequence([
-      Animated.timing(bounceAnim, { toValue: 1.15, duration: 150, useNativeDriver: true }),
-      Animated.timing(bounceAnim, { toValue: 1, duration: 150, useNativeDriver: true }),
-    ]).start();
-  };
 
   const handleSelect = (option: TargetOption) => {
     if (selectedId !== null) return;
@@ -173,7 +181,7 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
             : t.targetStageSubtitleSound}
         </Text>
 
-        <TouchableOpacity style={[styles.targetOrb, isPhraseLevel && styles.targetOrbPhrase]} onPress={playSound} activeOpacity={0.8}>
+        <TouchableOpacity style={[styles.targetOrb, isPhraseLevel && styles.targetOrbPhrase]} onPress={() => playSound()} activeOpacity={0.8}>
           <Animated.View style={[
             styles.targetInner,
             isPhraseLevel && styles.targetInnerPhrase,
@@ -185,6 +193,15 @@ export const TargetGame: React.FC<TargetGameProps> = ({ items, onComplete, onExi
             </LinearGradient>
           </Animated.View>
         </TouchableOpacity>
+
+        {isWordOrPhrase && (
+          <PlaybackSpeedToggle
+            currentSpeed={playbackSpeed}
+            onSpeedChange={handleSpeedChange}
+            variant="amber"
+            style={{ marginTop: 8 }}
+          />
+        )}
 
         {(currentItem.phonemeDesc?.toLowerCase().includes('début') ||
           currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||

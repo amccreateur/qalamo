@@ -70,6 +70,23 @@ export const storageService = {
   async resetProgress(): Promise<UserProgress> {
     await AsyncStorage.removeItem(STORAGE_KEY);
     return INITIAL_PROGRESS;
+  },
+
+  async getPlaybackSpeed(): Promise<number> {
+    try {
+      const data = await AsyncStorage.getItem('@qalamo_playback_speed');
+      if (data) {
+        const parsed = parseFloat(data);
+        if (!isNaN(parsed) && parsed > 0) return parsed;
+      }
+    } catch (_) {}
+    return 1.0;
+  },
+
+  async setPlaybackSpeed(speed: number): Promise<void> {
+    try {
+      await AsyncStorage.setItem('@qalamo_playback_speed', speed.toString());
+    } catch (_) {}
   }
 };
 

@@ -3,15 +3,34 @@ import * as Speech from 'expo-speech';
 import * as Haptics from 'expo-haptics';
 import { Platform } from 'react-native';
 import { ALL_AUDIO_ASSETS, CHAR_TO_KEY } from './audioMap';
+import { storageService } from './storageService';
 
 class SoundService {
   private isMuted: boolean = false;
   private currentWebAudio: any = null;
   private currentNativePlayer: AudioPlayer | null = null;
   private isAudioModeConfigured: boolean = false;
+  private playbackSpeed: number = 1.0;
 
   constructor() {
     this.initAudioMode();
+    this.initPlaybackSpeed();
+  }
+
+  private async initPlaybackSpeed() {
+    try {
+      const speed = await storageService.getPlaybackSpeed();
+      this.playbackSpeed = speed;
+    } catch (_) {}
+  }
+
+  public setPlaybackSpeed(speed: number) {
+    this.playbackSpeed = speed;
+    storageService.setPlaybackSpeed(speed);
+  }
+
+  public getPlaybackSpeed(): number {
+    return this.playbackSpeed;
   }
 
   private async initAudioMode() {
@@ -41,8 +60,10 @@ class SoundService {
   /**
    * Play studio letter/vowel/word sound on Android, iOS, and Web
    */
-  public async playSound(itemId?: string, fallbackText?: string): Promise<void> {
+  public async playSound(itemId?: string, fallbackText?: string, speed?: number): Promise<void> {
     if (this.isMuted) return;
+
+    const effectiveSpeed = speed !== undefined ? speed : this.playbackSpeed;
 
     // 1. Determine key: by explicit id or by matching character
     let soundKey = itemId;
@@ -68,6 +89,7 @@ class SoundService {
           if (WebAudioClass) {
             this.currentWebAudio = new WebAudioClass(uri);
             this.currentWebAudio.loop = false;
+            this.currentWebAudio.playbackRate = effectiveSpeed;
             await this.currentWebAudio.play();
             return;
           }
@@ -91,6 +113,12 @@ class SoundService {
 
           const player = createAudioPlayer(asset);
           player.loop = false;
+          if (typeof (player as any).setPlaybackRate === 'function') {
+            (player as any).setPlaybackRate(effectiveSpeed);
+          } else {
+            player.playbackRate = effectiveSpeed;
+          }
+          player.shouldCorrectPitch = true;
           this.currentNativePlayer = player;
           player.play();
 
@@ -108,7 +136,7 @@ class SoundService {
         Speech.speak(fallbackText, {
           language: 'ar-SA',
           pitch: 0.85,
-          rate: 0.82,
+          rate: 0.82 * effectiveSpeed,
         });
       } catch (e) {
         console.warn('Speech fallback error:', e);
@@ -119,7 +147,7 @@ class SoundService {
   /**
    * Pronounce text directly (tries asset first, fallback to Speech)
    */
-  public async speakArabic(text: string, rate: number = 0.82): Promise<void> {
+  public async speakArabic(text: string, rate?: number): Promise<void> {
     if (this.isMuted) return;
 
     const cleanText = text.trim();
@@ -128,12 +156,13 @@ class SoundService {
       return;
     }
 
+    const effectiveRate = rate !== undefined ? rate : 0.82 * this.playbackSpeed;
     try {
       await Speech.stop();
       Speech.speak(text, {
         language: 'ar-SA',
         pitch: 0.85,
-        rate: rate,
+        rate: effectiveRate,
       });
     } catch (e) {
       console.warn('Speech error:', e);

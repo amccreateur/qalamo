@@ -14,6 +14,7 @@ import { PhonemeItem } from '../types/game';
 import { soundService } from '../services/soundService';
 import { COLORS } from '../theme/colors';
 import { useLanguage } from '../i18n/LanguageContext';
+import { PlaybackSpeedToggle } from './PlaybackSpeedToggle';
 
 const { width } = Dimensions.get('window');
 
@@ -39,6 +40,7 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
   const [mistakes, setMistakes] = useState<string[]>([]);
   const [selectedBubbleId, setSelectedBubbleId] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
+  const [playbackSpeed, setPlaybackSpeed] = useState<number>(soundService.getPlaybackSpeed());
 
   // Animations
   const floatAnim1 = useRef(new Animated.Value(0)).current;
@@ -52,6 +54,7 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
     const baseLetters = opt.grapheme.replace(/[\u064B-\u065F\u0670]/g, '');
     return opt.grapheme.includes(' ') || baseLetters.length > 7;
   });
+  const isWordOrPhrase = isPhraseLevel || (currentItem && (currentItem.grapheme.length > 2 || (currentItem.phonemeDesc && currentItem.phonemeDesc.length > 0)));
 
   const getLocalizedPhonemeDesc = (desc?: string): string => {
     if (!desc) return '';
@@ -62,6 +65,22 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
     if (d.includes('fin')) return t.posFinal;
     if (d.includes('isol')) return t.posIsolated;
     return desc;
+  };
+
+  const playCurrentSound = (speed?: number) => {
+    if (!currentItem) return;
+    soundService.playSound(currentItem.id, currentItem.audioText || currentItem.grapheme, speed);
+
+    // Pulse the sound speaker
+    Animated.sequence([
+      Animated.timing(pulseAnim, { toValue: 1.25, duration: 180, useNativeDriver: true }),
+      Animated.timing(pulseAnim, { toValue: 1, duration: 180, useNativeDriver: true }),
+    ]).start();
+  };
+
+  const handleSpeedChange = (newSpeed: number) => {
+    setPlaybackSpeed(newSpeed);
+    playCurrentSound(newSpeed);
   };
 
   useEffect(() => {
@@ -114,17 +133,6 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
 
     return () => clearTimeout(timer);
   }, [currentIndex]);
-
-  const playCurrentSound = () => {
-    if (!currentItem) return;
-    soundService.playSound(currentItem.id, currentItem.audioText || currentItem.grapheme);
-
-    // Pulse the sound speaker
-    Animated.sequence([
-      Animated.timing(pulseAnim, { toValue: 1.25, duration: 180, useNativeDriver: true }),
-      Animated.timing(pulseAnim, { toValue: 1, duration: 180, useNativeDriver: true }),
-    ]).start();
-  };
 
   const handleBubblePress = (option: BubbleOption) => {
     if (selectedBubbleId !== null) return; // Prevent double tap
@@ -217,7 +225,7 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
             : 'اِسْتَمِعْ وَاخْتَرِ الحَرْفَ المُنَاسِب'}
         </Text>
 
-        <TouchableOpacity style={[styles.speakerButton, isPhraseLevel && styles.speakerButtonPhrase]} onPress={playCurrentSound} activeOpacity={0.8}>
+        <TouchableOpacity style={[styles.speakerButton, isPhraseLevel && styles.speakerButtonPhrase]} onPress={() => playCurrentSound()} activeOpacity={0.8}>
           <Animated.View style={[
             styles.speakerInner,
             isPhraseLevel && styles.speakerInnerPhrase,
@@ -228,6 +236,15 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
             </LinearGradient>
           </Animated.View>
         </TouchableOpacity>
+
+        {isWordOrPhrase && (
+          <PlaybackSpeedToggle
+            currentSpeed={playbackSpeed}
+            onSpeedChange={handleSpeedChange}
+            variant="blue"
+            style={{ marginTop: 6, marginBottom: 4 }}
+          />
+        )}
 
         {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
         currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
