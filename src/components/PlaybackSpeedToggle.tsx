@@ -18,7 +18,8 @@ export const PlaybackSpeedToggle: React.FC<PlaybackSpeedToggleProps> = ({
 }) => {
   const speeds = [
     { value: 1.0, label: '1.0x' },
-    { value: 0.8, label: '0.8x 🐢' },
+    { value: 0.8, label: '0.8x' },
+    { value: 0.6, label: '0.6x 🐢' },
   ];
 
   const handleSelect = (speed: number) => {
@@ -90,8 +91,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   speedButton: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
+    paddingHorizontal: 11,
+    paddingVertical: 5,
     borderRadius: 16,
     justifyContent: 'center',
     alignItems: 'center',
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
     }),
   },
   speedText: {
-    fontSize: 13,
+    fontSize: 12.5,
     fontWeight: '800',
   },
   speedTextActive: {
