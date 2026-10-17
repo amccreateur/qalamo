@@ -74,6 +74,17 @@ export const LevelMap: React.FC<LevelMapProps> = ({
     }
   }, [firstUnvalidatedLevel]);
 
+  // Scroll smoothly back to top when progress is reset
+  const prevValidatedCount = React.useRef(Object.keys(progress.validatedLevels || {}).length);
+  React.useEffect(() => {
+    const currentCount = Object.keys(progress.validatedLevels || {}).length;
+    if (prevValidatedCount.current > 0 && currentCount === 0) {
+      hasAutoScrolled.current = true;
+      scrollViewRef.current?.scrollTo({ y: 0, animated: true });
+    }
+    prevValidatedCount.current = currentCount;
+  }, [progress.validatedLevels]);
+
   const getGameIcon = (type: Level['gameType']) => {
     switch (type) {
       case 'bubble': return 'radio-button-on';

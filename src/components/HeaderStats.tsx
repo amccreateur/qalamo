@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Platform, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../theme/colors';
 import { soundService } from '../services/soundService';
@@ -11,6 +11,7 @@ interface HeaderStatsProps {
   avatarBase?: string;
   onAvatarPress?: () => void;
   onHomePress?: () => void;
+  onResetPress?: () => void;
   showHome?: boolean;
 }
 
@@ -20,6 +21,7 @@ export const HeaderStats: React.FC<HeaderStatsProps> = ({
   avatarBase = 'lion',
   onAvatarPress,
   onHomePress,
+  onResetPress,
   showHome = false,
 }) => {
   const [isMuted, setIsMuted] = useState(soundService.getMuted());
@@ -34,6 +36,29 @@ export const HeaderStats: React.FC<HeaderStatsProps> = ({
   const handleLanguageToggle = () => {
     soundService.triggerPop();
     toggleLanguage();
+  };
+
+  const handleResetPress = () => {
+    soundService.triggerPop();
+    if (Platform.OS === 'web') {
+      const confirmed = window.confirm(`${t.resetProgressTitle}\n\n${t.resetProgressMessage}`);
+      if (confirmed) {
+        onResetPress?.();
+      }
+    } else {
+      Alert.alert(
+        t.resetProgressTitle,
+        t.resetProgressMessage,
+        [
+          { text: t.cancel, style: 'cancel' },
+          {
+            text: t.resetProgressConfirm,
+            style: 'destructive',
+            onPress: () => onResetPress?.(),
+          },
+        ]
+      );
+    }
   };
 
   const getAvatarEmoji = (base: string) => {
@@ -90,6 +115,18 @@ export const HeaderStats: React.FC<HeaderStatsProps> = ({
             color={isMuted ? '#EF4444' : '#3B82F6'}
           />
         </TouchableOpacity>
+
+        {/* Reset Progress Button */}
+        {onResetPress && (
+          <TouchableOpacity
+            style={styles.resetButton}
+            onPress={handleResetPress}
+            activeOpacity={0.8}
+            accessibilityLabel={t.resetProgressTitle}
+          >
+            <Ionicons name="refresh-outline" size={19} color="#DC2626" />
+          </TouchableOpacity>
+        )}
       </View>
     </View>
   );
@@ -100,7 +137,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 16,
+    paddingHorizontal: 12,
     paddingVertical: 10,
     backgroundColor: 'rgba(255, 255, 255, 0.94)',
     borderBottomWidth: 1,
@@ -136,7 +173,7 @@ const styles = StyleSheet.create({
   statsRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
+    gap: 6,
   },
   langButton: {
     flexDirection: 'row',
@@ -160,10 +197,10 @@ const styles = StyleSheet.create({
   badge: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 10,
+    paddingHorizontal: 9,
     paddingVertical: 5,
     borderRadius: 18,
-    gap: 5,
+    gap: 4,
   },
   starBadge: {
     backgroundColor: '#FEF3C7',
@@ -176,7 +213,7 @@ const styles = StyleSheet.create({
     borderColor: '#A5F3FC',
   },
   badgeText: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: '800',
     color: '#1E293B',
   },
@@ -189,5 +226,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: '#BFDBFE',
+  },
+  resetButton: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: '#FEF2F2',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#FECACA',
   },
 });

@@ -49,6 +49,11 @@ export default function App() {
     setProgress(saved);
   };
 
+  const handleResetProgress = async () => {
+    const reset = await storageService.resetProgress();
+    setProgress(reset);
+  };
+
   const calculateTotalStars = (): number => {
     return Object.entries(progress.starsByLevel).reduce((acc, [lvlId, s]) => {
       if (!progress.validatedLevels || progress.validatedLevels[Number(lvlId)]) {
@@ -184,6 +189,7 @@ export default function App() {
                 avatarBase={progress.avatar.base}
                 onAvatarPress={() => setView('avatar')}
                 onHomePress={handleReturnHome}
+                onResetPress={view === 'map' ? handleResetProgress : undefined}
                 showHome={view !== 'map'}
               />
             )}

@@ -6,6 +6,7 @@ export interface Translations {
   home: string;
   back: string;
   close: string;
+  cancel: string;
   replay: string;
   nextLevel: string;
   loading: string;
@@ -73,6 +74,9 @@ export interface Translations {
   exitWithoutSaving: string;
   validatedTagOnMap: string;
   currentLevelBadge: string;
+  resetProgressTitle: string;
+  resetProgressMessage: string;
+  resetProgressConfirm: string;
 
   // AvatarCustomizer
   avatarShopTitle: string;
@@ -118,6 +122,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     home: 'Accueil',
     back: 'Retour',
     close: 'Fermer',
+    cancel: 'Annuler',
     replay: 'Rejouer',
     nextLevel: 'Niveau Suivant',
     loading: 'Chargement...',
@@ -178,6 +183,9 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     exitWithoutSaving: 'Retour à la carte sans valider',
     validatedTagOnMap: 'Validé',
     currentLevelBadge: 'À faire 🎯',
+    resetProgressTitle: 'Réinitialiser la progression ?',
+    resetProgressMessage: 'Toutes vos étoiles, vos pièces et vos niveaux validés seront remis à zéro. Êtes-vous sûr de vouloir recommencer depuis le début ?',
+    resetProgressConfirm: 'Réinitialiser',
 
     avatarShopTitle: 'Mon Avatar & Boutique',
     chooseAvatarSection: 'Choisis ton Avatar',
@@ -218,6 +226,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     home: 'Home',
     back: 'Back',
     close: 'Close',
+    cancel: 'Cancel',
     replay: 'Replay',
     nextLevel: 'Next Level',
     loading: 'Loading...',
@@ -278,6 +287,9 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     exitWithoutSaving: 'Back to map without validating',
     validatedTagOnMap: 'Validated',
     currentLevelBadge: 'Next up 🎯',
+    resetProgressTitle: 'Reset progress?',
+    resetProgressMessage: 'All your stars, coins, and validated levels will be reset to zero. Are you sure you want to start over from the beginning?',
+    resetProgressConfirm: 'Reset',
 
     avatarShopTitle: 'My Avatar & Shop',
     chooseAvatarSection: 'Choose your Avatar',
