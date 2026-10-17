@@ -63,6 +63,15 @@ export interface Translations {
   goodEncouragementText: string;
   scoreAccuracy: string;
   coinsWon: string;
+  validateModuleTitle: string;
+  validateModuleDesc: string;
+  validateBtn: string;
+  validatedBadge: string;
+  alreadyValidatedBadge: string;
+  savedInMemoryNotice: string;
+  replayWithoutSaving: string;
+  exitWithoutSaving: string;
+  validatedTagOnMap: string;
 
   // AvatarCustomizer
   avatarShopTitle: string;
@@ -158,6 +167,15 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     goodEncouragementText: 'Bien joué ! Entraîne-toi encore !',
     scoreAccuracy: 'Précision',
     coinsWon: 'Pièces gagnées',
+    validateModuleTitle: 'Valider ce module ?',
+    validateModuleDesc: 'Voulez-vous valider ce niveau et conserver votre réussite en mémoire pour vos prochaines connexions ?',
+    validateBtn: 'Valider ce module',
+    validatedBadge: 'Module validé avec succès !',
+    alreadyValidatedBadge: 'Ce module est déjà validé',
+    savedInMemoryNotice: 'Conservé en mémoire pour la prochaine connexion',
+    replayWithoutSaving: 'Refaire sans valider',
+    exitWithoutSaving: 'Retour à la carte sans valider',
+    validatedTagOnMap: 'Validé',
 
     avatarShopTitle: 'Mon Avatar & Boutique',
     chooseAvatarSection: 'Choisis ton Avatar',
@@ -248,6 +266,15 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     goodEncouragementText: 'Well done! Keep practicing!',
     scoreAccuracy: 'Accuracy',
     coinsWon: 'Coins earned',
+    validateModuleTitle: 'Validate this module?',
+    validateModuleDesc: 'Do you want to validate this level and keep your achievement in memory for your next sessions?',
+    validateBtn: 'Validate this module',
+    validatedBadge: 'Module successfully validated!',
+    alreadyValidatedBadge: 'This module is already validated',
+    savedInMemoryNotice: 'Saved in memory for next session',
+    replayWithoutSaving: 'Replay without validating',
+    exitWithoutSaving: 'Back to map without validating',
+    validatedTagOnMap: 'Validated',
 
     avatarShopTitle: 'My Avatar & Shop',
     chooseAvatarSection: 'Choose your Avatar',

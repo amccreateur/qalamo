@@ -57,6 +57,7 @@ export interface World {
 export interface UserProgress {
   unlockedLevelId: number;
   starsByLevel: Record<number, number>; // levelId -> stars (0-3)
+  validatedLevels?: Record<number, boolean>; // levelId -> boolean
   coins: number;
   xp: number;
   avatar: {

@@ -37,6 +37,8 @@ export default function App() {
   const [earnedCoins, setEarnedCoins] = useState(0);
   const [gameScore, setGameScore] = useState(0);
   const [totalQuestions, setTotalQuestions] = useState(0);
+  const [pendingMistakes, setPendingMistakes] = useState<string[]>([]);
+  const [isValidatedCurrent, setIsValidatedCurrent] = useState(false);
 
   useEffect(() => {
     loadProgress();
@@ -48,7 +50,12 @@ export default function App() {
   };
 
   const calculateTotalStars = (): number => {
-    return Object.values(progress.starsByLevel).reduce((acc, curr) => acc + curr, 0);
+    return Object.entries(progress.starsByLevel).reduce((acc, [lvlId, s]) => {
+      if (!progress.validatedLevels || progress.validatedLevels[Number(lvlId)]) {
+        return acc + s;
+      }
+      return acc;
+    }, 0);
   };
 
   const handleStartLevel = (level: Level) => {
@@ -62,14 +69,34 @@ export default function App() {
     setEarnedStars(stars);
     setEarnedCoins(coins);
     setGameScore(score);
+    setPendingMistakes(mistakes);
     const questionsCount = activeLevel.gameType === 'wordBuilder' 
       ? (activeLevel.wordItems?.length || 4)
       : activeLevel.items.length;
     setTotalQuestions(questionsCount);
 
-    const updated = await storageService.completeLevel(activeLevel.id, stars, coins, mistakes);
-    setProgress(updated);
+    const alreadyValidated = !!progress.validatedLevels?.[activeLevel.id];
+    setIsValidatedCurrent(alreadyValidated);
+
+    // If it was already validated previously, keep progress updated
+    if (alreadyValidated) {
+      const updated = await storageService.validateLevel(activeLevel.id, stars, coins, mistakes);
+      setProgress(updated);
+    }
+
     setVictoryVisible(true);
+  };
+
+  const handleValidateLevel = async () => {
+    if (!activeLevel) return;
+    const updated = await storageService.validateLevel(
+      activeLevel.id,
+      earnedStars,
+      earnedCoins,
+      pendingMistakes
+    );
+    setProgress(updated);
+    setIsValidatedCurrent(true);
   };
 
   const handleNextLevel = () => {
@@ -193,6 +220,8 @@ export default function App() {
               earnedCoins={earnedCoins}
               score={gameScore}
               totalQuestions={totalQuestions}
+              isValidated={isValidatedCurrent}
+              onValidate={handleValidateLevel}
               onReplay={handleReplayLevel}
               onNext={handleNextLevel}
               onHome={handleReturnHome}

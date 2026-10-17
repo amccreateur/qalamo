@@ -11,6 +11,8 @@ interface VictoryModalProps {
   earnedCoins: number;
   score: number;
   totalQuestions: number;
+  isValidated: boolean;
+  onValidate: () => Promise<void> | void;
   onReplay: () => void;
   onNext: () => void;
   onHome: () => void;
@@ -22,11 +24,16 @@ export const VictoryModal: React.FC<VictoryModalProps> = ({
   earnedCoins,
   score,
   totalQuestions,
+  isValidated,
+  onValidate,
   onReplay,
   onNext,
   onHome,
 }) => {
   const { language, t } = useLanguage();
+  const [validatedInModal, setValidatedInModal] = React.useState(false);
+  const [isValidating, setIsValidating] = React.useState(false);
+
   const scaleAnim = useRef(new Animated.Value(0.3)).current;
   const starScale1 = useRef(new Animated.Value(0)).current;
   const starScale2 = useRef(new Animated.Value(0)).current;
@@ -35,6 +42,8 @@ export const VictoryModal: React.FC<VictoryModalProps> = ({
   useEffect(() => {
     if (visible) {
       soundService.triggerVictory();
+      setValidatedInModal(isValidated);
+      setIsValidating(false);
 
       scaleAnim.setValue(0.3);
       starScale1.setValue(0);
@@ -66,7 +75,21 @@ export const VictoryModal: React.FC<VictoryModalProps> = ({
         }
       }, 900);
     }
-  }, [visible, stars]);
+  }, [visible, stars, isValidated]);
+
+  const handleValidatePress = async () => {
+    if (isValidating || validatedInModal) return;
+    setIsValidating(true);
+    try {
+      await onValidate();
+      setValidatedInModal(true);
+      soundService.triggerSuccess();
+    } catch (e) {
+      console.warn('Failed to validate level:', e);
+    } finally {
+      setIsValidating(false);
+    }
+  };
 
   const getEncouragement = (s: number) => {
     if (s === 3) return { ar: t.perfectEncouragementAr, text: t.perfectEncouragementText };
@@ -111,22 +134,63 @@ export const VictoryModal: React.FC<VictoryModalProps> = ({
             </View>
           </View>
 
+          {/* Validation Question / Confirmation */}
+          {!validatedInModal ? (
+            <View style={styles.validationPromptCard}>
+              <View style={styles.validationHeaderRow}>
+                <Ionicons name="help-circle" size={22} color="#2563EB" />
+                <Text style={styles.validationPromptTitle}>{t.validateModuleTitle}</Text>
+              </View>
+              <Text style={styles.validationPromptDesc}>{t.validateModuleDesc}</Text>
+
+              <TouchableOpacity
+                style={styles.validatePrimaryBtn}
+                onPress={handleValidatePress}
+                disabled={isValidating}
+                activeOpacity={0.8}
+              >
+                <Ionicons name="checkmark-circle" size={22} color="#FFFFFF" />
+                <Text style={styles.validatePrimaryBtnText}>
+                  {isValidating ? t.loading : t.validateBtn}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          ) : (
+            <View style={styles.validatedSuccessCard}>
+              <Ionicons name="shield-checkmark" size={26} color="#10B981" />
+              <View style={styles.validatedSuccessTextCol}>
+                <Text style={styles.validatedSuccessTitle}>
+                  {isValidated ? t.alreadyValidatedBadge : t.validatedBadge}
+                </Text>
+                <Text style={styles.validatedSuccessSubtitle}>{t.savedInMemoryNotice}</Text>
+              </View>
+            </View>
+          )}
+
           {/* Buttons */}
           <View style={styles.buttonsContainer}>
             <TouchableOpacity style={styles.replayButton} onPress={onReplay} activeOpacity={0.8}>
-              <Ionicons name="refresh" size={24} color="#475569" />
-              <Text style={styles.replayText}>{t.replay}</Text>
+              <Ionicons name="refresh" size={22} color="#475569" />
+              <Text style={styles.replayText}>
+                {validatedInModal ? t.replay : t.replayWithoutSaving}
+              </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.nextButton} onPress={onNext} activeOpacity={0.8}>
-              <Text style={styles.nextText}>{t.nextLevel}</Text>
-              <Ionicons name="arrow-forward" size={24} color="#FFFFFF" />
-            </TouchableOpacity>
+            {validatedInModal && (
+              <TouchableOpacity style={styles.nextButton} onPress={onNext} activeOpacity={0.8}>
+                <Text style={styles.nextText}>{t.nextLevel}</Text>
+                <Ionicons name="arrow-forward" size={22} color="#FFFFFF" />
+              </TouchableOpacity>
+            )}
           </View>
 
           <TouchableOpacity style={styles.homeLink} onPress={onHome} activeOpacity={0.7}>
-            <Ionicons name="map" size={18} color="#64748B" />
-            <Text style={styles.homeText}>{language === 'en' ? 'Back to World Map' : 'Retour à la carte des mondes'}</Text>
+            <Ionicons name={validatedInModal ? 'map' : 'close-circle-outline'} size={18} color="#64748B" />
+            <Text style={styles.homeText}>
+              {validatedInModal 
+                ? (language === 'en' ? 'Back to World Map' : 'Retour à la carte des mondes')
+                : t.exitWithoutSaving}
+            </Text>
           </TouchableOpacity>
         </Animated.View>
       </View>
@@ -200,6 +264,83 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '800',
     color: '#1E293B',
+  },
+  validationPromptCard: {
+    width: '100%',
+    backgroundColor: '#EFF6FF',
+    borderColor: '#BFDBFE',
+    borderWidth: 1.5,
+    borderRadius: 20,
+    padding: 16,
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  validationHeaderRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    marginBottom: 6,
+  },
+  validationPromptTitle: {
+    fontSize: 16,
+    fontWeight: '800',
+    color: '#1D4ED8',
+  },
+  validationPromptDesc: {
+    fontSize: 13,
+    fontWeight: '500',
+    color: '#2563EB',
+    textAlign: 'center',
+    lineHeight: 18,
+    marginBottom: 14,
+  },
+  validatePrimaryBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    backgroundColor: '#10B981',
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 16,
+    width: '100%',
+    ...Platform.select({
+      ios: { shadowColor: '#10B981', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.3, shadowRadius: 6 },
+      android: { elevation: 4 },
+      web: { boxShadow: '0 4px 6px -1px rgba(16, 185, 129, 0.4)' } as any,
+    }),
+  },
+  validatePrimaryBtnText: {
+    fontSize: 16,
+    fontWeight: '800',
+    color: '#FFFFFF',
+  },
+  validatedSuccessCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    width: '100%',
+    backgroundColor: '#ECFDF5',
+    borderColor: '#A7F3D0',
+    borderWidth: 1.5,
+    borderRadius: 20,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    marginBottom: 20,
+  },
+  validatedSuccessTextCol: {
+    flex: 1,
+  },
+  validatedSuccessTitle: {
+    fontSize: 15,
+    fontWeight: '800',
+    color: '#065F46',
+    marginBottom: 2,
+  },
+  validatedSuccessSubtitle: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: '#059669',
   },
   buttonsContainer: {
     flexDirection: 'row',

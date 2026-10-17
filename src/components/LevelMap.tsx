@@ -110,7 +110,8 @@ export const LevelMap: React.FC<LevelMapProps> = ({
             <View style={styles.levelsList}>
               {world.levels.map((level: Level, lIdx: number) => {
                 const isUnlocked = true; // Débloqué pour tests
-                const earnedStars = progress.starsByLevel[level.id] || 0;
+                const isValidated = !!progress.validatedLevels?.[level.id];
+                const earnedStars = isValidated ? (progress.starsByLevel[level.id] || 0) : 0;
                 const levelTitle = language === 'en' ? (level.titleEn || level.title) : level.title;
 
                 return (
@@ -135,9 +136,9 @@ export const LevelMap: React.FC<LevelMapProps> = ({
                       style={styles.levelCardGradient}
                     >
                       {/* Left Number & Status */}
-                      <View style={styles.levelNumberCircle}>
+                      <View style={[styles.levelNumberCircle, isValidated && styles.levelNumberCircleValidated]}>
                         {isUnlocked ? (
-                          <Text style={styles.levelNumber}>{level.id}</Text>
+                          <Text style={[styles.levelNumber, isValidated && styles.levelNumberValidated]}>{level.id}</Text>
                         ) : (
                           <Ionicons name="lock-closed" size={18} color="#94A3B8" />
                         )}
@@ -145,21 +146,31 @@ export const LevelMap: React.FC<LevelMapProps> = ({
 
                       {/* Middle Content */}
                       <View style={styles.levelInfo}>
-                        <View style={styles.gameTypeTag}>
-                          <Ionicons
-                            name={getGameIcon(level.gameType) as any}
-                            size={12}
-                            color={isUnlocked ? '#FFFFFF' : '#64748B'}
-                          />
-                          <Text
-                            style={[
-                              styles.gameTypeText,
-                              { color: isUnlocked ? 'rgba(255,255,255,0.9)' : '#64748B' },
-                            ]}
-                          >
-                            {getGameLabel(level.gameType)}
-                          </Text>
+                        <View style={styles.tagRow}>
+                          <View style={styles.gameTypeTag}>
+                            <Ionicons
+                              name={getGameIcon(level.gameType) as any}
+                              size={12}
+                              color={isUnlocked ? '#FFFFFF' : '#64748B'}
+                            />
+                            <Text
+                              style={[
+                                styles.gameTypeText,
+                                { color: isUnlocked ? 'rgba(255,255,255,0.9)' : '#64748B' },
+                              ]}
+                            >
+                              {getGameLabel(level.gameType)}
+                            </Text>
+                          </View>
+
+                          {isValidated && (
+                            <View style={styles.validatedBadge}>
+                              <Ionicons name="checkmark-circle" size={11} color="#FFFFFF" />
+                              <Text style={styles.validatedBadgeText}>{t.validatedTagOnMap}</Text>
+                            </View>
+                          )}
                         </View>
+
                         <Text style={[styles.levelTitle, { color: isUnlocked ? '#FFFFFF' : '#475569' }]}>
                           {levelTitle}
                         </Text>
@@ -181,9 +192,13 @@ export const LevelMap: React.FC<LevelMapProps> = ({
                           ))}
                         </View>
                         {isUnlocked && (
-                          <View style={styles.playButtonPill}>
-                            <Text style={styles.playButtonText}>{language === 'en' ? 'Play' : 'Jouer'}</Text>
-                            <Ionicons name="chevron-forward" size={14} color="#1E293B" />
+                          <View style={[styles.playButtonPill, isValidated && styles.playButtonPillValidated]}>
+                            <Text style={[styles.playButtonText, isValidated && styles.playButtonTextValidated]}>
+                              {isValidated 
+                                ? (language === 'en' ? 'Replay' : 'Revoir')
+                                : (language === 'en' ? 'Play' : 'Jouer')}
+                            </Text>
+                            <Ionicons name="chevron-forward" size={14} color={isValidated ? '#047857' : '#1E293B'} />
                           </View>
                         )}
                       </View>
@@ -335,14 +350,44 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     color: '#1E293B',
   },
+  levelNumberCircleValidated: {
+    borderWidth: 2,
+    borderColor: '#10B981',
+    backgroundColor: '#F0FDF4',
+  },
+  levelNumberValidated: {
+    color: '#047857',
+  },
   levelInfo: {
     flex: 1,
+  },
+  tagRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    marginBottom: 4,
+    flexWrap: 'wrap',
   },
   gameTypeTag: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
-    marginBottom: 4,
+  },
+  validatedBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 3,
+    backgroundColor: 'rgba(16, 185, 129, 0.45)',
+    borderColor: '#10B981',
+    borderWidth: 1,
+    paddingHorizontal: 7,
+    paddingVertical: 1.5,
+    borderRadius: 10,
+  },
+  validatedBadgeText: {
+    fontSize: 10,
+    fontWeight: '800',
+    color: '#FFFFFF',
   },
   gameTypeText: {
     fontSize: 11,
@@ -375,9 +420,17 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     gap: 2,
   },
+  playButtonPillValidated: {
+    backgroundColor: '#F0FDF4',
+    borderWidth: 1,
+    borderColor: '#86EFAC',
+  },
   playButtonText: {
     fontSize: 11,
     fontWeight: '800',
     color: '#1E293B',
+  },
+  playButtonTextValidated: {
+    color: '#047857',
   },
 });

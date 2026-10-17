@@ -6,6 +6,7 @@ const STORAGE_KEY = '@graphogame_arabic_progress_v1';
 export const INITIAL_PROGRESS: UserProgress = {
   unlockedLevelId: 999,
   starsByLevel: {},
+  validatedLevels: {},
   coins: 100,
   xp: 0,
   avatar: {
@@ -22,7 +23,21 @@ export const storageService = {
     try {
       const data = await AsyncStorage.getItem(STORAGE_KEY);
       if (data) {
-        return { ...INITIAL_PROGRESS, ...JSON.parse(data) };
+        const parsed = JSON.parse(data);
+        const validatedLevels = parsed.validatedLevels || {};
+        // Backward compatibility: migrate if stars exist but validatedLevels is not initialized
+        if (Object.keys(validatedLevels).length === 0 && parsed.starsByLevel) {
+          Object.keys(parsed.starsByLevel).forEach((lvlId) => {
+            if (parsed.starsByLevel[Number(lvlId)] > 0) {
+              validatedLevels[Number(lvlId)] = true;
+            }
+          });
+        }
+        return {
+          ...INITIAL_PROGRESS,
+          ...parsed,
+          validatedLevels,
+        };
       }
     } catch (e) {
       console.warn('Failed to load user progress:', e);
@@ -38,7 +53,7 @@ export const storageService = {
     }
   },
 
-  async completeLevel(levelId: number, earnedStars: number, earnedCoins: number, mistakes: string[]): Promise<UserProgress> {
+  async validateLevel(levelId: number, earnedStars: number, earnedCoins: number, mistakes: string[]): Promise<UserProgress> {
     const current = await this.getProgress();
     const oldStars = current.starsByLevel[levelId] || 0;
     const newStars = Math.max(oldStars, earnedStars);
@@ -58,6 +73,10 @@ export const storageService = {
         ...current.starsByLevel,
         [levelId]: newStars,
       },
+      validatedLevels: {
+        ...(current.validatedLevels || {}),
+        [levelId]: true,
+      },
       coins: current.coins + earnedCoins,
       xp: current.xp + earnedStars * 50 + 20,
       mistakeHistory: updatedMistakes,
@@ -65,6 +84,25 @@ export const storageService = {
 
     await this.saveProgress(updated);
     return updated;
+  },
+
+  async unvalidateLevel(levelId: number): Promise<UserProgress> {
+    const current = await this.getProgress();
+    const updatedValidated = { ...(current.validatedLevels || {}) };
+    delete updatedValidated[levelId];
+    const updatedStars = { ...current.starsByLevel };
+    delete updatedStars[levelId];
+    const updated: UserProgress = {
+      ...current,
+      validatedLevels: updatedValidated,
+      starsByLevel: updatedStars,
+    };
+    await this.saveProgress(updated);
+    return updated;
+  },
+
+  async completeLevel(levelId: number, earnedStars: number, earnedCoins: number, mistakes: string[]): Promise<UserProgress> {
+    return this.validateLevel(levelId, earnedStars, earnedCoins, mistakes);
   },
 
   async resetProgress(): Promise<UserProgress> {
