@@ -72,6 +72,7 @@ export interface Translations {
   replayWithoutSaving: string;
   exitWithoutSaving: string;
   validatedTagOnMap: string;
+  currentLevelBadge: string;
 
   // AvatarCustomizer
   avatarShopTitle: string;
@@ -176,6 +177,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     replayWithoutSaving: 'Refaire sans valider',
     exitWithoutSaving: 'Retour à la carte sans valider',
     validatedTagOnMap: 'Validé',
+    currentLevelBadge: 'À faire 🎯',
 
     avatarShopTitle: 'Mon Avatar & Boutique',
     chooseAvatarSection: 'Choisis ton Avatar',
@@ -275,6 +277,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     replayWithoutSaving: 'Replay without validating',
     exitWithoutSaving: 'Back to map without validating',
     validatedTagOnMap: 'Validated',
+    currentLevelBadge: 'Next up 🎯',
 
     avatarShopTitle: 'My Avatar & Shop',
     chooseAvatarSection: 'Choose your Avatar',

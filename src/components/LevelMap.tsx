@@ -31,6 +31,49 @@ export const LevelMap: React.FC<LevelMapProps> = ({
 }) => {
   const { language, t } = useLanguage();
 
+  // Find all levels in order to identify the first unvalidated one
+  const allLevels = React.useMemo(() => {
+    let list: Level[] = [];
+    WORLDS.forEach((w) => {
+      list = [...list, ...w.levels];
+    });
+    return list;
+  }, []);
+
+  const firstUnvalidatedLevel = React.useMemo(() => {
+    return allLevels.find((l) => !progress.validatedLevels?.[l.id]) || allLevels[0];
+  }, [allLevels, progress.validatedLevels]);
+
+  const scrollViewRef = React.useRef<ScrollView>(null);
+  const worldLayoutY = React.useRef<Record<number, number>>({});
+  const levelsListY = React.useRef<Record<number, number>>({});
+  const levelLayoutY = React.useRef<Record<number, number>>({});
+  const hasAutoScrolled = React.useRef(false);
+
+  const attemptScrollToTarget = React.useCallback(() => {
+    if (hasAutoScrolled.current || !firstUnvalidatedLevel) return;
+
+    if (firstUnvalidatedLevel.id === 1) {
+      hasAutoScrolled.current = true;
+      return;
+    }
+
+    const wY = worldLayoutY.current[firstUnvalidatedLevel.worldId];
+    const listY = levelsListY.current[firstUnvalidatedLevel.worldId] || 0;
+    const lY = levelLayoutY.current[firstUnvalidatedLevel.id];
+
+    if (wY !== undefined && lY !== undefined) {
+      hasAutoScrolled.current = true;
+      const targetY = Math.max(0, wY + listY + lY - 110);
+      setTimeout(() => {
+        scrollViewRef.current?.scrollTo({
+          y: targetY,
+          animated: true,
+        });
+      }, 350);
+    }
+  }, [firstUnvalidatedLevel]);
+
   const getGameIcon = (type: Level['gameType']) => {
     switch (type) {
       case 'bubble': return 'radio-button-on';
@@ -50,7 +93,11 @@ export const LevelMap: React.FC<LevelMapProps> = ({
   };
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.scrollContent}>
+    <ScrollView
+      ref={scrollViewRef}
+      style={styles.container}
+      contentContainerStyle={styles.scrollContent}
+    >
       {/* Quick Access Top Bar */}
       <View style={styles.quickAccessRow}>
         <TouchableOpacity style={styles.quickCard} onPress={onOpenExplorer} activeOpacity={0.8}>
@@ -80,7 +127,14 @@ export const LevelMap: React.FC<LevelMapProps> = ({
         const worldDesc = language === 'en' ? (world.descriptionEn || world.description) : world.description;
 
         return (
-          <View key={world.id} style={styles.worldContainer}>
+          <View
+            key={world.id}
+            style={styles.worldContainer}
+            onLayout={(e) => {
+              worldLayoutY.current[world.id] = e.nativeEvent.layout.y;
+              attemptScrollToTarget();
+            }}
+          >
             {/* World Header Card */}
             <View style={styles.worldHeader}>
               <View style={[styles.worldIconCircle, { backgroundColor: world.color }]}>
@@ -107,10 +161,17 @@ export const LevelMap: React.FC<LevelMapProps> = ({
             </View>
 
             {/* Levels along the road */}
-            <View style={styles.levelsList}>
+            <View
+              style={styles.levelsList}
+              onLayout={(e) => {
+                levelsListY.current[world.id] = e.nativeEvent.layout.y;
+                attemptScrollToTarget();
+              }}
+            >
               {world.levels.map((level: Level, lIdx: number) => {
                 const isUnlocked = true; // Débloqué pour tests
                 const isValidated = !!progress.validatedLevels?.[level.id];
+                const isCurrentTarget = level.id === firstUnvalidatedLevel?.id && !isValidated;
                 const earnedStars = isValidated ? (progress.starsByLevel[level.id] || 0) : 0;
                 const levelTitle = language === 'en' ? (level.titleEn || level.title) : level.title;
 
@@ -120,7 +181,14 @@ export const LevelMap: React.FC<LevelMapProps> = ({
                     style={[
                       styles.levelCard,
                       !isUnlocked && styles.levelCardLocked,
+                      isCurrentTarget && styles.levelCardCurrent,
                     ]}
+                    onLayout={(e) => {
+                      levelLayoutY.current[level.id] = e.nativeEvent.layout.y;
+                      if (level.id === firstUnvalidatedLevel?.id) {
+                        attemptScrollToTarget();
+                      }
+                    }}
                     onPress={() => {
                       if (isUnlocked) {
                         soundService.triggerPop();
@@ -169,6 +237,13 @@ export const LevelMap: React.FC<LevelMapProps> = ({
                               <Text style={styles.validatedBadgeText}>{t.validatedTagOnMap}</Text>
                             </View>
                           )}
+
+                          {isCurrentTarget && (
+                            <View style={styles.currentLevelBadge}>
+                              <Ionicons name="sparkles" size={11} color="#92400E" />
+                              <Text style={styles.currentLevelBadgeText}>{t.currentLevelBadge}</Text>
+                            </View>
+                          )}
                         </View>
 
                         <Text style={[styles.levelTitle, { color: isUnlocked ? '#FFFFFF' : '#475569' }]}>
@@ -192,13 +267,25 @@ export const LevelMap: React.FC<LevelMapProps> = ({
                           ))}
                         </View>
                         {isUnlocked && (
-                          <View style={[styles.playButtonPill, isValidated && styles.playButtonPillValidated]}>
-                            <Text style={[styles.playButtonText, isValidated && styles.playButtonTextValidated]}>
+                          <View style={[
+                            styles.playButtonPill, 
+                            isValidated && styles.playButtonPillValidated,
+                            isCurrentTarget && styles.playButtonPillCurrent,
+                          ]}>
+                            <Text style={[
+                              styles.playButtonText, 
+                              isValidated && styles.playButtonTextValidated,
+                              isCurrentTarget && styles.playButtonTextCurrent,
+                            ]}>
                               {isValidated 
                                 ? (language === 'en' ? 'Replay' : 'Revoir')
                                 : (language === 'en' ? 'Play' : 'Jouer')}
                             </Text>
-                            <Ionicons name="chevron-forward" size={14} color={isValidated ? '#047857' : '#1E293B'} />
+                            <Ionicons 
+                              name="chevron-forward" 
+                              size={14} 
+                              color={isValidated ? '#047857' : isCurrentTarget ? '#B45309' : '#1E293B'} 
+                            />
                           </View>
                         )}
                       </View>
@@ -425,6 +512,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#86EFAC',
   },
+  playButtonPillCurrent: {
+    backgroundColor: '#FEF3C7',
+    borderWidth: 1,
+    borderColor: '#F59E0B',
+  },
   playButtonText: {
     fontSize: 11,
     fontWeight: '800',
@@ -432,5 +524,34 @@ const styles = StyleSheet.create({
   },
   playButtonTextValidated: {
     color: '#047857',
+  },
+  playButtonTextCurrent: {
+    color: '#92400E',
+    fontWeight: '900',
+  },
+  levelCardCurrent: {
+    borderWidth: 2.5,
+    borderColor: '#F59E0B',
+    ...Platform.select({
+      ios: { shadowColor: '#F59E0B', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.35, shadowRadius: 8 },
+      android: { elevation: 6 },
+      web: { boxShadow: '0 4px 14px rgba(245, 158, 11, 0.4)' } as any,
+    }),
+  },
+  currentLevelBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 3,
+    backgroundColor: '#FEF3C7',
+    borderColor: '#F59E0B',
+    borderWidth: 1,
+    paddingHorizontal: 7,
+    paddingVertical: 1.5,
+    borderRadius: 10,
+  },
+  currentLevelBadgeText: {
+    fontSize: 10,
+    fontWeight: '800',
+    color: '#92400E',
   },
 });
