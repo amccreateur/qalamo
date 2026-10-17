@@ -13,7 +13,8 @@ import { WordItem } from '../types/game';
 import { soundService } from '../services/soundService';
 import { useLanguage } from '../i18n/LanguageContext';
 
-const { width } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
+const isTablet = width >= 600;
 
 interface WordBuilderGameProps {
   items: WordItem[];
@@ -23,6 +24,17 @@ interface WordBuilderGameProps {
 
 export const WordBuilderGame: React.FC<WordBuilderGameProps> = ({ items, onComplete, onExit }) => {
   const { language, t } = useLanguage();
+
+  const getLetterFontSize = (text: string, isSlot: boolean): number => {
+    // Count base Arabic characters excluding vowel diacritics
+    const baseCount = (text || '').replace(/[\u064B-\u065F\u0670]/g, '').length;
+    if (isTablet) {
+      if (baseCount > 1) return isSlot ? 38 : 36;
+      return isSlot ? 46 : 42;
+    }
+    if (baseCount > 1) return isSlot ? 30 : 28;
+    return isSlot ? 38 : 34;
+  };
   const [currentIndex, setCurrentIndex] = useState(0);
   const [placedLetters, setPlacedLetters] = useState<string[]>([]);
   const [poolLetters, setPoolLetters] = useState<{ id: string; letter: string }[]>([]);
@@ -124,99 +136,119 @@ export const WordBuilderGame: React.FC<WordBuilderGameProps> = ({ items, onCompl
 
   return (
     <LinearGradient colors={['#064E3B', '#047857', '#10B981']} style={styles.container}>
-      {/* Top Bar */}
-      <View style={styles.topBar}>
-        <TouchableOpacity style={styles.exitBtn} onPress={onExit}>
-          <Ionicons name="close" size={24} color="#FFFFFF" />
-        </TouchableOpacity>
+      <View style={styles.contentWrapper}>
+        {/* Top Bar */}
+        <View style={styles.topBar}>
+          <TouchableOpacity style={styles.exitBtn} onPress={onExit}>
+            <Ionicons name="close" size={24} color="#FFFFFF" />
+          </TouchableOpacity>
 
-        <View style={styles.progressBarContainer}>
-          <View style={[styles.progressBarFill, { width: `${progressPercent}%` }]} />
+          <View style={styles.progressBarContainer}>
+            <View style={[styles.progressBarFill, { width: `${progressPercent}%` }]} />
+          </View>
+
+          <View style={styles.counterBadge}>
+            <Text style={styles.counterText}>
+              {currentIndex + 1}/{items.length}
+            </Text>
+          </View>
         </View>
 
-        <View style={styles.counterBadge}>
-          <Text style={styles.counterText}>
-            {currentIndex + 1}/{items.length}
-          </Text>
-        </View>
-      </View>
+        {/* Word Illustration & Audio Prompt */}
+        <View style={styles.wordStage}>
+          {currentWord.emoji ? <Text style={styles.emoji}>{currentWord.emoji}</Text> : null}
+          
+          <TouchableOpacity style={styles.speakerPill} onPress={playWordAudio} activeOpacity={0.8}>
+            <Ionicons name="volume-high" size={26} color="#065F46" />
+            <Text style={styles.speakerPillText}>{t.listenWordBtn}</Text>
+          </TouchableOpacity>
 
-      {/* Word Illustration & Audio Prompt */}
-      <View style={styles.wordStage}>
-        {currentWord.emoji ? <Text style={styles.emoji}>{currentWord.emoji}</Text> : null}
-        
-        <TouchableOpacity style={styles.speakerPill} onPress={playWordAudio} activeOpacity={0.8}>
-          <Ionicons name="volume-high" size={26} color="#065F46" />
-          <Text style={styles.speakerPillText}>{t.listenWordBtn}</Text>
-        </TouchableOpacity>
-
-        {Boolean(
-          ((language === 'en'
-            ? currentWord.translationEn || currentWord.translationFr || currentWord.meaning
-            : currentWord.translationFr || currentWord.meaning) || '')
-            .replace(/\s*\([^)]*\)/g, '')
-            .trim()
-        ) && (
-          <Text style={styles.meaningText}>
-            {((language === 'en'
+          {Boolean(
+            ((language === 'en'
               ? currentWord.translationEn || currentWord.translationFr || currentWord.meaning
               : currentWord.translationFr || currentWord.meaning) || '')
               .replace(/\s*\([^)]*\)/g, '')
-              .trim()}
-          </Text>
-        )}
-      </View>
-
-      {/* Word Slots (assembled word) */}
-      <View style={styles.slotsRow}>
-        {currentWord.letters.map((_, idx) => {
-          const letter = placedLetters[idx];
-          const isCurrentSlot = placedLetters.length === idx;
-
-          return (
-            <View
-              key={`slot_${idx}`}
-              style={[
-                styles.slot,
-                letter ? styles.slotFilled : isCurrentSlot ? styles.slotActive : styles.slotEmpty,
-              ]}
-            >
-              <Text style={styles.slotText}>{letter || '...'}</Text>
-            </View>
-          );
-        })}
-      </View>
-
-      {/* If completed, show full connected word */}
-      {isCompletedWord && (
-        <View style={styles.fullWordBadge}>
-          <Text style={styles.fullWordText}>{currentWord.word}</Text>
-        </View>
-      )}
-
-      {/* Available Letters Pool */}
-      <View style={styles.poolSection}>
-        <View style={styles.poolHeader}>
-          <Text style={styles.poolInstruction}>{t.orderLettersInstruction}</Text>
-          {placedLetters.length > 0 && !isCompletedWord && (
-            <TouchableOpacity onPress={handleResetCurrent} style={styles.resetBtn}>
-              <Ionicons name="refresh" size={16} color="#FFFFFF" />
-              <Text style={styles.resetBtnText}>{t.clearBtn}</Text>
-            </TouchableOpacity>
+              .trim()
+          ) && (
+            <Text style={styles.meaningText}>
+              {((language === 'en'
+                ? currentWord.translationEn || currentWord.translationFr || currentWord.meaning
+                : currentWord.translationFr || currentWord.meaning) || '')
+                .replace(/\s*\([^)]*\)/g, '')
+                .trim()}
+            </Text>
           )}
         </View>
 
-        <View style={styles.lettersPool}>
-          {poolLetters.map((p) => (
-            <TouchableOpacity
-              key={p.id}
-              style={styles.letterTile}
-              onPress={() => handleSelectLetter(p)}
-              activeOpacity={0.7}
-            >
-              <Text style={styles.letterTileText}>{p.letter}</Text>
-            </TouchableOpacity>
-          ))}
+        {/* Word Slots (assembled word) */}
+        <View style={styles.slotsRow}>
+          {currentWord.letters.map((_, idx) => {
+            const letter = placedLetters[idx];
+            const isCurrentSlot = placedLetters.length === idx;
+
+            return (
+              <View
+                key={`slot_${idx}`}
+                style={[
+                  styles.slot,
+                  letter ? styles.slotFilled : isCurrentSlot ? styles.slotActive : styles.slotEmpty,
+                ]}
+              >
+                <Text 
+                  style={[
+                    styles.slotText,
+                    { fontSize: getLetterFontSize(letter || '...', true) }
+                  ]}
+                  allowFontScaling={false}
+                >
+                  {letter || '...'}
+                </Text>
+              </View>
+            );
+          })}
+        </View>
+
+        {/* If completed, show full connected word */}
+        {isCompletedWord && (
+          <View style={styles.fullWordBadge}>
+            <Text style={styles.fullWordText} allowFontScaling={false}>
+              {currentWord.word}
+            </Text>
+          </View>
+        )}
+
+        {/* Available Letters Pool */}
+        <View style={styles.poolSection}>
+          <View style={styles.poolHeader}>
+            <Text style={styles.poolInstruction}>{t.orderLettersInstruction}</Text>
+            {placedLetters.length > 0 && !isCompletedWord && (
+              <TouchableOpacity onPress={handleResetCurrent} style={styles.resetBtn}>
+                <Ionicons name="refresh" size={16} color="#FFFFFF" />
+                <Text style={styles.resetBtnText}>{t.clearBtn}</Text>
+              </TouchableOpacity>
+            )}
+          </View>
+
+          <View style={styles.lettersPool}>
+            {poolLetters.map((p) => (
+              <TouchableOpacity
+                key={p.id}
+                style={styles.letterTile}
+                onPress={() => handleSelectLetter(p)}
+                activeOpacity={0.7}
+              >
+                <Text 
+                  style={[
+                    styles.letterTileText,
+                    { fontSize: getLetterFontSize(p.letter, false) }
+                  ]}
+                  allowFontScaling={false}
+                >
+                  {p.letter}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
         </View>
       </View>
     </LinearGradient>
@@ -228,8 +260,14 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: Platform.OS === 'ios' ? 50 : 20,
     paddingHorizontal: 16,
+    paddingBottom: isTablet ? 50 : 36,
+    alignItems: 'center',
+  },
+  contentWrapper: {
+    width: '100%',
+    maxWidth: isTablet ? 720 : 480,
+    flex: 1,
     justifyContent: 'space-between',
-    paddingBottom: 40,
   },
   topBar: {
     flexDirection: 'row',
@@ -238,51 +276,51 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   exitBtn: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
+    width: isTablet ? 52 : 44,
+    height: isTablet ? 52 : 44,
+    borderRadius: isTablet ? 26 : 22,
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
     justifyContent: 'center',
     alignItems: 'center',
   },
   progressBarContainer: {
     flex: 1,
-    height: 14,
+    height: isTablet ? 16 : 14,
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
-    borderRadius: 7,
+    borderRadius: 8,
     overflow: 'hidden',
   },
   progressBarFill: {
     height: '100%',
     backgroundColor: '#38BDF8',
-    borderRadius: 7,
+    borderRadius: 8,
   },
   counterBadge: {
     backgroundColor: 'rgba(255, 255, 255, 0.25)',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
+    paddingHorizontal: isTablet ? 16 : 12,
+    paddingVertical: isTablet ? 8 : 6,
     borderRadius: 14,
   },
   counterText: {
-    fontSize: 14,
+    fontSize: isTablet ? 16 : 14,
     fontWeight: '800',
     color: '#FFFFFF',
   },
   wordStage: {
     alignItems: 'center',
-    marginVertical: 10,
+    marginVertical: isTablet ? 12 : 6,
   },
   emoji: {
-    fontSize: 64,
-    marginBottom: 10,
+    fontSize: isTablet ? 76 : 60,
+    marginBottom: isTablet ? 12 : 6,
   },
   speakerPill: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
     backgroundColor: '#FFFFFF',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingHorizontal: isTablet ? 26 : 20,
+    paddingVertical: isTablet ? 12 : 10,
     borderRadius: 30,
     ...Platform.select({
       ios: { shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.15, shadowRadius: 6 },
@@ -291,29 +329,30 @@ const styles = StyleSheet.create({
     }),
   },
   speakerPillText: {
-    fontSize: 16,
+    fontSize: isTablet ? 18 : 16,
     fontWeight: '800',
     color: '#065F46',
   },
   meaningText: {
     marginTop: 10,
-    fontSize: 18,
+    fontSize: isTablet ? 20 : 17,
     fontWeight: '700',
     color: '#D1FAE5',
+    textAlign: 'center',
   },
   slotsRow: {
     flexDirection: 'row-reverse', // Arabic RTL order
     justifyContent: 'center',
-    gap: 12,
-    marginVertical: 12,
+    gap: isTablet ? 16 : 10,
+    marginVertical: isTablet ? 16 : 10,
     flexWrap: 'wrap',
   },
   slot: {
-    minWidth: 76,
-    maxWidth: 96,
-    height: 90,
-    paddingHorizontal: 8,
-    borderRadius: 20,
+    minWidth: isTablet ? 96 : 76,
+    maxWidth: isTablet ? 116 : 94,
+    height: isTablet ? 112 : 94,
+    paddingHorizontal: isTablet ? 12 : 8,
+    borderRadius: isTablet ? 24 : 20,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 3,
@@ -332,17 +371,18 @@ const styles = StyleSheet.create({
   },
   slotText: {
     fontFamily: 'Amiri-Bold',
-    fontSize: 54,
     fontWeight: '700',
     color: '#064E3B',
-    includeFontPadding: true,
+    includeFontPadding: false,
     textAlign: 'center',
+    textAlignVertical: 'center',
+    alignSelf: 'center',
   },
   fullWordBadge: {
     alignSelf: 'center',
     backgroundColor: '#FEF08A',
-    paddingHorizontal: 28,
-    paddingVertical: 10,
+    paddingHorizontal: isTablet ? 36 : 28,
+    paddingVertical: isTablet ? 12 : 8,
     borderRadius: 24,
     marginBottom: 8,
     borderWidth: 2,
@@ -355,16 +395,19 @@ const styles = StyleSheet.create({
   },
   fullWordText: {
     fontFamily: 'Amiri-Bold',
-    fontSize: 56,
+    fontSize: isTablet ? 48 : 38,
     fontWeight: '700',
     color: '#713F12',
     textAlign: 'center',
-    includeFontPadding: true,
+    textAlignVertical: 'center',
+    alignSelf: 'center',
+    includeFontPadding: false,
   },
   poolSection: {
     backgroundColor: 'rgba(0, 0, 0, 0.25)',
     borderRadius: 28,
-    padding: 16,
+    padding: isTablet ? 20 : 16,
+    width: '100%',
   },
   poolHeader: {
     flexDirection: 'row',
@@ -373,7 +416,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   poolInstruction: {
-    fontSize: 14,
+    fontSize: isTablet ? 16 : 14,
     fontWeight: '700',
     color: '#E0E7FF',
   },
@@ -382,12 +425,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 4,
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
-    paddingHorizontal: 10,
-    paddingVertical: 4,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
     borderRadius: 12,
   },
   resetBtnText: {
-    fontSize: 12,
+    fontSize: isTablet ? 14 : 12,
     fontWeight: '700',
     color: '#FFFFFF',
   },
@@ -395,13 +438,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    gap: 12,
+    gap: isTablet ? 16 : 10,
   },
   letterTile: {
-    minWidth: 76,
-    height: 80,
-    paddingHorizontal: 10,
-    borderRadius: 20,
+    minWidth: isTablet ? 92 : 74,
+    maxWidth: isTablet ? 112 : 90,
+    height: isTablet ? 104 : 88,
+    paddingHorizontal: isTablet ? 12 : 8,
+    borderRadius: isTablet ? 24 : 20,
     backgroundColor: '#FFFFFF',
     justifyContent: 'center',
     alignItems: 'center',
@@ -415,11 +459,12 @@ const styles = StyleSheet.create({
   },
   letterTileText: {
     fontFamily: 'Amiri-Bold',
-    fontSize: 52,
     fontWeight: '700',
     color: '#1F2937',
     includeFontPadding: false,
     textAlign: 'center',
+    textAlignVertical: 'center',
+    alignSelf: 'center',
   },
 });
 
