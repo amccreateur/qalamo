@@ -5,7 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Animated,
-  Dimensions,
+  useWindowDimensions,
   Platform,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
@@ -15,8 +15,6 @@ import { soundService } from '../services/soundService';
 import { COLORS } from '../theme/colors';
 import { useLanguage } from '../i18n/LanguageContext';
 import { PlaybackSpeedToggle } from './PlaybackSpeedToggle';
-
-const { width } = Dimensions.get('window');
 
 interface BubbleGameProps {
   items: PhonemeItem[];
@@ -33,6 +31,9 @@ interface BubbleOption {
 
 export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExit }) => {
   const { language, t } = useLanguage();
+  const { width, height } = useWindowDimensions();
+  const isTablet = Math.min(width, height) >= 600;
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [options, setOptions] = useState<BubbleOption[]>([]);
   const [score, setScore] = useState(0);
@@ -54,7 +55,18 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
     const baseLetters = item.grapheme.replace(/[\u064B-\u065F\u0670]/g, '');
     return item.grapheme.includes(' ') || baseLetters.length > 7;
   }) || options.some((opt) => opt.grapheme.includes(' '));
-  const isWordOrPhrase = isPhraseLevel || (currentItem && (currentItem.grapheme.length > 2 || (currentItem.phonemeDesc && currentItem.phonemeDesc.length > 0)));
+
+  const isWordLevel = !isPhraseLevel && (
+    items.some((item) => {
+      const baseLetters = item.grapheme.replace(/[\u064B-\u065F\u0670]/g, '');
+      return baseLetters.length >= 2;
+    }) || options.some((opt) => {
+      const baseLetters = opt.grapheme.replace(/[\u064B-\u065F\u0670]/g, '');
+      return baseLetters.length >= 2;
+    })
+  );
+
+  const isWordOrPhrase = isPhraseLevel || isWordLevel;
 
   const getLocalizedPhonemeDesc = (desc?: string): string => {
     if (!desc) return '';
@@ -65,6 +77,40 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
     if (d.includes('fin')) return t.posFinal;
     if (d.includes('isol')) return t.posIsolated;
     return desc;
+  };
+
+  const getInstruction = (): string => {
+    const hasPosition = currentItem?.phonemeDesc?.toLowerCase().includes('début') ||
+      currentItem?.phonemeDesc?.toLowerCase().includes('milieu') ||
+      currentItem?.phonemeDesc?.toLowerCase().includes('fin');
+
+    if (hasPosition) {
+      return `${t.bubbleInstructionShape} ${getLocalizedPhonemeDesc(currentItem.phonemeDesc)}`;
+    }
+    if (isPhraseLevel) {
+      return t.bubbleInstructionPhrase;
+    }
+    if (isWordLevel) {
+      return t.bubbleInstructionWord;
+    }
+    return t.bubbleInstructionLetter;
+  };
+
+  const getInstructionAr = (): string => {
+    const hasPosition = currentItem?.phonemeDesc?.toLowerCase().includes('début') ||
+      currentItem?.phonemeDesc?.toLowerCase().includes('milieu') ||
+      currentItem?.phonemeDesc?.toLowerCase().includes('fin');
+
+    if (hasPosition) {
+      return 'اخْتَرِ الشَّكْلَ المُنَاسِبَ لِمَوْقِعِ الحَرْف';
+    }
+    if (isPhraseLevel) {
+      return 'اِسْتَمِعْ وَاخْتَرِ الجُمْلَةَ المُنَاسِبَة';
+    }
+    if (isWordLevel) {
+      return 'اِسْتَمِعْ وَاخْتَرِ الكَلِمَةَ المُنَاسِبَة';
+    }
+    return 'اِسْتَمِعْ وَاخْتَرِ الحَرْفَ المُنَاسِب';
   };
 
   const playCurrentSound = (speed?: number) => {
@@ -189,50 +235,74 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
   const progressPercent = ((currentIndex + 1) / items.length) * 100;
 
   return (
-    <LinearGradient colors={['#E0F2FE', '#BAE6FD', '#7DD3FC']} style={styles.container}>
+    <LinearGradient
+      colors={['#E0F2FE', '#BAE6FD', '#7DD3FC']}
+      style={[
+        styles.container,
+        isTablet && styles.containerTablet,
+        isPhraseLevel && isTablet && styles.containerPhraseTablet,
+      ]}
+    >
       {/* Top Bar */}
-      <View style={styles.topBar}>
-        <TouchableOpacity style={styles.exitBtn} onPress={onExit}>
-          <Ionicons name="close" size={26} color="#0F172A" />
+      <View style={[styles.topBar, isTablet && styles.topBarTablet]}>
+        <TouchableOpacity style={[styles.exitBtn, isTablet && styles.exitBtnTablet]} onPress={onExit}>
+          <Ionicons name="close" size={isTablet ? 30 : 26} color="#0F172A" />
         </TouchableOpacity>
 
         {/* Progress Bar */}
-        <View style={styles.progressBarContainer}>
+        <View style={[styles.progressBarContainer, isTablet && styles.progressBarContainerTablet]}>
           <View style={[styles.progressBarFill, { width: `${progressPercent}%` }]} />
         </View>
 
-        <View style={styles.counterBadge}>
-          <Text style={styles.counterText}>
+        <View style={[styles.counterBadge, isTablet && styles.counterBadgeTablet]}>
+          <Text style={[styles.counterText, isTablet && styles.counterTextTablet]}>
             {currentIndex + 1}/{items.length}
           </Text>
         </View>
       </View>
 
       {/* Center Sound Speaker (The Grapho Audio Prompt) */}
-      <View style={[styles.promptArea, isPhraseLevel && styles.promptAreaPhrase]}>
-        <Text style={[styles.instructionText, isPhraseLevel && styles.instructionTextPhrase]}>
-          {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
-          currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
-          currentItem.phonemeDesc?.toLowerCase().includes('fin')
-            ? `${t.bubbleInstructionShape} ${getLocalizedPhonemeDesc(currentItem.phonemeDesc)}`
-            : t.bubbleInstructionLetter}
+      <View style={[
+        styles.promptArea,
+        isPhraseLevel && styles.promptAreaPhrase,
+        isTablet && styles.promptAreaTablet,
+      ]}>
+        <Text style={[
+          styles.instructionText,
+          isPhraseLevel && styles.instructionTextPhrase,
+          isTablet && styles.instructionTextTablet,
+        ]}>
+          {getInstruction()}
         </Text>
-        <Text style={[styles.instructionAr, isPhraseLevel && styles.instructionArPhrase]}>
-          {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
-          currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
-          currentItem.phonemeDesc?.toLowerCase().includes('fin')
-            ? 'اخْتَرِ الشَّكْلَ المُنَاسِبَ لِمَوْقِعِ الحَرْف'
-            : 'اِسْتَمِعْ وَاخْتَرِ الحَرْفَ المُنَاسِب'}
+        <Text style={[
+          styles.instructionAr,
+          isPhraseLevel && styles.instructionArPhrase,
+          isTablet && styles.instructionArTablet,
+        ]}>
+          {getInstructionAr()}
         </Text>
 
-        <TouchableOpacity style={[styles.speakerButton, isPhraseLevel && styles.speakerButtonPhrase]} onPress={() => playCurrentSound()} activeOpacity={0.8}>
+        <TouchableOpacity
+          style={[
+            styles.speakerButton,
+            isPhraseLevel && styles.speakerButtonPhrase,
+            isTablet && styles.speakerButtonTablet,
+          ]}
+          onPress={() => playCurrentSound()}
+          activeOpacity={0.8}
+        >
           <Animated.View style={[
             styles.speakerInner,
             isPhraseLevel && styles.speakerInnerPhrase,
+            isTablet && styles.speakerInnerTablet,
             { transform: [{ scale: pulseAnim }] }
           ]}>
             <LinearGradient colors={['#3B82F6', '#1D4ED8']} style={styles.speakerGradient}>
-              <Ionicons name="volume-high" size={isPhraseLevel ? 32 : 44} color="#FFFFFF" />
+              <Ionicons
+                name="volume-high"
+                size={isTablet ? 48 : (isPhraseLevel ? 32 : 44)}
+                color="#FFFFFF"
+              />
             </LinearGradient>
           </Animated.View>
         </TouchableOpacity>
@@ -242,24 +312,39 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
             currentSpeed={playbackSpeed}
             onSpeedChange={handleSpeedChange}
             variant="blue"
-            style={{ marginTop: 6, marginBottom: 4 }}
+            style={[
+              { marginTop: 6, marginBottom: 4 },
+              isTablet && { marginTop: 10, marginBottom: 8 },
+            ]}
           />
         )}
 
         {currentItem.phonemeDesc?.toLowerCase().includes('début') ||
         currentItem.phonemeDesc?.toLowerCase().includes('milieu') ||
         currentItem.phonemeDesc?.toLowerCase().includes('fin') ? (
-          <View style={styles.hintPill}>
-            <Ionicons name="locate" size={14} color="#1E40AF" />
-            <Text style={styles.hintPillText}>{getLocalizedPhonemeDesc(currentItem.phonemeDesc)}</Text>
+          <View style={[styles.hintPill, isTablet && styles.hintPillTablet]}>
+            <Ionicons name="locate" size={isTablet ? 18 : 14} color="#1E40AF" />
+            <Text style={[styles.hintPillText, isTablet && styles.hintPillTextTablet]}>
+              {getLocalizedPhonemeDesc(currentItem.phonemeDesc)}
+            </Text>
           </View>
         ) : (
-          <Text style={[styles.phonemeHint, isPhraseLevel && styles.phonemeHintPhrase]}>{t.bubbleReplayHint}</Text>
+          <Text style={[
+            styles.phonemeHint,
+            isPhraseLevel && styles.phonemeHintPhrase,
+            isTablet && styles.phonemeHintTablet,
+          ]}>
+            {t.bubbleReplayHint}
+          </Text>
         )}
       </View>
 
-      {/* Floating Bubbles Grid */}
-      <View style={[styles.bubblesGrid, isPhraseLevel && styles.bubblesColumn]}>
+      {/* Floating Bubbles / Phrase Cards Grid */}
+      <View style={[
+        styles.bubblesGrid,
+        isPhraseLevel && styles.bubblesColumn,
+        isPhraseLevel && isTablet && styles.bubblesColumnTablet,
+      ]}>
         {options.map((opt, index) => {
           const color = COLORS.bubbleColors[opt.colorIdx];
           const isSelected = selectedBubbleId === opt.id;
@@ -277,45 +362,51 @@ export const BubbleGame: React.FC<BubbleGameProps> = ({ items, onComplete, onExi
             <Animated.View
               key={opt.id}
               style={[
-                isPhraseLevel ? styles.bubbleWrapperPhrase : styles.bubbleWrapperRegular,
+                isPhraseLevel
+                  ? (isTablet ? styles.bubbleWrapperPhraseTablet : styles.bubbleWrapperPhrase)
+                  : (isTablet ? styles.bubbleWrapperRegularTablet : styles.bubbleWrapperRegular),
                 { transform: [{ translateY: anim }] },
               ]}
             >
               <TouchableOpacity
                 style={[
-                  isPhraseLevel ? styles.bubblePhrase : styles.bubbleRegular,
+                  isPhraseLevel
+                    ? (isTablet ? styles.bubblePhraseTablet : styles.bubblePhrase)
+                    : (isTablet ? styles.bubbleRegularTablet : styles.bubbleRegular),
                   { backgroundColor: bubbleBg, borderColor: bubbleBorder },
                 ]}
                 onPress={() => handleBubblePress(opt)}
                 activeOpacity={0.7}
               >
-              <View style={styles.bubbleContentWrapper}>
-                <Text
-                  style={[
-                    styles.bubbleText,
-                    { color: color.text },
-                    opt.grapheme.length > 25
-                      ? styles.bubbleTextPhraseLong
-                      : opt.grapheme.length > 16
-                      ? styles.bubbleTextExtraSmall
-                      : opt.grapheme.length > 8
-                      ? styles.bubbleTextSmall
-                      : opt.grapheme.length > 4
-                      ? styles.bubbleTextMedium
-                      : null,
-                  ]}
-                  numberOfLines={2}
-                  adjustsFontSizeToFit
-                >
-                  {opt.grapheme}
-                </Text>
-              </View>
+                <View style={styles.bubbleContentWrapper}>
+                  <Text
+                    style={[
+                      styles.bubbleText,
+                      { color: color.text },
+                      isPhraseLevel
+                        ? (isTablet
+                            ? (opt.grapheme.length > 25 ? styles.bubbleTextPhraseLongTablet : styles.bubbleTextPhraseTablet)
+                            : (opt.grapheme.length > 25 ? styles.bubbleTextPhraseLong : styles.bubbleTextPhrase))
+                        : (opt.grapheme.length > 16
+                          ? styles.bubbleTextExtraSmall
+                          : opt.grapheme.length > 8
+                          ? styles.bubbleTextSmall
+                          : opt.grapheme.length > 4
+                          ? styles.bubbleTextMedium
+                          : (isTablet ? styles.bubbleTextTablet : null)),
+                    ]}
+                    numberOfLines={2}
+                    adjustsFontSizeToFit
+                  >
+                    {opt.grapheme}
+                  </Text>
+                </View>
 
                 {isSelected && (
-                  <View style={styles.feedbackIcon}>
+                  <View style={[styles.feedbackIcon, isTablet && styles.feedbackIconTablet]}>
                     <Ionicons
                       name={isSuccess ? 'checkmark-circle' : 'close-circle'}
-                      size={30}
+                      size={isTablet ? 38 : 30}
                       color={isSuccess ? '#10B981' : '#EF4444'}
                     />
                   </View>
@@ -337,11 +428,22 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingBottom: 30,
   },
+  containerTablet: {
+    paddingHorizontal: 32,
+    paddingTop: Platform.OS === 'ios' ? 60 : 30,
+    paddingBottom: 40,
+  },
+  containerPhraseTablet: {
+    justifyContent: 'space-evenly',
+  },
   topBar: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     gap: 12,
+  },
+  topBarTablet: {
+    paddingHorizontal: 8,
   },
   exitBtn: {
     width: 44,
@@ -351,12 +453,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  exitBtnTablet: {
+    width: 52,
+    height: 52,
+    borderRadius: 26,
+  },
   progressBarContainer: {
     flex: 1,
     height: 14,
     backgroundColor: 'rgba(255, 255, 255, 0.6)',
     borderRadius: 7,
     overflow: 'hidden',
+  },
+  progressBarContainerTablet: {
+    height: 18,
+    borderRadius: 9,
   },
   progressBarFill: {
     height: '100%',
@@ -369,10 +480,18 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     borderRadius: 14,
   },
+  counterBadgeTablet: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 18,
+  },
   counterText: {
     fontSize: 14,
     fontWeight: '800',
     color: '#0F172A',
+  },
+  counterTextTablet: {
+    fontSize: 16,
   },
   promptArea: {
     alignItems: 'center',
@@ -380,6 +499,10 @@ const styles = StyleSheet.create({
   },
   promptAreaPhrase: {
     marginTop: 2,
+  },
+  promptAreaTablet: {
+    marginTop: 0,
+    marginBottom: 8,
   },
   instructionText: {
     fontSize: 15,
@@ -390,6 +513,10 @@ const styles = StyleSheet.create({
   instructionTextPhrase: {
     fontSize: 14,
     marginBottom: 1,
+  },
+  instructionTextTablet: {
+    fontSize: 19,
+    marginBottom: 4,
   },
   instructionAr: {
     fontFamily: 'Amiri-Bold',
@@ -402,11 +529,18 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginBottom: 4,
   },
+  instructionArTablet: {
+    fontSize: 24,
+    marginBottom: 8,
+  },
   speakerButton: {
     marginVertical: 4,
   },
   speakerButtonPhrase: {
     marginVertical: 2,
+  },
+  speakerButtonTablet: {
+    marginVertical: 6,
   },
   speakerInner: {
     width: 88,
@@ -423,10 +557,15 @@ const styles = StyleSheet.create({
     height: 74,
     borderRadius: 37,
   },
+  speakerInnerTablet: {
+    width: 96,
+    height: 96,
+    borderRadius: 48,
+  },
   speakerGradient: {
     width: '100%',
     height: '100%',
-    borderRadius: 44,
+    borderRadius: 48,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 4,
@@ -442,6 +581,10 @@ const styles = StyleSheet.create({
     marginTop: 2,
     fontSize: 11,
   },
+  phonemeHintTablet: {
+    fontSize: 14,
+    marginTop: 6,
+  },
   hintPill: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -454,10 +597,19 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     marginTop: 8,
   },
+  hintPillTablet: {
+    paddingHorizontal: 18,
+    paddingVertical: 6,
+    borderRadius: 20,
+    marginTop: 10,
+  },
   hintPillText: {
     fontSize: 14,
     fontWeight: '800',
     color: '#1E40AF',
+  },
+  hintPillTextTablet: {
+    fontSize: 16,
   },
   bubblesGrid: {
     flexDirection: 'row',
@@ -473,15 +625,30 @@ const styles = StyleSheet.create({
     width: '100%',
     gap: 8,
   },
+  bubblesColumnTablet: {
+    maxWidth: 720,
+    gap: 16,
+    alignSelf: 'center',
+  },
   bubbleWrapperRegular: {
-    width: (width - 44) / 2,
+    width: '46%',
     maxWidth: 180,
+    aspectRatio: 1,
+  },
+  bubbleWrapperRegularTablet: {
+    width: '46%',
+    maxWidth: 240,
     aspectRatio: 1,
   },
   bubbleWrapperPhrase: {
     width: '100%',
-    maxWidth: 420,
-    height: 62,
+    maxWidth: 440,
+    height: 64,
+  },
+  bubbleWrapperPhraseTablet: {
+    width: '100%',
+    maxWidth: 720,
+    height: 84,
   },
   bubbleRegular: {
     width: '100%',
@@ -498,10 +665,14 @@ const styles = StyleSheet.create({
       web: { boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' } as any,
     }),
   },
+  bubbleRegularTablet: {
+    borderRadius: 48,
+    borderWidth: 4,
+  },
   bubblePhrase: {
     width: '100%',
     height: '100%',
-    borderRadius: 18,
+    borderRadius: 20,
     borderWidth: 3,
     justifyContent: 'center',
     alignItems: 'center',
@@ -511,6 +682,21 @@ const styles = StyleSheet.create({
       ios: { shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.12, shadowRadius: 6 },
       android: { elevation: 4 },
       web: { boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' } as any,
+    }),
+  },
+  bubblePhraseTablet: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 24,
+    borderWidth: 3.5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 24,
+    paddingVertical: 8,
+    ...Platform.select({
+      ios: { shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.15, shadowRadius: 8 },
+      android: { elevation: 5 },
+      web: { boxShadow: '0 6px 14px -2px rgba(0, 0, 0, 0.12)' } as any,
     }),
   },
   bubbleContentWrapper: {
@@ -528,6 +714,9 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     width: '100%',
     includeFontPadding: false,
+  },
+  bubbleTextTablet: {
+    fontSize: 82,
   },
   bubbleTextMedium: {
     fontSize: 48,
@@ -555,6 +744,16 @@ const styles = StyleSheet.create({
     width: '100%',
     includeFontPadding: false,
   },
+  bubbleTextPhrase: {
+    fontSize: 24,
+    fontWeight: '700',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    alignSelf: 'center',
+    width: '100%',
+    lineHeight: 34,
+    includeFontPadding: false,
+  },
   bubbleTextPhraseLong: {
     fontSize: 22,
     fontWeight: '700',
@@ -565,10 +764,34 @@ const styles = StyleSheet.create({
     lineHeight: 32,
     includeFontPadding: false,
   },
+  bubbleTextPhraseTablet: {
+    fontSize: 32,
+    fontWeight: '700',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    alignSelf: 'center',
+    width: '100%',
+    lineHeight: 46,
+    includeFontPadding: false,
+  },
+  bubbleTextPhraseLongTablet: {
+    fontSize: 28,
+    fontWeight: '700',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    alignSelf: 'center',
+    width: '100%',
+    lineHeight: 42,
+    includeFontPadding: false,
+  },
   feedbackIcon: {
     position: 'absolute',
     top: 6,
     right: 8,
+  },
+  feedbackIconTablet: {
+    top: 10,
+    right: 14,
   },
 });
 

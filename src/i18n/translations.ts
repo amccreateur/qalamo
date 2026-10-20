@@ -39,6 +39,8 @@ export interface Translations {
 
   // BubbleGame
   bubbleInstructionLetter: string;
+  bubbleInstructionWord: string;
+  bubbleInstructionPhrase: string;
   bubbleInstructionShape: string;
   bubbleReplayHint: string;
   bubbleShapePrefix: string;
@@ -47,6 +49,8 @@ export interface Translations {
   targetStageTitleSound: string;
   targetStageTitlePosition: string;
   targetStageSubtitleSound: string;
+  targetStageSubtitleWord: string;
+  targetStageSubtitlePhrase: string;
   targetStageSubtitlePosition: string;
   targetReplay: string;
 
@@ -151,6 +155,8 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     tipPrefix: '💡 Conseil :',
 
     bubbleInstructionLetter: 'Écoute et trouve la bonne lettre :',
+    bubbleInstructionWord: 'Écoute et trouve le bon mot :',
+    bubbleInstructionPhrase: 'Écoute et choisis la bonne phrase :',
     bubbleInstructionShape: 'Trouve la forme :',
     bubbleReplayHint: 'Touche le haut-parleur pour réécouter',
     bubbleShapePrefix: 'Position :',
@@ -158,6 +164,8 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     targetStageTitleSound: 'Tir Sonore / تَطَابُقُ الأَصْوَات',
     targetStageTitlePosition: 'Position de la Lettre / مَوْقِعُ الحَرْف',
     targetStageSubtitleSound: 'Quel signe correspond à ce son ?',
+    targetStageSubtitleWord: 'Quel mot as-tu entendu ?',
+    targetStageSubtitlePhrase: 'Quelle phrase as-tu entendue ?',
     targetStageSubtitlePosition: 'Trouve la forme :',
     targetReplay: 'Réécouter',
 
@@ -255,6 +263,8 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     tipPrefix: '💡 Tip:',
 
     bubbleInstructionLetter: 'Listen and find the right letter:',
+    bubbleInstructionWord: 'Listen and find the right word:',
+    bubbleInstructionPhrase: 'Listen and choose the right sentence:',
     bubbleInstructionShape: 'Find the shape:',
     bubbleReplayHint: 'Tap the speaker to replay',
     bubbleShapePrefix: 'Position:',
@@ -262,6 +272,8 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     targetStageTitleSound: 'Sound Target / تَطَابُقُ الأَصْوَات',
     targetStageTitlePosition: 'Letter Position / مَوْقِعُ الحَرْف',
     targetStageSubtitleSound: 'Which sign corresponds to this sound?',
+    targetStageSubtitleWord: 'Which word did you hear?',
+    targetStageSubtitlePhrase: 'Which sentence did you hear?',
     targetStageSubtitlePosition: 'Find the shape:',
     targetReplay: 'Replay',
 
